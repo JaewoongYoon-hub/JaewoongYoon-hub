@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>KPredict 포트폴리오</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="SAP ERP 데이터 분석 포트폴리오, Jaewoong Yoon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;700&display=swap">
+<style>
+/* Layout: 원장(ledger) 문서 같은 단일 칼럼. 섹션마다 왼쪽에 SAP 스타일 코드 라벨, 오른쪽에 본문. */
+:root {
+  --bg: #f4f6f9;
+  --surface: #ffffff;
+  --fg: #172033;
+  --muted: #5a6478;
+  --line: #d9dee8;
+  --accent: #2f45a8;
+  --forecast: #b8700f;
+  --accent-soft: #e6eaf8;
+  --font-body: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --step-0: 1rem;
+  --step-1: 1.25rem;
+  --step-2: 1.75rem;
+  --step-3: clamp(2.1rem, 5vw, 3.2rem);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #10141d; --surface: #171d29; --fg: #e4e8f1; --muted: #9aa3b6;
+    --line: #2a3242; --accent: #8fa2f5; --forecast: #e6a64a; --accent-soft: #1f2741;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #10141d; --surface: #171d29; --fg: #e4e8f1; --muted: #9aa3b6;
+  --line: #2a3242; --accent: #8fa2f5; --forecast: #e6a64a; --accent-soft: #1f2741;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: var(--step-0);
+  line-height: 1.7;
+  word-break: keep-all;
+}
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+.wrap {
+  max-width: 960px;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+/* 상단 바 */
+.topbar { border-bottom: 1px solid var(--line); }
+.topbar .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; padding-block: 14px; }
+.brand { font-family: var(--font-mono); font-weight: 500; letter-spacing: 0.02em; color: var(--fg); text-decoration: none; }
+.brand span { color: var(--forecast); }
+.nav { display: flex; flex-wrap: wrap; gap: 4px 18px; font-size: 0.9rem; }
+.nav a { color: var(--muted); text-decoration: none; }
+.nav a:hover { color: var(--fg); }
+
+/* 히어로 */
+.hero .wrap { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center; padding-block: 64px 48px; }
+.hero .wrap > * { min-width: 0; }
+.eyebrow { font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 0 0 12px; }
+h1 { font-size: var(--step-3); line-height: 1.2; margin: 0 0 16px; text-wrap: balance; font-weight: 700; }
+h1 em { font-style: normal; color: var(--accent); }
+.lede { color: var(--muted); font-size: var(--step-1); line-height: 1.6; margin: 0; max-width: 32em; }
+.chart { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 16px; }
+.chart svg { display: block; width: 100%; height: auto; }
+.chart figcaption { display: flex; flex-wrap: wrap; gap: 4px 16px; font-family: var(--font-mono); font-size: 0.75rem; color: var(--muted); margin-top: 8px; }
+.key::before { content: ""; display: inline-block; width: 14px; height: 0; border-top: 2px solid var(--accent); vertical-align: middle; margin-right: 6px; }
+.key.fc::before { border-top: 2px dashed var(--forecast); }
+
+/* 섹션 */
+section { border-top: 1px solid var(--line); }
+section > .wrap { display: grid; grid-template-columns: 180px 1fr; gap: 24px 40px; padding-block: 48px; }
+section > .wrap > * { min-width: 0; }
+.label { font-family: var(--font-mono); font-size: 0.8rem; color: var(--muted); padding-top: 6px; }
+.label b { display: block; color: var(--fg); font-weight: 500; font-size: 0.95rem; font-family: var(--font-body); }
+h2 { font-size: var(--step-2); margin: 0 0 16px; line-height: 1.3; text-wrap: balance; }
+h3 { font-size: var(--step-1); margin: 0; line-height: 1.4; text-wrap: balance; }
+p { margin: 0; max-width: 65ch; }
+.stack { display: flex; flex-direction: column; gap: 16px; }
+
+/* 아직 채우지 않은 칸 표시 */
+.todo { color: var(--muted); background: var(--accent-soft); border-radius: 3px; padding: 0 4px; }
+
+/* 프로젝트 */
+.projects { display: flex; flex-direction: column; gap: 16px; }
+.project { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 24px; display: grid; gap: 12px; }
+.project-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 16px; }
+.period { font-family: var(--font-mono); font-size: 0.85rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.facts { display: grid; grid-template-columns: 5.5em 1fr; gap: 6px 16px; margin: 0; }
+.facts dt { font-size: 0.85rem; color: var(--muted); padding-top: 2px; }
+.facts dd { margin: 0; min-width: 0; }
+.result { color: var(--forecast); font-weight: 500; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; margin: 0; padding: 0; }
+.chips li { font-family: var(--font-mono); font-size: 0.8rem; border: 1px solid var(--line); border-radius: 3px; padding: 1px 8px; color: var(--fg); }
+
+/* 기술 표 */
+.table-scroll { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 0.95rem; }
+th, td { text-align: left; padding: 10px 12px 10px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: 0.8rem; font-weight: 500; color: var(--muted); letter-spacing: 0.04em; }
+td code { font-family: var(--font-mono); font-size: 0.85rem; }
+
+/* 경력 타임라인 */
+.timeline { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 20px; }
+.timeline li { display: grid; grid-template-columns: 9em 1fr; gap: 4px 20px; }
+.timeline li > * { min-width: 0; }
+
+/* 연락처 */
+.contact { display: grid; grid-template-columns: 6em 1fr; gap: 8px 16px; margin: 0; }
+.contact dt { color: var(--muted); font-size: 0.9rem; }
+.contact dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+
+footer .wrap { padding-block: 32px 48px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--muted); border-top: 1px solid var(--line); }
+
+@media (max-width: 720px) {
+  .hero .wrap { grid-template-columns: 1fr; padding-block: 40px 32px; gap: 28px; }
+  section > .wrap { grid-template-columns: 1fr; gap: 12px; padding-block: 36px; }
+  .timeline li { grid-template-columns: 1fr; }
+  .facts { grid-template-columns: 1fr; gap: 0; }
+  .facts dd { margin-bottom: 8px; }
+}
+</style>
+</head>
+<body>
+
+<!--
+  편집 안내
+  - class="todo" 로 표시된 부분이 아직 채우지 않은 칸입니다. 내용을 넣은 뒤 class="todo" 를 지우세요.
+  - 프로젝트를 추가하려면 <article class="project"> ... </article> 블록을 복사하세요.
+  - 공개 사이트입니다. 회사 내부 데이터, 고객사명, 실제 금액은 넣지 마세요.
+-->
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top">k<span>predict</span></a>
+    <nav class="nav" aria-label="섹션">
+      <a href="#about">소개</a>
+      <a href="#projects">프로젝트</a>
+      <a href="#skills">기술</a>
+      <a href="#career">경력</a>
+      <a href="#contact">연락처</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">SAP ERP · Data Analytics</p>
+        <h1>ERP 데이터로<br><em>다음 달</em>을 읽습니다</h1>
+        <p class="lede">Jaewoong Yoon. SAP ERP에 쌓인 거래 데이터를 Python으로 정리하고 분석해, 현업이 바로 쓸 수 있는 숫자로 바꿉니다.</p>
+      </div>
+      <figure class="chart" style="margin:0">
+        <svg viewBox="0 0 320 170" role="img" aria-label="실적 선과 예측 구간을 보여주는 장식용 그래프">
+          <g stroke="var(--line)" stroke-width="1">
+            <line x1="30" y1="20" x2="310" y2="20"/>
+            <line x1="30" y1="65" x2="310" y2="65"/>
+            <line x1="30" y1="110" x2="310" y2="110"/>
+            <line x1="30" y1="150" x2="310" y2="150"/>
+          </g>
+          <line x1="210" y1="14" x2="210" y2="150" stroke="var(--muted)" stroke-width="1" stroke-dasharray="2 3"/>
+          <path d="M210 92 L240 72 L270 64 L300 50 L300 96 L270 100 L240 104 L210 92 Z" fill="var(--forecast)" opacity="0.14"/>
+          <polyline fill="none" stroke="var(--accent)" stroke-width="2.2" stroke-linejoin="round"
+            points="30,128 50,120 70,124 90,106 110,112 130,98 150,102 170,88 190,94 210,92"/>
+          <polyline fill="none" stroke="var(--forecast)" stroke-width="2.2" stroke-dasharray="5 4" stroke-linejoin="round"
+            points="210,92 240,88 270,82 300,73"/>
+          <circle cx="210" cy="92" r="3.5" fill="var(--accent)"/>
+          <g font-family="IBM Plex Mono, monospace" font-size="9" fill="var(--muted)">
+            <text x="30" y="164">P01</text>
+            <text x="110" y="164">P05</text>
+            <text x="195" y="164">P10</text>
+            <text x="286" y="164">P12</text>
+            <text x="214" y="12">예측</text>
+          </g>
+        </svg>
+        <figcaption><span class="key">실적</span><span class="key fc">예측</span><span>회계기간 P01–P12 · 예시 그래프</span></figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="label"><b>소개</b>About</div>
+      <div class="stack">
+        <h2>현업과 데이터 사이에서 일합니다</h2>
+        <p>SAP ERP의 데이터 분석 영역에 관심을 두고, Python으로 분석 역량을 키우고 있습니다.</p>
+        <p class="todo">여기에 2~3문장으로 자신을 소개해 주세요. 지금 하는 일, 강점, 앞으로 하고 싶은 일을 적으면 됩니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <div class="label"><b>프로젝트</b>Projects</div>
+      <div class="projects">
+
+        <article class="project">
+          <div class="project-head">
+            <h3 class="todo">프로젝트 1 제목</h3>
+            <span class="period todo">YYYY.MM – YYYY.MM</span>
+          </div>
+          <dl class="facts">
+            <dt>문제</dt><dd class="todo">어떤 업무 문제를 풀려고 했는지</dd>
+            <dt>한 일</dt><dd class="todo">사용한 데이터(예: SAP 테이블, T-code 추출본)와 분석 방법, 맡은 역할</dd>
+            <dt>결과</dt><dd class="todo result">숫자로 말할 수 있는 성과</dd>
+          </dl>
+          <ul class="chips" aria-label="사용 기술"><li>Python</li><li class="todo">기술</li></ul>
+        </article>
+
+        <article class="project">
+          <div class="project-head">
+            <h3 class="todo">프로젝트 2 제목</h3>
+            <span class="period todo">YYYY.MM – YYYY.MM</span>
+          </div>
+          <dl class="facts">
+            <dt>문제</dt><dd class="todo">어떤 업무 문제를 풀려고 했는지</dd>
+            <dt>한 일</dt><dd class="todo">사용한 데이터와 분석 방법, 맡은 역할</dd>
+            <dt>결과</dt><dd class="todo result">숫자로 말할 수 있는 성과</dd>
+          </dl>
+          <ul class="chips" aria-label="사용 기술"><li class="todo">기술</li></ul>
+        </article>
+
+        <article class="project">
+          <div class="project-head">
+            <h3 class="todo">프로젝트 3 제목</h3>
+            <span class="period todo">YYYY.MM – YYYY.MM</span>
+          </div>
+          <dl class="facts">
+            <dt>문제</dt><dd class="todo">어떤 업무 문제를 풀려고 했는지</dd>
+            <dt>한 일</dt><dd class="todo">사용한 데이터와 분석 방법, 맡은 역할</dd>
+            <dt>결과</dt><dd class="todo result">숫자로 말할 수 있는 성과</dd>
+          </dl>
+          <ul class="chips" aria-label="사용 기술"><li class="todo">기술</li></ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <div class="label"><b>기술</b>Skills</div>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th scope="col">분야</th><th scope="col">내용</th><th scope="col">수준</th></tr></thead>
+          <tbody>
+            <tr><td>SAP ERP</td><td class="todo">다뤄본 모듈 (FI / CO / MM / SD / PP 중)</td><td class="todo">실무 · 학습 중</td></tr>
+            <tr><td>Python</td><td class="todo">pandas, matplotlib 등 사용한 라이브러리</td><td>학습 중</td></tr>
+            <tr><td>SQL · BI</td><td class="todo">SQL, Power BI, Excel 등</td><td class="todo">수준</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="career">
+    <div class="wrap">
+      <div class="label"><b>경력 · 자격</b>Career</div>
+      <ol class="timeline">
+        <li><span class="period todo">YYYY.MM – 현재</span><div><b class="todo">회사 · 직무</b><p class="todo">주요 업무 한 줄</p></div></li>
+        <li><span class="period todo">YYYY.MM</span><div><b class="todo">자격증 또는 교육</b><p class="todo">예: SAP 인증, ADsP, SQLD</p></div></li>
+        <li><span class="period todo">YYYY</span><div><b class="todo">학교 · 전공</b></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="label"><b>연락처</b>Contact</div>
+      <dl class="contact">
+        <dt>GitHub</dt><dd><a href="https://github.com/JaewoongYoon-hub" target="_blank" rel="noopener">github.com/JaewoongYoon-hub</a></dd>
+        <dt>이메일</dt><dd class="todo">공개할 이메일 주소</dd>
+        <dt>LinkedIn</dt><dd class="todo">프로필 주소 (선택)</dd>
+      </dl>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Jaewoong Yoon · www.kpredict.co.kr</div>
+</footer>
+
+</body>
+</html>
