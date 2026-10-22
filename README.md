@@ -26,6 +26,7 @@
 - 2026.09 · **Modern Work Conference Seoul 2026** 외부 강연 (한국마이크로소프트, Modern Work Community 주최)
   「Copilot을 활용해 단숨에 Power BI 전문가 되기」 · [행사 페이지](https://ticketa.co/event/796zfanx)
 - 2025–2026 · 포스코인터내셔널 DX 준전문가 과정: Power BI, Power Apps 초급·중급 강의 및 교재 직접 개발
+- 2025–2026 · 포스코인터내셔널 직원 Self 개발 과정 지원: 직원이 직접 대시보드·RPA를 만들도록 지원
 - 2020.09 – 2022.12 · 포스코인재창조원 Python 데이터 분석 과정 강의 (2022.03 **A급 강사 인증**)
 - 재능기부 · 공업고등학교 학생 대상 Python · RPA 강의
 
