@@ -2,7 +2,7 @@
 
 딥러닝 시계열 예측으로 정책과 시장의 숫자를 미리 계산하고, 그 방법을 사내 강의로 가르칩니다.
 
-**포트폴리오: [www.kpredict.co.kr](https://www.kpredict.co.kr)**
+**포트폴리오: [www.kpredict.co.kr](https://www.kpredict.co.kr)** · 📫 yoonjw3840@naver.com
 
 #### 연구
 - **경영학 석사학위 논문** (아주대학교 경영대학원, 2023.08)
