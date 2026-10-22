@@ -119,6 +119,21 @@ p { margin: 0; max-width: 65ch; }
 .fuel-row b { font-family: var(--font-mono); font-weight: 500; text-align: right; font-variant-numeric: tabular-nums; }
 .fuel .note { font-size: 0.85rem; color: var(--muted); }
 .links { display: flex; flex-wrap: wrap; gap: 4px 20px; }
+.research { display: flex; flex-direction: column; gap: 56px; }
+.research > .paper + .paper { border-top: 1px dashed var(--line); padding-top: 40px; }
+.paper .en { font-size: 0.9rem; color: var(--muted); font-style: italic; margin-top: -8px; }
+.paper .note { font-size: 0.9rem; color: var(--muted); }
+.headline { display: grid; grid-template-columns: auto 1fr; gap: 8px 20px; align-items: center; border-left: 3px solid var(--forecast); padding: 4px 0 4px 16px; }
+.headline b { font-family: var(--font-mono); font-size: var(--step-3); font-weight: 500; color: var(--forecast); line-height: 1; font-variant-numeric: tabular-nums; }
+.headline p { font-size: 0.95rem; }
+.thesis-fig { margin: 0; display: grid; gap: 6px; }
+.thesis-fig img { display: block; width: 100%; height: auto; max-width: 100%; border: 1px solid var(--line); border-radius: 4px; background: #ffffff; }
+.thesis-fig figcaption { font-size: 0.85rem; color: var(--muted); }
+.mape caption { text-align: left; font-size: 0.85rem; color: var(--muted); padding-bottom: 6px; }
+.mape td + td, .mape th + th { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.mape .best td { color: var(--forecast); font-weight: 500; }
+.award { color: var(--forecast); }
+@media (max-width: 480px) { .headline { grid-template-columns: 1fr; } }
 .photos { margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 .photos img { display: block; width: 100%; height: 100%; max-width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 4px; background: var(--accent-soft); }
 .photos .photo-main { grid-column: 1 / -1; aspect-ratio: 16 / 9; object-position: center 40%; }
@@ -166,7 +181,7 @@ footer .wrap { padding-block: 32px 48px; font-family: var(--font-mono); font-siz
     <a class="brand" href="#top">k<span>predict</span></a>
     <nav class="nav" aria-label="섹션">
       <a href="#about">소개</a>
-      <a href="#paper">논문</a>
+      <a href="#paper">연구</a>
       <a href="#projects">프로젝트</a>
       <a href="#skills">기술</a>
       <a href="#career">경력</a>
@@ -181,7 +196,7 @@ footer .wrap { padding-block: 32px 48px; font-family: var(--font-mono); font-siz
       <div>
         <p class="eyebrow">SAP ERP · Data Analytics</p>
         <h1>ERP 데이터로<br><em>다음 달</em>을 읽습니다</h1>
-        <p class="lede">윤재웅 (Jaewoong Yoon). SAP ERP 데이터와 딥러닝 예측으로 전기요금 원가 같은 어려운 숫자를 미리 계산하고, 현업이 바로 쓸 수 있는 정보로 바꿉니다.</p>
+        <p class="lede">윤재웅 (Jaewoong Yoon). LSTM으로 2030년 전기 도매가격(SMP)을 예측한 경영학 석사이자, 포스코그룹에서 디지털 혁신을 가르쳐 온 A급 사내 강사입니다. 데이터로 정책과 업무의 결과를 미리 계산합니다.</p>
       </div>
       <figure class="chart" style="margin:0">
         <svg viewBox="0 0 320 170" role="img" aria-label="실적 선과 예측 구간을 보여주는 장식용 그래프">
@@ -216,7 +231,7 @@ footer .wrap { padding-block: 32px 48px; font-family: var(--font-mono); font-siz
       <div class="label"><b>소개</b>About</div>
       <div class="stack">
         <h2>현업과 데이터 사이에서 일합니다</h2>
-        <p>SAP ERP의 데이터 분석 영역에 관심을 두고, Python으로 분석 역량을 키우고 있습니다.</p>
+        <p>SAP ERP의 데이터 분석 영역에 관심을 두고, Python으로 분석 역량을 키우고 있습니다. 석사 과정에서는 RNN·LSTM 시계열 모델로 SMP를 예측해 검증 오차(MAPE) 8.6%를 얻었고, 이 연구로 한국품질경영학회 우수발표논문상을 받았습니다.</p>
         <p class="todo">여기에 2~3문장으로 자신을 소개해 주세요. 지금 하는 일, 강점, 앞으로 하고 싶은 일을 적으면 됩니다.</p>
       </div>
     </div>
@@ -224,11 +239,56 @@ footer .wrap { padding-block: 32px 48px; font-family: var(--font-mono); font-siz
 
   <section id="paper">
     <div class="wrap">
-      <div class="label"><b>논문</b>Publication</div>
+      <div class="label"><b>연구</b>Research</div>
+      <div class="research">
       <article class="paper">
-        <p class="eyebrow">학술대회 발표논문 · 2022.10</p>
-        <h2>정부의 원전 확대 정책이 전기 요금 원가에 미치는 영향을 딥러닝 알고리즘으로 예측 및 분석</h2>
+        <p class="eyebrow">경영학 석사학위 논문 · 2023.08</p>
+        <h2>딥러닝 기반 원전 확대의 전기요금원가 영향 연구</h2>
+        <p class="en">A Study on the Impact of Nuclear Power Plant Expansion Policies on the System Marginal Price of Electricity based on Deep Learning</p>
+        <p class="period">윤재웅 &nbsp;|&nbsp; 아주대학교 경영대학원 · 지도교수 강주영</p>
+        <p>제10차 전력수급계획의 발전원별 비율을 반영해 2030년 전기 도매가격(SMP, 계통한계가격)을 RNN과 LSTM으로 예측하고, 원전 확대 정책이 전기요금 원가에 주는 영향을 숫자로 보여줬습니다.</p>
+
+        <div class="headline">
+          <b>−22.2%</b>
+          <p>LSTM 모델이 예측한 2030년 SMP, 2021년 실적 대비. 2021년 전력시장 전체 정산금이 약 55조 원이라 이 차이는 작지 않습니다.</p>
+        </div>
+
+        <figure class="thesis-fig">
+          <img src="images/smp-2030-lstm.png" width="997" height="546" loading="lazy" alt="LSTM으로 예측한 2030년 2~12월 SMP가 2021년 같은 기간 실적보다 전 구간에서 낮게 나타난 선 그래프">
+          <figcaption>2030년 SMP 예측(주황)과 2021년 실적(파랑), LSTM · 정규화 값 · 논문 그림 20</figcaption>
+        </figure>
+
+        <div class="table-scroll">
+          <table class="mape">
+            <caption>예측 오차(MAPE) 비교 · 낮을수록 정확</caption>
+            <thead><tr><th scope="col">모델</th><th scope="col">학습 (2002.01–2018.08)</th><th scope="col">검증 (2018.09–2022.08)</th></tr></thead>
+            <tbody>
+              <tr><td>RNN</td><td>12.2%</td><td>13.8%</td></tr>
+              <tr class="best"><td>LSTM</td><td>6.5%</td><td>8.6%</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">LSTM의 정확도가 RNN보다 약 1.7배 높았고, 예측 범위를 1년으로 좁히면 MAPE는 5.8%까지 내려갑니다.</p>
+
+        <figure class="thesis-fig">
+          <img src="images/smp-validation-lstm.png" width="1082" height="608" loading="lazy" alt="2018년 9월부터 2022년 8월까지 실제 SMP와 LSTM 예측값이 거의 겹쳐 움직이는 검증 그래프">
+          <figcaption>검증 구간 실제값과 예측값, 2018.09–2022.08 · 논문 그림 15</figcaption>
+        </figure>
+
+        <dl class="facts">
+          <dt>데이터</dt><dd>월별 전력거래량(GWh)과 전력거래금액(억 원)으로 SMP(원/kWh)를 예측. 2021년 실적과 발전원별 정산단가로 2030년 거래량·거래금액을 산출했습니다.</dd>
+          <dt>방법</dt><dd>시계열 딥러닝 모델 RNN과 LSTM을 학습·검증해 비교하고, 정확도가 높은 LSTM으로 2030년을 예측했습니다.</dd>
+          <dt>활용</dt><dd>신재생 투자 판단(SMP·REC 가격), 발전 산업의 의사결정, 합리적인 전기요금 논의에 쓸 수 있습니다.</dd>
+          <dt>다음 연구</dt><dd>뉴스 같은 비정형 정보를 생성형 AI로 수치화해 독립변수로 쓰고, 시계열 예측의 랜덤워크 한계를 넘는 연구를 구상하고 있습니다.</dd>
+        </dl>
+        <ul class="chips" aria-label="키워드"><li>LSTM</li><li>RNN</li><li>SMP</li><li>제10차 전력수급계획</li><li>원전 정책</li><li>시계열 예측</li></ul>
+      </article>
+
+      <article class="paper">
+        <p class="eyebrow">학술대회 발표논문 · 2022.10 · <span class="award">우수발표논문상</span></p>
+        <h3>정부의 원전 확대 정책이 전기 요금 원가에 미치는 영향을 딥러닝 알고리즘으로 예측 및 분석</h3>
         <p class="period">윤재웅 · 강주영 &nbsp;|&nbsp; 한국품질경영학회 2022년 추계학술발표논문집, p. 36</p>
+        <p>석사 논문의 출발점이 된 연구입니다. 학술위원회 추천과 포상심의위원회 심사를 거쳐 2022년 한국품질경영학회 추계 학술대회 <b>우수발표논문(Best Quality Management Presentation Award)</b>으로 선정됐습니다.</p>
 
         <figure class="photos">
           <img class="photo-main" src="images/talk-room.jpg" width="1400" height="934" loading="lazy" alt="윤재웅이 논문 제목이 띄워진 화면 앞에서 청중에게 발표하는 모습">
@@ -250,12 +310,12 @@ footer .wrap { padding-block: 32px 48px; font-family: var(--font-mono); font-siz
 
         <dl class="facts">
           <dt>배경</dt><dd>러시아의 우크라이나 침공(2022.2) 이후 에너지 시장이 흔들리고, 유럽연합의회가 그린 택소노미에 원전을 포함(2022.7.6)하는 등 원전·석탄·LNG의 역할이 다시 커졌습니다.</dd>
-          <dt>방법</dt><dd>제9차 전력수급계획의 발전원별 전원 믹스를 기반으로 하고, 석탄발전은 유지·감소 시나리오를 시뮬레이션했습니다. 2022.8.30 발표된 제10차 전력수급기본계획 실무안도 일부 반영했습니다.</dd>
-          <dt>목적</dt><dd>정부 정책 담당자, 발전사, 일반 국민에게 정책 결정이 실제 전기요금 원가에 미치는 영향을 정확한 숫자로 제공합니다.</dd>
+          <dt>방법</dt><dd>제9차 전력수급계획의 발전원별 전원 믹스를 기반으로 석탄발전 유지·감소 시나리오를 시뮬레이션하고, 2022.8.30 발표된 제10차 전력수급기본계획 실무안도 반영했습니다.</dd>
         </dl>
         <ul class="chips" aria-label="키워드"><li>계통한계가격</li><li>전기요금 원가</li><li>딥러닝</li><li>인공지능</li><li>예측</li></ul>
         <p class="links"><a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12479173" target="_blank" rel="noopener">DBpia에서 보기 ↗</a><a href="https://kiss.kstudy.com/Detail/Ar?key=3988099" target="_blank" rel="noopener">KISS에서 보기 ↗</a></p>
       </article>
+      </div>
     </div>
   </section>
 
@@ -315,7 +375,8 @@ footer .wrap { padding-block: 32px 48px; font-family: var(--font-mono); font-siz
           <thead><tr><th scope="col">분야</th><th scope="col">내용</th><th scope="col">수준</th></tr></thead>
           <tbody>
             <tr><td>SAP ERP</td><td class="todo">다뤄본 모듈 (FI / CO / MM / SD / PP 중)</td><td class="todo">실무 · 학습 중</td></tr>
-            <tr><td>Python</td><td class="todo">pandas, matplotlib 등 사용한 라이브러리</td><td>학습 중</td></tr>
+            <tr><td>Python</td><td>RNN · LSTM 시계열 예측 모델, matplotlib 시각화</td><td>석사 논문 연구에 적용</td></tr>
+            <tr><td>강의</td><td>포스코그룹 사내 강사 (디지털혁신교육)</td><td>A급 강사 인증</td></tr>
             <tr><td>SQL · BI</td><td class="todo">SQL, Power BI, Excel 등</td><td class="todo">수준</td></tr>
           </tbody>
         </table>
@@ -328,9 +389,11 @@ footer .wrap { padding-block: 32px 48px; font-family: var(--font-mono); font-siz
       <div class="label"><b>경력 · 자격</b>Career</div>
       <ol class="timeline">
         <li><span class="period"><span class="todo">YYYY.MM</span> – 현재</span><div><b>포스코인터내셔널</b><p class="todo">직무와 주요 업무 한 줄</p></div></li>
-        <li><span class="period">2022</span><div><b>포스코인재창조원 · 차장</b><p>한국품질경영학회 추계 학술대회 논문 발표 당시 소속</p></div></li>
-        <li><span class="period todo">YYYY.MM</span><div><b class="todo">자격증 또는 교육</b><p class="todo">예: SAP 인증, ADsP, SQLD</p></div></li>
-        <li><span class="period todo">YYYY</span><div><b class="todo">학교 · 전공</b></div></li>
+        <li><span class="period">2023.08</span><div><b>경영학 석사 · 아주대학교 경영대학원</b><p>학위논문: 딥러닝 기반 원전 확대의 전기요금원가 영향 연구 (지도교수 강주영)</p></div></li>
+        <li><span class="period">2022.10</span><div><b>우수발표논문상 · 한국품질경영학회</b><p>2022년 추계 학술대회, Best Quality Management Presentation Award</p></div></li>
+        <li><span class="period">2022.03</span><div><b>A급 강사 인증 · 포스코인재창조원</b><p>포스코그룹 사내 강사로 활동하며 우수한 고객평가 점수 등 우수강사 인증 조건 충족</p></div></li>
+        <li><span class="period">2022</span><div><b>포스코인재창조원 디지털혁신교육그룹 · 차장</b><p>포스코그룹 임직원 대상 디지털 혁신 교육 담당</p></div></li>
+        <li><span class="period todo">YYYY.MM</span><div><b class="todo">자격증</b><p class="todo">예: SAP 인증, ADsP, SQLD</p></div></li>
       </ol>
     </div>
   </section>
