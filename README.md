@@ -22,7 +22,7 @@
 - 2020.09 – 2022.12 · 포스코인재창조원 디지털혁신교육그룹 (2022.03 **A급 강사 인증**)
 
 #### 자격
-- CISA (Certified Information Systems Auditor) · ISACA
+- CISA (Certified Information Systems Auditor) · ISACA, 2019년 취득 (현재 미갱신)
 
 #### 다루는 도구
 Python · LSTM / RNN · matplotlib · Power BI · Power Apps · Microsoft 365 Copilot
