@@ -7,16 +7,18 @@
 
 #### 경력
 - 2010.05 – 현재 · 포스코인터내셔널 차장, 경영지원본부 DX혁신실 DX기획그룹 (2020.09 – 2022.12 포스코인재창조원 디지털혁신교육그룹 파견)
+  Oracle ERP → SAP ERP 전환 PI 참여, SAP ERP 운영 관리, 폴란드·인도 모터코아 ERP 구축 PMO
 - 2026 – 현재 · 한국 MS 파워플랫폼 협회 기술 이사 (설립 주도)
 - 2008.01 – 2010.05 · 포스코DX
 
 #### 주요 프로젝트
-- **SAP 데이터 2만여 항목 자동 검증 RPA**: SAP 데이터와 정부 관련 외부 사이트 정보를 자동으로 비교·검증해 수작업을 대체
+- **폴란드·인도 모터코아 ERP 구축 PMO**: 경쟁 입찰 기획, RFP 작성, 제안 평가표와 평가 항목별·조직별 가중치 설계
+- **SAP 데이터 약 2만 건 자동 검증 RPA**: SAP에서 추출한 데이터를 외부 시스템과 자동으로 비교·검증해 반복 수작업을 대체
 - **Power BI 중급 과정 End-to-End 실습 설계**: 공공·웹 데이터 수집 → Power Automate Desktop 자동화 → Power BI Service 연계, 교재 직접 제작
 - **대시보드 설계 교육**: Stephen Few 이론 기반, 임원 보고용 KPI 구조와 드릴다운·조건부 서식
 
 #### 연구
-- **경영학 석사학위 논문** (아주대학교 경영대학원, 2023.08)
+- **경영학 석사학위 논문** (아주대학교 경영대학원 SAP Track, 2023.08)
   「딥러닝 기반 원전 확대의 전기요금원가 영향 연구」
   RNN·LSTM으로 2030년 SMP(계통한계가격)를 예측해 2021년 실적 대비 **22.2% 감소** 전망. LSTM 검증 MAPE 8.6%
 - **학회 발표** (한국품질경영학회 2022 추계 학술대회) · 🏆 **우수발표논문상**
@@ -34,4 +36,4 @@
 - CISA (Certified Information Systems Auditor) · ISACA, 2019년 취득 (현재 미갱신)
 
 #### 다루는 도구
-Python · LSTM / RNN · Power BI · Power Apps · Power Automate · RPA · Microsoft 365 Copilot · 생성형 AI · 바이브 코딩
+SAP ERP · Python · LSTM / RNN · Power BI · Power Apps · Power Automate · RPA · Microsoft 365 Copilot · 생성형 AI · 바이브 코딩
