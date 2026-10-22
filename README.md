@@ -12,8 +12,10 @@
   「정부의 원전 확대 정책이 전기 요금 원가에 미치는 영향을 딥러닝 알고리즘으로 예측 및 분석」 · [DBpia](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12479173)
 
 #### 강의
+- 2026.09 · **Modern Work Conference Seoul 2026** 외부 강연 (한국마이크로소프트, Modern Work Community 주최)
+  「Copilot을 활용해 단숨에 Power BI 전문가 되기」 · [행사 페이지](https://ticketa.co/event/796zfanx)
 - 2025–2026 · 포스코인터내셔널 DX 준전문가 과정: Power BI, Power Apps 초급·중급 강의 및 교재 직접 개발
 - 2022 · 포스코인재창조원 디지털혁신교육그룹, **A급 강사 인증**
 
 #### 다루는 도구
-Python · LSTM / RNN · matplotlib · Power BI · Power Apps
+Python · LSTM / RNN · matplotlib · Power BI · Power Apps · Microsoft 365 Copilot
