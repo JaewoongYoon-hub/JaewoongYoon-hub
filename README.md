@@ -12,7 +12,7 @@
   「정부의 원전 확대 정책이 전기 요금 원가에 미치는 영향을 딥러닝 알고리즘으로 예측 및 분석」 · [DBpia](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12479173)
 
 #### 강의
-- 2025–2026 · 포스코인터내셔널 DX 준전문가 과정: Power BI, Power Apps 초급·중급
+- 2025–2026 · 포스코인터내셔널 DX 준전문가 과정: Power BI, Power Apps 초급·중급 강의 및 교재 직접 개발
 - 2022 · 포스코인재창조원 디지털혁신교육그룹, **A급 강사 인증**
 
 #### 다루는 도구
