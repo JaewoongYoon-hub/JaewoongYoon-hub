@@ -1,10 +1,19 @@
-- 👋 Hi, I’m @JaewoongYoon-hub
-- 👀 I’m interested in SAP ERP Data analytic parts 
-- 🌱 I’m currently learning ...
-- 💞️ I’m looking to collaborate on ...
-- 📫 How to reach me ...
+### 안녕하세요, 윤재웅입니다 👋
 
-<!---
-JaewoongYoon-hub/JaewoongYoon-hub is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+딥러닝 시계열 예측으로 정책과 시장의 숫자를 미리 계산하고, 그 방법을 사내 강의로 가르칩니다.
+
+**포트폴리오: [www.kpredict.co.kr](https://www.kpredict.co.kr)**
+
+#### 연구
+- **경영학 석사학위 논문** (아주대학교 경영대학원, 2023.08)
+  「딥러닝 기반 원전 확대의 전기요금원가 영향 연구」
+  RNN·LSTM으로 2030년 SMP(계통한계가격)를 예측해 2021년 실적 대비 **22.2% 감소** 전망. LSTM 검증 MAPE 8.6%
+- **학회 발표** (한국품질경영학회 2022 추계 학술대회) · 🏆 **우수발표논문상**
+  「정부의 원전 확대 정책이 전기 요금 원가에 미치는 영향을 딥러닝 알고리즘으로 예측 및 분석」 · [DBpia](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12479173)
+
+#### 강의
+- 2025–2026 · 포스코인터내셔널 DX 준전문가 과정: Power BI, Power Apps 초급·중급
+- 2022 · 포스코인재창조원 디지털혁신교육그룹, **A급 강사 인증**
+
+#### 다루는 도구
+Python · LSTM / RNN · matplotlib · Power BI · Power Apps
