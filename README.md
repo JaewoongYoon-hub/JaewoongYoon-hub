@@ -5,7 +5,7 @@
 **포트폴리오: [www.kpredict.co.kr](https://www.kpredict.co.kr)** · 📫 yoonjw3840@naver.com
 
 #### 경력
-- 2010.05 – 현재 · 포스코인터내셔널 (2022 포스코인재창조원 디지털혁신교육그룹 파견)
+- 2010.05 – 현재 · 포스코인터내셔널 (2020.09 – 2022.12 포스코인재창조원 디지털혁신교육그룹 파견)
 - 2008.01 – 2010.05 · 포스코DX
 
 #### 연구
@@ -19,7 +19,7 @@
 - 2026.09 · **Modern Work Conference Seoul 2026** 외부 강연 (한국마이크로소프트, Modern Work Community 주최)
   「Copilot을 활용해 단숨에 Power BI 전문가 되기」 · [행사 페이지](https://ticketa.co/event/796zfanx)
 - 2025–2026 · 포스코인터내셔널 DX 준전문가 과정: Power BI, Power Apps 초급·중급 강의 및 교재 직접 개발
-- 2022 · 포스코인재창조원 디지털혁신교육그룹, **A급 강사 인증**
+- 2020.09 – 2022.12 · 포스코인재창조원 디지털혁신교육그룹 (2022.03 **A급 강사 인증**)
 
 #### 자격
 - CISA (Certified Information Systems Auditor) · ISACA
