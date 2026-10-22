@@ -17,5 +17,8 @@
 - 2025–2026 · 포스코인터내셔널 DX 준전문가 과정: Power BI, Power Apps 초급·중급 강의 및 교재 직접 개발
 - 2022 · 포스코인재창조원 디지털혁신교육그룹, **A급 강사 인증**
 
+#### 자격
+- CISA (Certified Information Systems Auditor) · ISACA
+
 #### 다루는 도구
 Python · LSTM / RNN · matplotlib · Power BI · Power Apps · Microsoft 365 Copilot
