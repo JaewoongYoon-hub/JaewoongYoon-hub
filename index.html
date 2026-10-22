@@ -119,6 +119,10 @@ p { margin: 0; max-width: 65ch; }
 .fuel-row b { font-family: var(--font-mono); font-weight: 500; text-align: right; font-variant-numeric: tabular-nums; }
 .fuel .note { font-size: 0.85rem; color: var(--muted); }
 .links { display: flex; flex-wrap: wrap; gap: 4px 20px; }
+.photos { margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.photos img { display: block; width: 100%; height: 100%; max-width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 4px; background: var(--accent-soft); }
+.photos .photo-main { grid-column: 1 / -1; aspect-ratio: 16 / 9; object-position: center 40%; }
+.photos figcaption { grid-column: 1 / -1; font-size: 0.85rem; color: var(--muted); }
 
 /* 기술 표 */
 .table-scroll { overflow-x: auto; }
@@ -225,6 +229,13 @@ footer .wrap { padding-block: 32px 48px; font-family: var(--font-mono); font-siz
         <p class="eyebrow">학술대회 발표논문 · 2022.10</p>
         <h2>정부의 원전 확대 정책이 전기 요금 원가에 미치는 영향을 딥러닝 알고리즘으로 예측 및 분석</h2>
         <p class="period">윤재웅 · 강주영 &nbsp;|&nbsp; 한국품질경영학회 2022년 추계학술발표논문집, p. 36</p>
+
+        <figure class="photos">
+          <img class="photo-main" src="images/talk-room.jpg" width="1400" height="934" loading="lazy" alt="윤재웅이 논문 제목이 띄워진 화면 앞에서 청중에게 발표하는 모습">
+          <img src="images/talk-speaker.jpg" width="1000" height="667" loading="lazy" alt="마이크를 들고 발표 중인 윤재웅, 학술대회 명찰 착용">
+          <img src="images/conference-hall.jpg" width="1000" height="750" loading="lazy" alt="2022 한국품질경영학회 추계 학술대회 개회식이 열린 강당">
+          <figcaption>2022.10.21 한국품질경영학회 추계 학술대회 발표 · 대회 주제 "국가균형발전과 기업의 지속가능경영: K-Quality"</figcaption>
+        </figure>
         <p>탈원전 정책 폐기와 원전 확대가 전기요금 원가에 어떤 영향을 주는지, 그리고 석탄발전을 현재 수준으로 유지할 때와 줄일 때 원가가 어떻게 달라지는지를 인공지능 딥러닝 알고리즘으로 예측했습니다.</p>
 
         <figure class="fuel">
@@ -317,6 +328,7 @@ footer .wrap { padding-block: 32px 48px; font-family: var(--font-mono); font-siz
       <div class="label"><b>경력 · 자격</b>Career</div>
       <ol class="timeline">
         <li><span class="period"><span class="todo">YYYY.MM</span> – 현재</span><div><b>포스코인터내셔널</b><p class="todo">직무와 주요 업무 한 줄</p></div></li>
+        <li><span class="period">2022</span><div><b>포스코인재창조원 · 차장</b><p>한국품질경영학회 추계 학술대회 논문 발표 당시 소속</p></div></li>
         <li><span class="period todo">YYYY.MM</span><div><b class="todo">자격증 또는 교육</b><p class="todo">예: SAP 인증, ADsP, SQLD</p></div></li>
         <li><span class="period todo">YYYY</span><div><b class="todo">학교 · 전공</b></div></li>
       </ol>
