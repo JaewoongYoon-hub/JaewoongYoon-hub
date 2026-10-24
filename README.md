@@ -41,6 +41,7 @@
 #### 집필 중
 - 「Copilot과 함께하는 Power Platform 업무 자동화」 (출간 준비 중, 약 400쪽 · 5부 15장)
   Power Automate로 모으고, Power BI로 보고, Power Apps로 현장에서 쓰는 흐름을 생성형 AI와 함께
+  · [샘플 원고 7~8장 (PDF)](https://www.kpredict.co.kr/docs/book-sample-ch7-8.pdf)
 
 #### 자격
 - CISA (Certified Information Systems Auditor) · ISACA, 2019년 취득 (현재 미갱신)
