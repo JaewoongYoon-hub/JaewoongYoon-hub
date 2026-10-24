@@ -38,6 +38,10 @@
 - Power BI 초급 「Power BI 이해 및 활용 실습」 151쪽 · Power BI 중급 「생성형 AI 활용 실습 중심」 206쪽
 - Power Apps 초급 「코드 없이 만드는 스마트 업무 앱」 113쪽 · Power Apps 중급 「Vibe 코딩, AI로 만드는 맞춤형 앱」 163쪽
 
+#### 집필 중
+- 「Copilot과 함께하는 Power Platform 업무 자동화」 (출간 준비 중, 약 400쪽 · 5부 15장)
+  Power Automate로 모으고, Power BI로 보고, Power Apps로 현장에서 쓰는 흐름을 생성형 AI와 함께
+
 #### 자격
 - CISA (Certified Information Systems Auditor) · ISACA, 2019년 취득 (현재 미갱신)
 

@@ -164,6 +164,11 @@ p { margin: 0; max-width: 65ch; }
 .flow { margin: 0; padding-left: 1.3em; display: grid; gap: 4px; font-size: 0.9rem; }
 .flow li::marker { font-family: var(--font-mono); color: var(--muted); }
 @media (max-width: 720px) { .books { grid-template-columns: 1fr; } }
+.book-sub { color: var(--muted); margin-top: -8px; }
+.parts { list-style: none; counter-reset: part; margin: 0; padding: 0; display: grid; gap: 10px; }
+.parts li { counter-increment: part; display: grid; grid-template-columns: 3.2em 1fr; gap: 2px 12px; padding: 10px 0; border-top: 1px solid var(--line); }
+.parts li::before { content: counter(part) "부"; grid-row: span 2; font-family: var(--font-mono); color: var(--accent); }
+.parts span { font-size: 0.92rem; color: var(--muted); }
 .photos figcaption { grid-column: 1 / -1; font-size: 0.85rem; color: var(--muted); }
 
 /* 기술 표 */
@@ -211,6 +216,7 @@ footer .wrap { padding-block: 32px 48px; font-family: var(--font-mono); font-siz
       <a href="#paper">연구</a>
       <a href="#talks">강연</a>
       <a href="#materials">교재</a>
+      <a href="#book">집필</a>
       <a href="#projects">프로젝트</a>
       <a href="#skills">기술</a>
       <a href="#career">경력</a>
@@ -385,6 +391,26 @@ footer .wrap { padding-block: 32px 48px; font-family: var(--font-mono); font-siz
           </article>
         </div>
         <p class="note">교재 속 실습 데이터는 모두 임의로 만든 예제입니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="book">
+    <div class="wrap">
+      <div class="label"><b>집필</b>Book</div>
+      <div class="stack">
+        <p class="eyebrow">집필 중 · 출간 준비</p>
+        <h2>Copilot과 함께하는 Power Platform 업무 자동화</h2>
+        <p class="book-sub">데이터 수집부터 대시보드, 업무 앱까지 코딩 없이</p>
+        <p>"설치는 했는데 내 일에는 어떻게 쓰나요?" 강의장에서 가장 많이 들은 이 질문에 답하는 책입니다. Power Automate로 데이터를 모으고, Power BI로 보고, Power Apps로 현장에서 쓰는 흐름을 한 권으로 엮고, 모든 단계에서 Copilot과 생성형 AI를 조수로 씁니다.</p>
+        <ol class="parts">
+          <li><b>시작하기</b><span>Power Platform과 Copilot으로 일하는 방식, 실습 환경, 데이터 분석의 흐름</span></li>
+          <li><b>데이터 모으기</b><span>Power Automate Desktop, 웹·공공 데이터 자동 수집, Copilot으로 만드는 엑셀 자동화</span></li>
+          <li><b>데이터 보기</b><span>Power BI 대시보드, 파워 쿼리와 생성형 AI 전처리, 대시보드 설계, 예약 새로고침</span></li>
+          <li><b>업무 앱 만들기</b><span>SharePoint 목록과 Power Apps, 갤러리·폼·검색, 바이브 코딩</span></li>
+          <li><b>하나로 잇기</b><span>앱 입력 → 자동 알림 → 대시보드 종합 프로젝트, 조직에 정착시키기</span></li>
+        </ol>
+        <p class="note">본문 약 400쪽 · 5부 15장 · 공공 데이터와 가상 예제로 실습</p>
       </div>
     </div>
   </section>
