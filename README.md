@@ -34,6 +34,10 @@
   매달 3주는 주마다 2일 과정(수강생 약 30명) 운영, 마지막 주는 수료 평가·재평가 · **누적 수강생 약 1,600명**
 - 2021 · 2022 · 재능기부: 포항제철공업고등학교 학생 대상 Python · RPA 강의 (연 1회, 2회)
 
+#### 직접 만든 교재 (DX 준전문가 과정)
+- Power BI 초급 「Power BI 이해 및 활용 실습」 151쪽 · Power BI 중급 「생성형 AI 활용 실습 중심」 206쪽
+- Power Apps 초급 「코드 없이 만드는 스마트 업무 앱」 113쪽 · Power Apps 중급 「Vibe 코딩, AI로 만드는 맞춤형 앱」 163쪽
+
 #### 자격
 - CISA (Certified Information Systems Auditor) · ISACA, 2019년 취득 (현재 미갱신)
 
