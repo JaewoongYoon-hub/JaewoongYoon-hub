@@ -1,7 +1,7 @@
 ### 안녕하세요, 윤재웅입니다 👋
 
 현업의 문제를 빠르게 구현하고, 조직에서 실제로 쓰이게 만드는 DX 전문가입니다.
-포스코인터내셔널 DX혁신실에서 전사 DX를 기획·실행하고, Power BI·Power Apps 전사 사내 강사로 활동합니다.
+포스코인터내셔널 DX혁신실에서 전사 DX를 기획·실행하고, Power BI·Power Apps·Power Automate 전사 사내 강사로 활동합니다.
 포스코 뉴칼라 과정에서 약 1,600명에게 Python 데이터 분석을 가르쳤습니다.
 
 **포트폴리오: [www.kpredict.co.kr](https://www.kpredict.co.kr)** · 📫 yoonjw3840@naver.com
@@ -28,7 +28,7 @@
 #### 강의
 - 2026.09 · **Modern Work Conference Seoul 2026** 외부 강연 (한국마이크로소프트, Modern Work Community 주최)
   「Copilot을 활용해 단숨에 Power BI 전문가 되기」 · [행사 페이지](https://ticketa.co/event/796zfanx)
-- 2025–2026 · 포스코인터내셔널 DX 준전문가 과정: Power BI, Power Apps 초급·중급 강의 및 교재 직접 개발
+- 2025–2026 · 포스코인터내셔널 DX 준전문가 과정: Power BI, Power Apps, Power Automate 초급·중급 강의 및 교재 직접 개발
 - 2025–2026 · 포스코인터내셔널 직원 Self 개발 과정 지원: 직원이 직접 대시보드·RPA를 만들도록 지원
 - 2020.09 – 2022.12 · 포스코인재창조원 파견, 포스코 뉴칼라 과정 강의: Python 데이터 전처리부터 시각화까지 (2022.03 **A급 강사 인증**)
   매달 3주는 주마다 2일 과정(수강생 약 30명) 운영, 마지막 주는 수료 평가·재평가 · **누적 수강생 약 1,600명**
