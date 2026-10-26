@@ -47,7 +47,6 @@
   · [샘플 원고 7~8장 (PDF)](https://www.kpredict.co.kr/docs/book-sample-ch7-8.pdf)
 
 #### 자격·학습
-- Copilot Studio & AI Agent Hands-On 수료 (Microsoft, 2025.09)
 - 정보관리기술사 심화 과정 수료 (2025.03–08)
 - CISA (Certified Information Systems Auditor) · ISACA, 2019년 취득 (현재 미갱신)
 
