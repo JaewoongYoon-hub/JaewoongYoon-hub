@@ -163,8 +163,6 @@ p { margin: 0; max-width: 65ch; }
 .book-goal { font-size: 0.92rem; color: var(--muted); }
 .flow { margin: 0; padding-left: 1.3em; display: grid; gap: 4px; font-size: 0.9rem; }
 .flow li::marker { font-family: var(--font-mono); color: var(--muted); }
-.book.wide { grid-column: 1 / -1; }
-.book.wide .book-meta { max-width: none; }
 @media (max-width: 720px) { .books { grid-template-columns: 1fr; } }
 .book-sub { color: var(--muted); margin-top: -8px; }
 .parts { list-style: none; counter-reset: part; margin: 0; padding: 0; display: grid; gap: 10px; }
@@ -364,8 +362,8 @@ footer .wrap { padding-block: 32px 48px; font-family: var(--font-mono); font-siz
     <div class="wrap">
       <div class="label"><b>교재</b>Materials</div>
       <div class="stack">
-        <h2>직접 만든 교재 5종</h2>
-        <p>포스코인터내셔널 임직원을 위한 Power BI, Power Apps 초급·중급 과정 교재를 직접 기획하고 제작했고, 새로 준비 중인 Python AI 바이브 코딩 강의 교재도 만들었습니다. 차수마다 현장 질문과 시행착오를 반영해 계속 고쳐 쓰고 있습니다.</p>
+        <h2>직접 만든 교재 6종</h2>
+        <p>포스코인터내셔널 임직원을 위한 Power BI, Power Apps 초급·중급 과정 교재를 직접 기획하고 제작했고, 새로 준비 중인 Python AI 바이브 코딩, SAP OData·Power BI 연동 강의 교재도 만들었습니다. 준비 중인 강의 교재는 PDF로 내려받을 수 있습니다. 차수마다 현장 질문과 시행착오를 반영해 계속 고쳐 쓰고 있습니다.</p>
         <div class="books">
           <article class="book">
             <p class="book-meta"><span>Power BI · 초급</span><span>151쪽 · 반나절</span></p>
@@ -391,11 +389,19 @@ footer .wrap { padding-block: 32px 48px; font-family: var(--font-mono); font-siz
             <p class="book-goal">바이브 코딩으로 실무용 앱을 만들고, 고치고, 직접 운영합니다.</p>
             <ol class="flow"><li>핵심 함수·수식·컨트롤 복습</li><li>출장자 정보 앱: 요구사항부터 게시까지</li><li>vibe.powerapps.com 바이브 코딩 입문</li><li>자연어로 업무 보고·이메일 액션 앱 만들기</li></ol>
           </article>
-          <article class="book wide">
-            <p class="book-meta"><span>Python · AI 바이브 코딩 · 강의 준비 중</span><span>45장 슬라이드 · 5시간</span></p>
+          <article class="book">
+            <p class="book-meta"><span>Python · AI 바이브 코딩</span><span>5시간 · 강의 준비 중</span></p>
             <h3>파이썬으로 완성하는 AI 바이브 코딩: Claude Code 중심</h3>
             <p class="book-goal">AI가 만든 코드를 "그대로 쓰는 사람"에서 "의도대로 고치고 책임지는 사람"으로. 읽기 → 수정 → 검증 → 업무 적용 순서로 실습합니다.</p>
             <ol class="flow"><li>바이브 코딩 이해: 좋은 요청의 6요소, 채팅형 코딩과 Claude Code 비교</li><li>AI 코드를 읽고 고치는 최소 Python 문법: 변수·조건·반복·함수·라이브러리, Traceback 읽기</li><li>Claude Code 실전: 탐색 → 계획 → 구현 → 실행 → 검토, CLAUDE.md·PRD·diff·테스트</li><li>업무 사례와 최신 AI: 엑셀 12개 파일 병합, 보고서 자동화, RAG, MCP, 멀티에이전트</li><li>기업 환경 보안: 입력·실행·배포 전 체크리스트, AI 코드 리뷰 기준 8가지</li></ol>
+            <p class="links"><a href="docs/python-ai-vibe-coding.pdf" target="_blank" rel="noopener" download>교재 내려받기 (PDF, 18쪽) ↓</a></p>
+          </article>
+          <article class="book">
+            <p class="book-meta"><span>SAP · Power BI</span><span>12장 · 강의 준비 중</span></p>
+            <h3>SAP CDS View &amp; OData 서비스 생성과 Power BI 연동</h3>
+            <p class="book-goal">SAP 데이터를 CDS View로 정의하고 OData로 열어 Power BI 대시보드까지 연결합니다. SAP 접속 없이 공개 OData로 먼저 연습할 수 있습니다.</p>
+            <ol class="flow"><li>CDS View 실습 4종: 기본·JOIN·Association·Parameter</li><li>OData 생성 3가지: @OData.publish · SEGW · RAP</li><li>심화: RAP Draft Handling, CDS Access Control(DCL)</li><li>Power BI 연동: OData 피드, Power Query, 스타 스키마, DAX</li><li>게시, Gateway, 예약·증분 새로고침, 트러블슈팅</li></ol>
+            <p class="links"><a href="docs/sap-cds-odata-powerbi.pdf" target="_blank" rel="noopener" download>교재 내려받기 (PDF, 22쪽) ↓</a></p>
           </article>
         </div>
         <p class="note">교재 속 실습 데이터는 모두 임의로 만든 예제입니다.</p>
