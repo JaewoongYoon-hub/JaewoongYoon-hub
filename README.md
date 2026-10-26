@@ -31,6 +31,7 @@
 #### 강의
 - 2026.09 · **Modern Work Conference Seoul 2026** 외부 강연 (한국마이크로소프트, Modern Work Community 주최)
   「Copilot을 활용해 단숨에 Power BI 전문가 되기」 · [행사 페이지](https://ticketa.co/event/796zfanx)
+- 준비 중 · 「파이썬으로 완성하는 AI 바이브 코딩: Claude Code 중심」 5시간 과정
 - 2025–2026 · 포스코인터내셔널 DX 준전문가 과정: Power BI, Power Apps, Power Automate 초급·중급 강의 및 교재 직접 개발 (2025년 18회, 2026년 22차수)
 - 2025–2026 · 포스코인터내셔널 직원 Self 개발 과정 지원: 직원이 직접 대시보드·RPA를 만들도록 지원 (2025년 RPA 지원 7건, 2026년 DX 과제 8건)
 - 2020.09 – 2022.12 · 포스코인재창조원 파견, 포스코 뉴칼라 과정 강의: Python 데이터 전처리부터 시각화까지 (2022.03 **A급 강사 인증**)
@@ -40,7 +41,7 @@
 #### 직접 만든 교재
 - Power BI 초급 「Power BI 이해 및 활용 실습」 151쪽 · Power BI 중급 「생성형 AI 활용 실습 중심」 206쪽
 - Power Apps 초급 「코드 없이 만드는 스마트 업무 앱」 113쪽 · Power Apps 중급 「Vibe 코딩, AI로 만드는 맞춤형 앱」 163쪽
-- Python 「파이썬으로 완성하는 AI 바이브 코딩: Claude Code 중심」 5시간 과정 · 45장 (읽기 → 수정 → 검증 → 업무 적용, 기업 보안 체크리스트)
+- Python 「파이썬으로 완성하는 AI 바이브 코딩: Claude Code 중심」 5시간 과정 · 45장 · 강의 준비 중 (읽기 → 수정 → 검증 → 업무 적용, 기업 보안 체크리스트)
 
 #### 집필 중
 - 「Copilot과 함께하는 Power Platform 업무 자동화」 (출간 준비 중, 약 400쪽 · 5부 15장)
