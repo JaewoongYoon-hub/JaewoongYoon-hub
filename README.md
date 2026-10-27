@@ -48,7 +48,6 @@
 - SAP 「SAP CDS View & OData 서비스 생성과 Power BI 연동」 실습 12장 + 부록 · 강의 준비 중 (CDS View, @OData.publish·SEGW·RAP, DCL, Power BI 대시보드) · [PDF](https://www.kpredict.co.kr/docs/sap-cds-odata-powerbi.pdf)
 - Power BI 「좋은 대시보드 만드는 Power BI 쉬운 실습」 30~60분 · [PDF](https://www.kpredict.co.kr/docs/powerbi-easy-dashboard.pdf)
 - Power BI 「삼국간 거래 Power BI 수익성 분석」 90분, 가상 거래 600건 · [PDF](https://www.kpredict.co.kr/docs/powerbi-trilateral-trade.pdf)
-- Copilot Studio 「메일 분류 워크플로 따라하기」 Outlook → AI 분류 → Teams 알림 · [PDF](https://www.kpredict.co.kr/docs/copilot-studio-mail-workflow.pdf)
 
 #### 집필 중
 - 「Copilot과 함께하는 Power Platform 업무 자동화」 (출간 준비 중, 약 400쪽 · 5부 15장)
