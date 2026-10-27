@@ -48,6 +48,7 @@
 - SAP 「SAP CDS View & OData 서비스 생성과 Power BI 연동」 실습 12장 + 부록 · 강의 준비 중 (CDS View, @OData.publish·SEGW·RAP, DCL, Power BI 대시보드) · [PDF](https://www.kpredict.co.kr/docs/sap-cds-odata-powerbi.pdf)
 - Power BI 「좋은 대시보드 만드는 Power BI 쉬운 실습」 30~60분 · [PDF](https://www.kpredict.co.kr/docs/powerbi-easy-dashboard.pdf)
 - Power BI 「삼국간 거래 Power BI 수익성 분석」 90분, 가상 거래 600건 · [PDF](https://www.kpredict.co.kr/docs/powerbi-trilateral-trade.pdf)
+- Process Mining 「강제 입력 없이 업무 데이터 확보하기」 교육자료 11장, 이미 쌓인 시스템 기록으로 업무 흐름 읽기 · [PDF](https://www.kpredict.co.kr/docs/process-mining-data.pdf)
 
 #### 집필 중
 - 「Copilot과 함께하는 Power Platform 업무 자동화」 (출간 준비 중, 약 400쪽 · 5부 15장)
