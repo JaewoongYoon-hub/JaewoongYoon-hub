@@ -58,6 +58,7 @@
 
 #### 자격·학습
 - 정보관리기술사 심화 과정 수료 (2025.03–08)
+- 경영학 석사 · 아주대학교 경영대학원 SAP Track (2023.08), SAP FI(재무회계) 모듈 중심 학습
 - CISA (Certified Information Systems Auditor) · ISACA, 2019년 취득 (현재 미갱신)
 
 #### 다루는 도구
