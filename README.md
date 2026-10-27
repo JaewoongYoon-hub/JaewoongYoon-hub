@@ -40,13 +40,14 @@
 - 2021 · 2022 · 재능기부: 포항제철공업고등학교 학생 대상 Python · RPA 강의 (연 1회, 2회)
 
 #### 직접 만든 교재
+> PDF는 공개용으로 간추린 요약본입니다. 실제 강의 교재는 PowerPoint로 화면 캡처와 단계별 설명이 담겨 훨씬 자세합니다.
+
 - Power BI 초급 「Power BI 이해 및 활용 실습」 151쪽 · Power BI 중급 「생성형 AI 활용 실습 중심」 206쪽
 - Power Apps 초급 「코드 없이 만드는 스마트 업무 앱」 113쪽 · Power Apps 중급 「Vibe 코딩, AI로 만드는 맞춤형 앱」 163쪽
 - Python 「파이썬으로 완성하는 AI 바이브 코딩: Claude Code 중심」 5시간 과정 · 45장 · 강의 준비 중 (읽기 → 수정 → 검증 → 업무 적용, 기업 보안 체크리스트) · [PDF](https://www.kpredict.co.kr/docs/python-ai-vibe-coding.pdf)
 - SAP 「SAP CDS View & OData 서비스 생성과 Power BI 연동」 실습 12장 + 부록 · 강의 준비 중 (CDS View, @OData.publish·SEGW·RAP, DCL, Power BI 대시보드) · [PDF](https://www.kpredict.co.kr/docs/sap-cds-odata-powerbi.pdf)
 - Power BI 「좋은 대시보드 만드는 Power BI 쉬운 실습」 30~60분 · [PDF](https://www.kpredict.co.kr/docs/powerbi-easy-dashboard.pdf)
 - Power BI 「삼국간 거래 Power BI 수익성 분석」 90분, 가상 거래 600건 · [PDF](https://www.kpredict.co.kr/docs/powerbi-trilateral-trade.pdf)
-- Copilot Studio 「따라 하며 완성하는 실무형 AI Agent 3종」 규정 Q&A·회의록 요약·개발요청 접수 · [PDF](https://www.kpredict.co.kr/docs/copilot-studio-ai-agent.pdf)
 - Copilot Studio 「메일 분류 워크플로 따라하기」 Outlook → AI 분류 → Teams 알림 · [PDF](https://www.kpredict.co.kr/docs/copilot-studio-mail-workflow.pdf)
 
 #### 집필 중
