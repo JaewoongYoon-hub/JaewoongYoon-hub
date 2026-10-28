@@ -116,6 +116,9 @@ h3 { font-size: var(--step-1); margin: 0; line-height: 1.4; text-wrap: balance; 
 p { margin: 0; max-width: 65ch; }
 .stack { display: flex; flex-direction: column; gap: 16px; }
 
+.callout { border-left: 3px solid var(--forecast); background: var(--surface); border-radius: 0 6px 6px 0; padding: 14px 18px; display: grid; gap: 6px; }
+.callout b { color: var(--forecast); }
+.callout .note { font-size: 0.88rem; color: var(--muted); }
 .group { font-size: 1rem; font-family: var(--font-mono); font-weight: 500; color: var(--muted); margin-top: 12px; padding-top: 12px; border-top: 1px dashed var(--line); }
 
 /* 프로젝트 */
@@ -398,6 +401,10 @@ footer .wrap { padding-block: 32px 48px; font-family: var(--font-mono); font-siz
       <div class="stack">
         <h2>직접 만든 교재 10종</h2>
         <p>강의에 쓰는 교재는 모두 직접 기획하고 만들었습니다. 차수마다 현장 질문과 시행착오를 반영해 계속 고쳐 씁니다.</p>
+        <div class="callout">
+          <p><b>부서 맞춤 제작</b> · 같은 Power BI 과정이라도 철강·에너지·식량·재무 등 부서마다 실제 업무와 비슷한 가상 데이터셋과 실습 시나리오를 새로 만들어 교재를 구성합니다. 수강생이 자기 업무 화면을 떠올리며 실습하고, 교육이 끝난 다음 날 바로 적용할 수 있게 하기 위해서입니다.</p>
+          <p class="note">예: 무역 부서용 삼국간 거래 600건(연결손익·내부거래 패턴), 본부 구조를 본뜬 실적 데이터 144행, 실적·설비 모니터링·법인 손익 대시보드 실습</p>
+        </div>
         <h3 class="group">사내 정규 과정 교재 · DX 준전문가 과정</h3>
         <div class="books">
           <article class="book">
@@ -631,7 +638,7 @@ footer .wrap { padding-block: 32px 48px; font-family: var(--font-mono); font-siz
       <div class="label"><b>연락처</b>Contact</div>
       <div class="stack">
       <h2>강의·강연·교재·협업 문의</h2>
-      <p>Power Platform·생성형 AI 실무 강의, 사내 교육과정 설계, 현업 DX 과제 자문 문의는 이메일로 보내 주세요.</p>
+      <p>Power Platform·생성형 AI 실무 강의, 부서·업종에 맞춘 교재와 실습 데이터셋 제작, 사내 교육과정 설계, 현업 DX 과제 자문 문의는 이메일로 보내 주세요.</p>
       <dl class="contact">
         <dt>GitHub</dt><dd><a href="https://github.com/JaewoongYoon-hub" target="_blank" rel="noopener">github.com/JaewoongYoon-hub</a></dd>
         <dt>이메일</dt><dd><a href="mailto:yoonjw3840@naver.com">yoonjw3840@naver.com</a></dd>
