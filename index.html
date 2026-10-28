@@ -16,6 +16,11 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Modern Work Conference Seoul 2026에서 Copilot과 Power BI를 주제로 강연하는 윤재웅">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://www.kpredict.co.kr/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%232f45a8'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='18' font-weight='700' fill='%23ffffff' text-anchor='middle'%3Ek%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"윤재웅","alternateName":"Jaewoong Yoon","url":"https://www.kpredict.co.kr/","image":"https://www.kpredict.co.kr/images/og-mwc.jpg","jobTitle":"DX혁신실 차장","worksFor":{"@type":"Organization","name":"포스코인터내셔널"},"alumniOf":{"@type":"CollegeOrUniversity","name":"아주대학교 경영대학원"},"email":"mailto:yoonjw3840@naver.com","sameAs":["https://github.com/JaewoongYoon-hub"],"knowsAbout":["Power BI","Power Apps","Power Automate","SAP ERP","RPA","생성형 AI","LSTM 시계열 예측"]}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;700&display=swap">
@@ -71,7 +76,8 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-
 }
 
 /* 상단 바 */
-.topbar { border-bottom: 1px solid var(--line); }
+.topbar { border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 10; background: var(--bg); }
+section { scroll-margin-top: 64px; }
 .topbar .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; padding-block: 14px; }
 .brand { font-family: var(--font-mono); font-weight: 500; letter-spacing: 0.02em; color: var(--fg); text-decoration: none; }
 .brand span { color: var(--forecast); }
@@ -86,11 +92,16 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-
 h1 { font-size: var(--step-3); line-height: 1.2; margin: 0 0 16px; text-wrap: balance; font-weight: 700; }
 h1 em { font-style: normal; color: var(--accent); }
 .lede { color: var(--muted); font-size: var(--step-1); line-height: 1.6; margin: 0; max-width: 32em; }
-.chart { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 16px; }
-.chart svg { display: block; width: 100%; height: auto; }
-.chart figcaption { display: flex; flex-wrap: wrap; gap: 4px 16px; font-family: var(--font-mono); font-size: 0.75rem; color: var(--muted); margin-top: 8px; }
-.key::before { content: ""; display: inline-block; width: 14px; height: 0; border-top: 2px solid var(--accent); vertical-align: middle; margin-right: 6px; }
-.key.fc::before { border-top: 2px dashed var(--forecast); }
+.stats { list-style: none; margin: 32px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.stats li { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 14px 16px; display: grid; gap: 2px; }
+.stats b { font-family: var(--font-mono); font-size: 1.6rem; font-weight: 500; color: var(--accent); line-height: 1.2; font-variant-numeric: tabular-nums; }
+.stats span { font-size: 0.85rem; color: var(--muted); line-height: 1.4; }
+.cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+.btn { display: inline-block; padding: 9px 18px; border-radius: 6px; background: var(--accent); color: #ffffff; text-decoration: none; font-weight: 500; font-size: 0.95rem; }
+.btn.ghost { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+:root[data-theme="dark"] .btn:not(.ghost) { color: #10141d; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .btn:not(.ghost) { color: #10141d; } }
+@media (max-width: 720px) { .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
 /* 섹션 */
 section { border-top: 1px solid var(--line); }
@@ -103,8 +114,7 @@ h3 { font-size: var(--step-1); margin: 0; line-height: 1.4; text-wrap: balance; 
 p { margin: 0; max-width: 65ch; }
 .stack { display: flex; flex-direction: column; gap: 16px; }
 
-/* 아직 채우지 않은 칸 표시 */
-.todo { color: var(--muted); background: var(--accent-soft); border-radius: 3px; padding: 0 4px; }
+.group { font-size: 1rem; font-family: var(--font-mono); font-weight: 500; color: var(--muted); margin-top: 12px; padding-top: 12px; border-top: 1px dashed var(--line); }
 
 /* 프로젝트 */
 .projects { display: flex; flex-direction: column; gap: 16px; }
@@ -196,28 +206,24 @@ footer .wrap { padding-block: 32px 48px; font-family: var(--font-mono); font-siz
   .timeline li { grid-template-columns: 1fr; }
   .facts { grid-template-columns: 1fr; gap: 0; }
   .facts dd { margin-bottom: 8px; }
+  .nav { flex-wrap: nowrap; overflow-x: auto; width: 100%; padding-bottom: 2px; }
+  section { scroll-margin-top: 100px; }
+  .nav a { white-space: nowrap; }
 }
 </style>
 </head>
 <body>
-
-<!--
-  편집 안내
-  - class="todo" 로 표시된 부분이 아직 채우지 않은 칸입니다. 내용을 넣은 뒤 class="todo" 를 지우세요.
-  - 프로젝트를 추가하려면 <article class="project"> ... </article> 블록을 복사하세요.
-  - 공개 사이트입니다. 회사 내부 데이터, 고객사명, 실제 금액은 넣지 마세요.
--->
 
 <header class="topbar">
   <div class="wrap">
     <a class="brand" href="#top">k<span>predict</span></a>
     <nav class="nav" aria-label="섹션">
       <a href="#about">소개</a>
-      <a href="#paper">연구</a>
+      <a href="#projects">프로젝트</a>
       <a href="#talks">강연</a>
       <a href="#materials">교재</a>
       <a href="#book">집필</a>
-      <a href="#projects">프로젝트</a>
+      <a href="#paper">연구</a>
       <a href="#skills">기술</a>
       <a href="#career">경력</a>
       <a href="#contact">연락처</a>
@@ -232,6 +238,13 @@ footer .wrap { padding-block: 32px 48px; font-family: var(--font-mono); font-siz
         <p class="eyebrow">DX · ERP · Power Platform · Deep Learning</p>
         <h1>현업의 문제를<br><em>실제로 쓰이는</em> 도구로 바꿉니다</h1>
         <p class="lede">윤재웅 (Jaewoong Yoon). 포스코인터내셔널 DX혁신실 차장이자 Power BI·Power Apps·Power Automate 전사 사내 강사, 한국 MS 파워플랫폼 협회 기술 이사입니다. 포스코 뉴칼라 과정에서 약 1,600명에게 Python 데이터 분석을 가르쳤습니다. LSTM으로 2030년 전기 도매가격(SMP)을 예측한 경영학 석사이기도 합니다.</p>
+        <ul class="stats" aria-label="주요 숫자">
+          <li><b>1,600명</b><span>Python 데이터 분석 누적 수강생</span></li>
+          <li><b>22차수</b><span>2026년 Power Platform 사내 강의</span></li>
+          <li><b>15건</b><span>현업 DX·RPA 개발 지원 (2025–2026)</span></li>
+          <li><b>10종</b><span>직접 만든 교재·교육자료</span></li>
+        </ul>
+        <p class="cta"><a class="btn" href="#materials">교재 보기</a><a class="btn ghost" href="#contact">강의·협업 문의</a></p>
       </div>
     </div>
   </div>
@@ -243,6 +256,239 @@ footer .wrap { padding-block: 32px 48px; font-family: var(--font-mono); font-siz
         <h2>현업의 문제를 빠르게 구현하고, 조직에 정착시킵니다</h2>
         <p>2008년부터 포스코그룹에서 ERP 구축·운영, 데이터 분석, RPA, 시각화를 다뤄 왔습니다. Oracle ERP에서 SAP ERP로 전환하는 PI 프로젝트에 참여한 뒤 SAP ERP 운영을 맡으며 핵심 업무 프로세스를 익혔고, 최근에는 폴란드 법인 ERP 구축 PMO와 인도 법인 ERP 솔루션 선정을 맡았습니다. 지금은 포스코인터내셔널 경영지원본부 DX혁신실에서 전사 DX 기획과 실행을 맡고 있습니다. 직접 설계한 DX 준전문가 과정으로 데이터 분석·자동화·시각화를 조직 전반에 확산하고 있습니다.</p>
         <p>현장에서 "이런 기능이 있으면 좋겠다"는 요청을 들으면 생성형 AI와 바이브 코딩으로 몇 분 만에 작동하는 결과물을 만들어 보여 줍니다. 석사 과정에서는 RNN·LSTM으로 SMP를 예측해 한국품질경영학회 우수발표논문상을 받았습니다. 기술을 설명하는 사람보다, 현업의 문제를 구현하고 실제로 쓰이게 만드는 DX 전문가를 지향합니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <div class="label"><b>프로젝트</b>Projects</div>
+      <div class="projects">
+        <h2>현업의 문제를 풀고, 직접 만들고, 확산한 일</h2>
+
+        <article class="project">
+          <div class="project-head">
+            <h3>폴란드 모터코아 ERP 구축 PMO · 인도 모터코아 ERP 선정</h3>
+            <span class="period">완료 · 포스코인터내셔널</span>
+          </div>
+          <dl class="facts">
+            <dt>범위</dt><dd><b>폴란드 모터코아</b>: ERP 구축 PMO로 초기 기획부터 실행 관리까지 담당<br><b>인도 모터코아</b>: 초기 ERP 솔루션 선정까지 담당</dd>
+            <dt>한 일</dt><dd>ERP 솔루션 선정 단계에서 경쟁 입찰 기획, RFP 작성, 제안 평가표 작성, 평가 항목별·조직별 가중치 설계와 반영을 수행했습니다. 인도 모터코아는 QAD, TCS iON 등 후보 솔루션을 비교하고 구매·생산·원가·재무 약 133개 항목의 기능 적합성과 추가 개발 필요 여부를 분석했습니다.</dd>
+            <dt>결과</dt><dd class="result">폴란드 모터코아 ERP는 2024년 하반기 경쟁 입찰과 평가를 거쳐 2024년 10월 계약했고, 2025년 5월 회계·구매 모듈 1차 오픈 후 생산 모듈까지 가동했습니다. 인도 모터코아 ERP는 솔루션 선정을 거쳐 2026년 5월 QAD와 계약했습니다.</dd>
+            <dt>바탕</dt><dd>Oracle ERP → SAP ERP 전환 PI 프로젝트와 SAP ERP 운영으로 쌓은 업무 프로세스·시스템 실무 경험</dd>
+          </dl>
+          <ul class="chips" aria-label="주제"><li>ERP</li><li>PMO</li><li>RFP · 제안 평가</li><li>해외 법인</li></ul>
+        </article>
+
+        <article class="project">
+          <div class="project-head">
+            <h3>수출 거래처 우려거래자 자동 조회 RPA</h3>
+            <span class="period">2026 · 포스코인터내셔널</span>
+          </div>
+          <dl class="facts">
+            <dt>문제</dt><dd>거래처가 우려거래자인지 확인하려면 직원마다 필요할 때 정부의 전략물자관리시스템에 들어가 한 곳씩 직접 검색해야 했습니다. 같은 확인을 여러 사람이 반복했습니다.</dd>
+            <dt>한 일</dt><dd>SAP에 등록된 모든 거래처 약 2만 건을 전략물자관리시스템에서 자동으로 조회하고, 결과를 사내 공지에 올려 두는 RPA를 직접 설계하고 개발했습니다.</dd>
+            <dt>결과</dt><dd class="result">직원 각자가 하던 개별 검색이 사라지고, 누구나 공지에서 전체 거래처의 조회 결과를 바로 확인합니다. 이 사례를 사내 교재와 강의에도 반영했습니다. 2026년 Power Platform 지원 완료 실적 8건 중 하나입니다.</dd>
+          </dl>
+          <ul class="chips" aria-label="사용 기술"><li>RPA</li><li>SAP</li><li>웹 데이터 수집</li></ul>
+        </article>
+
+        <article class="project">
+          <div class="project-head">
+            <h3>현업 DX 과제 8건: 대시보드 4건 · 자동화 4건</h3>
+            <span class="period">2026 · 포스코인터내셔널</span>
+          </div>
+          <dl class="facts">
+            <dt>대시보드</dt><dd>철강 부문 실적, 전기강판 판매, 기초소재 수입 국가별 통계(HS코드 검색), 철강원료 트레이딩 실적</dd>
+            <dt>자동화</dt><dd>우려거래자 자동 조회, 이차전지 원료 시황·웹 데이터 수집, 철강 시황지 메일의 Teams 채널 자동 게시, 무역금융 주요 지표 데이터 자동 수집·누적</dd>
+            <dt>방식</dt><dd>현업 요청을 듣고 직접 설계·개발하거나, 담당자가 스스로 만들 수 있도록 함께 개발했습니다.</dd>
+          </dl>
+          <ul class="chips" aria-label="사용 기술"><li>Power BI</li><li>Power Automate</li><li>RPA</li></ul>
+        </article>
+
+        <article class="project">
+          <div class="project-head">
+            <h3>RPA Self 개발 지원 7건</h3>
+            <span class="period">2025 · 포스코인터내셔널</span>
+          </div>
+          <dl class="facts">
+            <dt>사례</dt><dd>해외법인 환율 크롤링 후 SAP 자동 입력, 국제 유가·뉴스 수집과 메일링, IEA 에너지 보고서를 받아 ChatGPT로 전략 보고서 초안 작성, 월 결산 반복 업무 자동화, 원자재 Surcharge 웹 수집, 익일 작업 계획 메일 자동 발송 등</dd>
+            <dt>결과</dt><dd class="result">현업 담당자가 직접 만들고 운영하는 자동화가 늘어나, 개발 요청 없이도 반복 업무를 줄이는 구조를 만들었습니다.</dd>
+          </dl>
+          <ul class="chips" aria-label="사용 기술"><li>Power Automate Desktop</li><li>생성형 AI</li><li>SAP</li></ul>
+        </article>
+
+        <article class="project">
+          <div class="project-head">
+            <h3>유럽 법인 DX Contest 평가 체계 설계</h3>
+            <span class="period">2026 · 포스코인터내셔널</span>
+          </div>
+          <dl class="facts">
+            <dt>범위</dt><dd>유럽 5개 법인이 제출한 DX 과제 12건</dd>
+            <dt>한 일</dt><dd>효과성·확산성·혁신성·기술난이도·구현가능성 5개 기준과 배점 체계를 설계해 객관적으로 평가할 수 있게 했습니다.</dd>
+          </dl>
+          <ul class="chips" aria-label="주제"><li>DX 평가</li><li>해외 법인</li></ul>
+        </article>
+
+        <article class="project">
+          <div class="project-head">
+            <h3>Power BI 중급 과정 End-to-End 실습 설계</h3>
+            <span class="period">DX 준전문가 과정 · 교재 직접 제작</span>
+          </div>
+          <dl class="facts">
+            <dt>문제</dt><dd>직원들이 가장 어려워하는 단계는 데이터 수집부터 자동화, 연결, 예약 새로고침까지 이어지는 흐름이었습니다.</dd>
+            <dt>한 일</dt><dd>공공·웹 데이터 수집, Power Automate Desktop 자동화, Power BI Service 연계를 하나의 실습 시나리오로 재구성하고 교재를 직접 만들었습니다.</dd>
+            <dt>결과</dt><dd class="result">수강생이 현업에서 바로 쓸 수 있는 데이터 파이프라인을 직접 구현하게 됐고, 현장 질문과 시행착오를 교재에 계속 반영하고 있습니다.</dd>
+          </dl>
+          <ul class="chips" aria-label="사용 기술"><li>Power BI</li><li>Power Automate Desktop</li><li>Power BI Service</li></ul>
+        </article>
+
+        <article class="project">
+          <div class="project-head">
+            <h3>의사결정으로 이어지는 대시보드 설계 교육</h3>
+            <span class="period">사내 교육 · 대시보드 설계</span>
+          </div>
+          <dl class="facts">
+            <dt>문제</dt><dd>보기 좋기만 하고 실제로는 쓰이지 않는 대시보드가 많았습니다.</dd>
+            <dt>한 일</dt><dd>Stephen Few의 대시보드 디자인 이론을 접목해 "좋은 대시보드 vs 사용되지 않는 대시보드"를 비교하고, 임원 보고용 KPI 구조, 드릴다운, 조건부 서식 활용법을 사례 중심으로 가르쳤습니다.</dd>
+            <dt>결과</dt><dd class="result">경영·의사결정 관점에서 대시보드를 설계하는 방법을 조직에 확산했습니다.</dd>
+          </dl>
+          <ul class="chips" aria-label="사용 기술"><li>Power BI</li><li>대시보드 디자인</li><li>KPI 설계</li></ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="talks">
+    <div class="wrap">
+      <div class="label"><b>강연</b>Talks</div>
+      <article class="paper">
+        <p class="eyebrow">외부 강연 · 2026.09.17</p>
+        <h2>Copilot을 활용해 단숨에 Power BI 전문가 되기</h2>
+        <p class="period">Modern Work Conference Seoul 2026 · 트랙2 &nbsp;|&nbsp; Modern Work Community 주최, 한국마이크로소프트 13층</p>
+
+        <figure class="photos duo">
+          <img class="talk" src="images/mwc-talk.jpg" width="1400" height="784" loading="lazy" alt="윤재웅이 'Copilot으로 데이터분석 전문가처럼 일하세요' 아젠다 슬라이드 앞에서 강연하는 모습">
+          <img src="images/mwc-group.jpg" width="1100" height="825" loading="lazy" alt="Modern Work Community 배너 앞에서 찍은 연사와 운영진 단체 사진">
+          <figcaption>강연 장면과 Modern Work Community 연사·운영진 단체 사진</figcaption>
+        </figure>
+
+        <p>Power BI를 설치해 써 봤지만 업무에 어떻게 쓸지 고민하는 분들을 위한 세션입니다. "Copilot으로 '데이터분석 전문가'처럼 일하세요"를 주제로, 예제와 대시보드 설계, 실습까지 직접 만든 64쪽 분량 자료로 진행했습니다.</p>
+
+        <ol class="agenda">
+          <li><b>데이터 분석의 목적</b><span>인사이트 도출 → 의사결정 → 효과 검증</span></li>
+          <li><b>Copilot이 전처리</b><span>파일이 여러 개여도, 정리가 안 돼 있어도</span></li>
+          <li><b>인사이트 + 설계 제안</b><span>무엇이 보이는지와 어떻게 그릴지를 함께</span></li>
+          <li><b>따라 그리는 방법</b><span>물어보고 그대로 따라 그리기</span></li>
+          <li><b>Power BI 내 Copilot</b><span>프롬프트로 직접 그려주기</span></li>
+        </ol>
+        <ul class="chips" aria-label="주제"><li>Power BI</li><li>Microsoft 365 Copilot</li><li>데이터 전처리</li><li>대시보드 설계</li></ul>
+        <p class="links"><a href="https://ticketa.co/event/796zfanx" target="_blank" rel="noopener">행사 페이지 보기 ↗</a></p>
+      </article>
+    </div>
+  </section>
+
+  <section id="materials">
+    <div class="wrap">
+      <div class="label"><b>교재</b>Materials</div>
+      <div class="stack">
+        <h2>직접 만든 교재 10종</h2>
+        <p>강의에 쓰는 교재는 모두 직접 기획하고 만들었습니다. 차수마다 현장 질문과 시행착오를 반영해 계속 고쳐 씁니다.</p>
+        <h3 class="group">사내 정규 과정 교재 · DX 준전문가 과정</h3>
+        <div class="books">
+          <article class="book">
+            <p class="book-meta"><span>Power BI · 초급</span><span>151쪽 · 반나절</span></p>
+            <h3>Power BI 이해 및 활용 실습</h3>
+            <p class="book-goal">대시보드를 직접 만들며 현업에 바로 쓸 수 있는 기초를 갖춥니다.</p>
+            <ol class="flow"><li>Power Platform 개요와 설치</li><li>시각화 개체 이해</li><li>공공 데이터 수집과 차트</li><li>데이터 전처리와 판매 대시보드</li><li>수출입 대시보드(Self BI)</li><li>LLM으로 대시보드 그리기</li></ol>
+          </article>
+          <article class="book">
+            <p class="book-meta"><span>Power BI · 중급</span><span>206쪽 · 하루</span></p>
+            <h3>생성형 AI 활용 실습 중심</h3>
+            <p class="book-goal">웹 데이터 연동, 자동화, 대시보드 설계 원칙을 익혀 의사결정용 대시보드를 만듭니다.</p>
+            <ol class="flow"><li>생성형 AI로 전처리·테마 만들기</li><li>웹 데이터와 예약 새로고침</li><li>Power Automate Desktop 자동화, Copilot으로 VBScript 생성</li><li>좋은 대시보드 vs 쓰이지 않는 대시보드</li><li>실적·설비 모니터링·법인 손익 대시보드 실습</li><li>워크스페이스·앱 배포와 1:1 피드백</li></ol>
+          </article>
+          <article class="book">
+            <p class="book-meta"><span>Power Apps · 초급</span><span>113쪽 · 반나절</span></p>
+            <h3>코드 없이 만드는 스마트 업무 앱</h3>
+            <p class="book-goal">개발 경험이 없어도 로우코드로 간단한 업무용 앱을 만듭니다.</p>
+            <ol class="flow"><li>Power Apps 시작하기와 화면 구성</li><li>진행 현황 공유 앱(SharePoint Lists 연동)</li><li>나만의 앱 만들기</li><li>LLM으로 앱 만들기 사례</li></ol>
+          </article>
+          <article class="book">
+            <p class="book-meta"><span>Power Apps · 중급</span><span>163쪽 · 하루</span></p>
+            <h3>Vibe 코딩, AI로 만드는 맞춤형 앱</h3>
+            <p class="book-goal">바이브 코딩으로 실무용 앱을 만들고, 고치고, 직접 운영합니다.</p>
+            <ol class="flow"><li>핵심 함수·수식·컨트롤 복습</li><li>출장자 정보 앱: 요구사항부터 게시까지</li><li>vibe.powerapps.com 바이브 코딩 입문</li><li>자연어로 업무 보고·이메일 액션 앱 만들기</li></ol>
+          </article>
+        </div>
+        <h3 class="group">실습 교재·교육자료 · PDF 내려받기</h3>
+        <div class="books">
+          <article class="book">
+            <p class="book-meta"><span>Python · 바이브 코딩</span><span>5시간 · 강의 준비 중</span></p>
+            <h3>파이썬으로 완성하는 AI 바이브 코딩: Claude Code 중심</h3>
+            <p class="book-goal">AI가 만든 코드를 "그대로 쓰는 사람"에서 "의도대로 고치고 책임지는 사람"으로. 읽기 → 수정 → 검증 → 업무 적용 순서로 실습합니다.</p>
+            <ol class="flow"><li>바이브 코딩 이해: 좋은 요청의 6요소, 채팅형 코딩과 Claude Code 비교</li><li>AI 코드를 읽고 고치는 최소 Python 문법: 변수·조건·반복·함수·라이브러리, Traceback 읽기</li><li>Claude Code 실전: 탐색 → 계획 → 구현 → 실행 → 검토, CLAUDE.md·PRD·diff·테스트</li><li>업무 사례와 최신 AI: 엑셀 12개 파일 병합, 보고서 자동화, RAG, MCP, 멀티에이전트</li><li>기업 환경 보안: 입력·실행·배포 전 체크리스트, AI 코드 리뷰 기준 8가지</li></ol>
+            <p class="links"><a href="docs/python-ai-vibe-coding.pdf" target="_blank" rel="noopener" download>교재 내려받기 (PDF, 18쪽) ↓</a></p>
+          </article>
+          <article class="book">
+            <p class="book-meta"><span>SAP · Power BI</span><span>12장 · 강의 준비 중</span></p>
+            <h3>SAP CDS View &amp; OData 서비스 생성과 Power BI 연동</h3>
+            <p class="book-goal">SAP 데이터를 CDS View로 정의하고 OData로 열어 Power BI 대시보드까지 연결합니다. SAP 접속 없이 공개 OData로 먼저 연습할 수 있습니다.</p>
+            <ol class="flow"><li>CDS View 실습 4종: 기본·JOIN·Association·Parameter</li><li>OData 생성 3가지: @OData.publish · SEGW · RAP</li><li>심화: RAP Draft Handling, CDS Access Control(DCL)</li><li>Power BI 연동: OData 피드, Power Query, 스타 스키마, DAX</li><li>게시, Gateway, 예약·증분 새로고침, 트러블슈팅</li></ol>
+            <p class="links"><a href="docs/sap-cds-odata-powerbi.pdf" target="_blank" rel="noopener" download>교재 내려받기 (PDF, 22쪽) ↓</a></p>
+          </article>
+          <article class="book">
+            <p class="book-meta"><span>Power BI · 입문</span><span>30~60분 · 실습 교재</span></p>
+            <h3>좋은 대시보드 만드는 Power BI 쉬운 실습</h3>
+            <p class="book-goal">144행 가상 데이터로 깔끔한 1페이지 대시보드를 완성하며, 복잡한 모델링보다 좋은 대시보드의 구조와 디자인 기준을 먼저 익힙니다.</p>
+            <ol class="flow"><li>Stephen Few식 5원칙: 명확성·비교·간결함·일관성·행동</li><li>12단계 따라하기: CSV → 측정값 4개 → KPI·막대·추이·매트릭스</li><li>색상 규칙, 정렬, 인사이트 박스</li><li>세 문장 보고: 결론 → 원인 → 행동</li></ol>
+            <p class="links"><a href="docs/powerbi-easy-dashboard.pdf" target="_blank" rel="noopener" download>교재 내려받기 (PDF, 8쪽) ↓</a></p>
+          </article>
+          <article class="book">
+            <p class="book-meta"><span>Power BI · 중급</span><span>90분 · 실습 교재</span></p>
+            <h3>삼국간 거래 Power BI 수익성 분석</h3>
+            <p class="book-goal">가상 거래 600건으로 연결손익·내부거래·마감 리스크를 추적하는 대시보드를 만들고, KPI에서 원인과 Action까지 설명합니다.</p>
+            <ol class="flow"><li>Power Query 형식 점검과 Date Table·스타 스키마</li><li>연결 OPM·미매칭·고위험 거래 DAX 측정값</li><li>KPI·Waterfall·Matrix·Drill-through로 원전표 추적</li><li>의도적으로 심은 이상 패턴 찾기와 3문장 보고</li></ol>
+            <p class="links"><a href="docs/powerbi-trilateral-trade.pdf" target="_blank" rel="noopener" download>교재 내려받기 (PDF, 8쪽) ↓</a></p>
+          </article>
+          <article class="book">
+            <p class="book-meta"><span>Process Mining · 교육자료</span><span>슬라이드 11장</span></p>
+            <h3>강제 입력 없이 업무 데이터 확보하기</h3>
+            <p class="book-goal">직원에게 새 시스템 입력을 강요하지 않고, ERP·결재 시스템에 이미 쌓인 기록으로 실제 업무 흐름을 읽는 프로세스 마이닝 입문입니다.</p>
+            <ol class="flow"><li>강제 입력의 함정: 입력 부담·품질 저하·신뢰 하락</li><li>이벤트 로그 세 열(Case ID·Activity·Timestamp)로 흐름 읽기</li><li>도구 비교: Power Automate Process Mining, Celonis, SAP Signavio</li><li>프로세스 마이닝과 태스크 마이닝의 차이, 지켜야 할 선</li><li>구매→지급 예시와 작게 시작하는 시범 적용 4단계</li></ol>
+            <p class="links"><a href="docs/process-mining-data.pdf" target="_blank" rel="noopener" download>교육자료 내려받기 (PDF, 11쪽) ↓</a></p>
+          </article>
+          <article class="book">
+            <p class="book-meta"><span>Security · 교육자료</span><span>3쪽</span></p>
+            <h3>바이브 코딩 환경의 공격 표면 관리 방안</h3>
+            <p class="book-goal">비개발 직원이 AI로 앱을 직접 만드는 시대에, 바이브 코딩을 막기보다 안전하게 넓히기 위한 공격 표면 관리(ASM·CTEM) 방안을 정리했습니다.</p>
+            <ol class="flow"><li>노출 유형: 회사 도메인 배포, 외부 호스팅(섀도 IT), 코드 내부 문제</li><li>발견: 네트워크 기록과 CASB로 외부 서비스 사용 파악</li><li>등록·코드 보안: 배포 시 자산 등록 규칙, 시크릿 스캔·SCA·SAST</li><li>환경 통제와 3단계 추진안, 도구 예시</li></ol>
+            <p class="links"><a href="docs/vibe-coding-attack-surface.pdf" target="_blank" rel="noopener" download>교육자료 내려받기 (PDF, 3쪽) ↓</a></p>
+          </article>
+        </div>
+        <p class="note">내려받는 PDF는 공개용으로 간추린 요약본입니다. 실제 강의에서 쓰는 교재는 PowerPoint로 만들었고, 화면 캡처와 단계별 설명이 담겨 훨씬 자세합니다. 교재 속 실습 데이터는 모두 임의로 만든 예제입니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="book">
+    <div class="wrap">
+      <div class="label"><b>집필</b>Book</div>
+      <div class="stack">
+        <p class="eyebrow">집필 중 · 출간 준비</p>
+        <h2>Copilot과 함께하는 Power Platform 업무 자동화</h2>
+        <p class="book-sub">데이터 수집부터 대시보드, 업무 앱까지 코딩 없이</p>
+        <p>"설치는 했는데 내 일에는 어떻게 쓰나요?" 강의장에서 가장 많이 들은 이 질문에 답하는 책입니다. Power Automate로 데이터를 모으고, Power BI로 보고, Power Apps로 현장에서 쓰는 흐름을 한 권으로 엮고, 모든 단계에서 Copilot과 생성형 AI를 조수로 씁니다.</p>
+        <ol class="parts">
+          <li><b>시작하기</b><span>Power Platform과 Copilot으로 일하는 방식, 실습 환경, 데이터 분석의 흐름</span></li>
+          <li><b>데이터 모으기</b><span>Power Automate Desktop, 웹·공공 데이터 자동 수집, Copilot으로 만드는 엑셀 자동화</span></li>
+          <li><b>데이터 보기</b><span>Power BI 대시보드, 파워 쿼리와 생성형 AI 전처리, 대시보드 설계, 예약 새로고침</span></li>
+          <li><b>업무 앱 만들기</b><span>SharePoint 목록과 Power Apps, 갤러리·폼·검색, 바이브 코딩</span></li>
+          <li><b>하나로 잇기</b><span>앱 입력 → 자동 알림 → 대시보드 종합 프로젝트, 조직에 정착시키기</span></li>
+        </ol>
+        <p class="note">본문 약 400쪽 · 5부 15장 · 공공 데이터와 가상 예제로 실습</p>
+        <p class="links"><a href="docs/book-sample-ch7-8.pdf" target="_blank" rel="noopener">샘플 원고 보기: 7장 Power BI 첫 대시보드 · 8장 파워 쿼리와 생성형 AI 전처리 (PDF, 6쪽) ↗</a></p>
       </div>
     </div>
   </section>
@@ -329,250 +575,26 @@ footer .wrap { padding-block: 32px 48px; font-family: var(--font-mono); font-siz
     </div>
   </section>
 
-  <section id="talks">
-    <div class="wrap">
-      <div class="label"><b>강연</b>Talks</div>
-      <article class="paper">
-        <p class="eyebrow">외부 강연 · 2026.09.17</p>
-        <h2>Copilot을 활용해 단숨에 Power BI 전문가 되기</h2>
-        <p class="period">Modern Work Conference Seoul 2026 · 트랙2 &nbsp;|&nbsp; Modern Work Community 주최, 한국마이크로소프트 13층</p>
-
-        <figure class="photos duo">
-          <img class="talk" src="images/mwc-talk.jpg" width="1400" height="784" loading="lazy" alt="윤재웅이 'Copilot으로 데이터분석 전문가처럼 일하세요' 아젠다 슬라이드 앞에서 강연하는 모습">
-          <img src="images/mwc-group.jpg" width="1100" height="825" loading="lazy" alt="Modern Work Community 배너 앞에서 찍은 연사와 운영진 단체 사진">
-          <figcaption>강연 장면과 Modern Work Community 연사·운영진 단체 사진</figcaption>
-        </figure>
-
-        <p>Power BI를 설치해 써 봤지만 업무에 어떻게 쓸지 고민하는 분들을 위한 세션입니다. "Copilot으로 '데이터분석 전문가'처럼 일하세요"를 주제로, 예제와 대시보드 설계, 실습까지 직접 만든 64쪽 분량 자료로 진행했습니다.</p>
-
-        <ol class="agenda">
-          <li><b>데이터 분석의 목적</b><span>인사이트 도출 → 의사결정 → 효과 검증</span></li>
-          <li><b>Copilot이 전처리</b><span>파일이 여러 개여도, 정리가 안 돼 있어도</span></li>
-          <li><b>인사이트 + 설계 제안</b><span>무엇이 보이는지와 어떻게 그릴지를 함께</span></li>
-          <li><b>따라 그리는 방법</b><span>물어보고 그대로 따라 그리기</span></li>
-          <li><b>Power BI 내 Copilot</b><span>프롬프트로 직접 그려주기</span></li>
-        </ol>
-        <ul class="chips" aria-label="주제"><li>Power BI</li><li>Microsoft 365 Copilot</li><li>데이터 전처리</li><li>대시보드 설계</li></ul>
-        <p class="links"><a href="https://ticketa.co/event/796zfanx" target="_blank" rel="noopener">행사 페이지 보기 ↗</a></p>
-      </article>
-    </div>
-  </section>
-
-  <section id="materials">
-    <div class="wrap">
-      <div class="label"><b>교재</b>Materials</div>
-      <div class="stack">
-        <h2>직접 만든 교재 10종</h2>
-        <p>포스코인터내셔널 임직원을 위한 Power BI, Power Apps 초급·중급 과정 교재를 직접 기획하고 제작했고, Python AI 바이브 코딩, SAP OData 연동, Power BI 실전 분석 실습 교재와 프로세스 마이닝, 바이브 코딩 보안 교육자료도 새로 만들었습니다. 새 실습 교재는 PDF로 내려받을 수 있습니다. 차수마다 현장 질문과 시행착오를 반영해 계속 고쳐 쓰고 있습니다.</p>
-        <div class="books">
-          <article class="book">
-            <p class="book-meta"><span>Power BI · 초급</span><span>151쪽 · 반나절</span></p>
-            <h3>Power BI 이해 및 활용 실습</h3>
-            <p class="book-goal">대시보드를 직접 만들며 현업에 바로 쓸 수 있는 기초를 갖춥니다.</p>
-            <ol class="flow"><li>Power Platform 개요와 설치</li><li>시각화 개체 이해</li><li>공공 데이터 수집과 차트</li><li>데이터 전처리와 판매 대시보드</li><li>수출입 대시보드(Self BI)</li><li>LLM으로 대시보드 그리기</li></ol>
-          </article>
-          <article class="book">
-            <p class="book-meta"><span>Power BI · 중급</span><span>206쪽 · 하루</span></p>
-            <h3>생성형 AI 활용 실습 중심</h3>
-            <p class="book-goal">웹 데이터 연동, 자동화, 대시보드 설계 원칙을 익혀 의사결정용 대시보드를 만듭니다.</p>
-            <ol class="flow"><li>생성형 AI로 전처리·테마 만들기</li><li>웹 데이터와 예약 새로고침</li><li>Power Automate Desktop 자동화, Copilot으로 VBScript 생성</li><li>좋은 대시보드 vs 쓰이지 않는 대시보드</li><li>실적·설비 모니터링·법인 손익 대시보드 실습</li><li>워크스페이스·앱 배포와 1:1 피드백</li></ol>
-          </article>
-          <article class="book">
-            <p class="book-meta"><span>Power Apps · 초급</span><span>113쪽 · 반나절</span></p>
-            <h3>코드 없이 만드는 스마트 업무 앱</h3>
-            <p class="book-goal">개발 경험이 없어도 로우코드로 간단한 업무용 앱을 만듭니다.</p>
-            <ol class="flow"><li>Power Apps 시작하기와 화면 구성</li><li>진행 현황 공유 앱(SharePoint Lists 연동)</li><li>나만의 앱 만들기</li><li>LLM으로 앱 만들기 사례</li></ol>
-          </article>
-          <article class="book">
-            <p class="book-meta"><span>Power Apps · 중급</span><span>163쪽 · 하루</span></p>
-            <h3>Vibe 코딩, AI로 만드는 맞춤형 앱</h3>
-            <p class="book-goal">바이브 코딩으로 실무용 앱을 만들고, 고치고, 직접 운영합니다.</p>
-            <ol class="flow"><li>핵심 함수·수식·컨트롤 복습</li><li>출장자 정보 앱: 요구사항부터 게시까지</li><li>vibe.powerapps.com 바이브 코딩 입문</li><li>자연어로 업무 보고·이메일 액션 앱 만들기</li></ol>
-          </article>
-          <article class="book">
-            <p class="book-meta"><span>Python · 바이브 코딩</span><span>5시간 · 강의 준비 중</span></p>
-            <h3>파이썬으로 완성하는 AI 바이브 코딩: Claude Code 중심</h3>
-            <p class="book-goal">AI가 만든 코드를 "그대로 쓰는 사람"에서 "의도대로 고치고 책임지는 사람"으로. 읽기 → 수정 → 검증 → 업무 적용 순서로 실습합니다.</p>
-            <ol class="flow"><li>바이브 코딩 이해: 좋은 요청의 6요소, 채팅형 코딩과 Claude Code 비교</li><li>AI 코드를 읽고 고치는 최소 Python 문법: 변수·조건·반복·함수·라이브러리, Traceback 읽기</li><li>Claude Code 실전: 탐색 → 계획 → 구현 → 실행 → 검토, CLAUDE.md·PRD·diff·테스트</li><li>업무 사례와 최신 AI: 엑셀 12개 파일 병합, 보고서 자동화, RAG, MCP, 멀티에이전트</li><li>기업 환경 보안: 입력·실행·배포 전 체크리스트, AI 코드 리뷰 기준 8가지</li></ol>
-            <p class="links"><a href="docs/python-ai-vibe-coding.pdf" target="_blank" rel="noopener" download>교재 내려받기 (PDF, 18쪽) ↓</a></p>
-          </article>
-          <article class="book">
-            <p class="book-meta"><span>SAP · Power BI</span><span>12장 · 강의 준비 중</span></p>
-            <h3>SAP CDS View &amp; OData 서비스 생성과 Power BI 연동</h3>
-            <p class="book-goal">SAP 데이터를 CDS View로 정의하고 OData로 열어 Power BI 대시보드까지 연결합니다. SAP 접속 없이 공개 OData로 먼저 연습할 수 있습니다.</p>
-            <ol class="flow"><li>CDS View 실습 4종: 기본·JOIN·Association·Parameter</li><li>OData 생성 3가지: @OData.publish · SEGW · RAP</li><li>심화: RAP Draft Handling, CDS Access Control(DCL)</li><li>Power BI 연동: OData 피드, Power Query, 스타 스키마, DAX</li><li>게시, Gateway, 예약·증분 새로고침, 트러블슈팅</li></ol>
-            <p class="links"><a href="docs/sap-cds-odata-powerbi.pdf" target="_blank" rel="noopener" download>교재 내려받기 (PDF, 22쪽) ↓</a></p>
-          </article>
-          <article class="book">
-            <p class="book-meta"><span>Power BI · 입문</span><span>30~60분 · 실습 교재</span></p>
-            <h3>좋은 대시보드 만드는 Power BI 쉬운 실습</h3>
-            <p class="book-goal">144행 가상 데이터로 깔끔한 1페이지 대시보드를 완성하며, 복잡한 모델링보다 좋은 대시보드의 구조와 디자인 기준을 먼저 익힙니다.</p>
-            <ol class="flow"><li>Stephen Few식 5원칙: 명확성·비교·간결함·일관성·행동</li><li>12단계 따라하기: CSV → 측정값 4개 → KPI·막대·추이·매트릭스</li><li>색상 규칙, 정렬, 인사이트 박스</li><li>세 문장 보고: 결론 → 원인 → 행동</li></ol>
-            <p class="links"><a href="docs/powerbi-easy-dashboard.pdf" target="_blank" rel="noopener" download>교재 내려받기 (PDF, 8쪽) ↓</a></p>
-          </article>
-          <article class="book">
-            <p class="book-meta"><span>Power BI · 중급</span><span>90분 · 실습 교재</span></p>
-            <h3>삼국간 거래 Power BI 수익성 분석</h3>
-            <p class="book-goal">가상 거래 600건으로 연결손익·내부거래·마감 리스크를 추적하는 대시보드를 만들고, KPI에서 원인과 Action까지 설명합니다.</p>
-            <ol class="flow"><li>Power Query 형식 점검과 Date Table·스타 스키마</li><li>연결 OPM·미매칭·고위험 거래 DAX 측정값</li><li>KPI·Waterfall·Matrix·Drill-through로 원전표 추적</li><li>의도적으로 심은 이상 패턴 찾기와 3문장 보고</li></ol>
-            <p class="links"><a href="docs/powerbi-trilateral-trade.pdf" target="_blank" rel="noopener" download>교재 내려받기 (PDF, 8쪽) ↓</a></p>
-          </article>
-          <article class="book">
-            <p class="book-meta"><span>Process Mining · 교육자료</span><span>슬라이드 11장</span></p>
-            <h3>강제 입력 없이 업무 데이터 확보하기</h3>
-            <p class="book-goal">직원에게 새 시스템 입력을 강요하지 않고, ERP·결재 시스템에 이미 쌓인 기록으로 실제 업무 흐름을 읽는 프로세스 마이닝 입문입니다.</p>
-            <ol class="flow"><li>강제 입력의 함정: 입력 부담·품질 저하·신뢰 하락</li><li>이벤트 로그 세 열(Case ID·Activity·Timestamp)로 흐름 읽기</li><li>도구 비교: Power Automate Process Mining, Celonis, SAP Signavio</li><li>프로세스 마이닝과 태스크 마이닝의 차이, 지켜야 할 선</li><li>구매→지급 예시와 작게 시작하는 시범 적용 4단계</li></ol>
-            <p class="links"><a href="docs/process-mining-data.pdf" target="_blank" rel="noopener" download>교육자료 내려받기 (PDF, 11쪽) ↓</a></p>
-          </article>
-          <article class="book">
-            <p class="book-meta"><span>Security · 교육자료</span><span>3쪽</span></p>
-            <h3>바이브 코딩 환경의 공격 표면 관리 방안</h3>
-            <p class="book-goal">비개발 직원이 AI로 앱을 직접 만드는 시대에, 바이브 코딩을 막기보다 안전하게 넓히기 위한 공격 표면 관리(ASM·CTEM) 방안을 정리했습니다.</p>
-            <ol class="flow"><li>노출 유형: 회사 도메인 배포, 외부 호스팅(섀도 IT), 코드 내부 문제</li><li>발견: 네트워크 기록과 CASB로 외부 서비스 사용 파악</li><li>등록·코드 보안: 배포 시 자산 등록 규칙, 시크릿 스캔·SCA·SAST</li><li>환경 통제와 3단계 추진안, 도구 예시</li></ol>
-            <p class="links"><a href="docs/vibe-coding-attack-surface.pdf" target="_blank" rel="noopener" download>교육자료 내려받기 (PDF, 3쪽) ↓</a></p>
-          </article>
-        </div>
-        <p class="note">내려받는 PDF는 공개용으로 간추린 요약본입니다. 실제 강의에서 쓰는 교재는 PowerPoint로 만들었고, 화면 캡처와 단계별 설명이 담겨 훨씬 자세합니다. 교재 속 실습 데이터는 모두 임의로 만든 예제입니다.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="book">
-    <div class="wrap">
-      <div class="label"><b>집필</b>Book</div>
-      <div class="stack">
-        <p class="eyebrow">집필 중 · 출간 준비</p>
-        <h2>Copilot과 함께하는 Power Platform 업무 자동화</h2>
-        <p class="book-sub">데이터 수집부터 대시보드, 업무 앱까지 코딩 없이</p>
-        <p>"설치는 했는데 내 일에는 어떻게 쓰나요?" 강의장에서 가장 많이 들은 이 질문에 답하는 책입니다. Power Automate로 데이터를 모으고, Power BI로 보고, Power Apps로 현장에서 쓰는 흐름을 한 권으로 엮고, 모든 단계에서 Copilot과 생성형 AI를 조수로 씁니다.</p>
-        <ol class="parts">
-          <li><b>시작하기</b><span>Power Platform과 Copilot으로 일하는 방식, 실습 환경, 데이터 분석의 흐름</span></li>
-          <li><b>데이터 모으기</b><span>Power Automate Desktop, 웹·공공 데이터 자동 수집, Copilot으로 만드는 엑셀 자동화</span></li>
-          <li><b>데이터 보기</b><span>Power BI 대시보드, 파워 쿼리와 생성형 AI 전처리, 대시보드 설계, 예약 새로고침</span></li>
-          <li><b>업무 앱 만들기</b><span>SharePoint 목록과 Power Apps, 갤러리·폼·검색, 바이브 코딩</span></li>
-          <li><b>하나로 잇기</b><span>앱 입력 → 자동 알림 → 대시보드 종합 프로젝트, 조직에 정착시키기</span></li>
-        </ol>
-        <p class="note">본문 약 400쪽 · 5부 15장 · 공공 데이터와 가상 예제로 실습</p>
-        <p class="links"><a href="docs/book-sample-ch7-8.pdf" target="_blank" rel="noopener">샘플 원고 보기: 7장 Power BI 첫 대시보드 · 8장 파워 쿼리와 생성형 AI 전처리 (PDF, 6쪽) ↗</a></p>
-      </div>
-    </div>
-  </section>
-
-  <section id="projects">
-    <div class="wrap">
-      <div class="label"><b>프로젝트</b>Projects</div>
-      <div class="projects">
-
-        <article class="project">
-          <div class="project-head">
-            <h3>폴란드 모터코아 ERP 구축 PMO · 인도 모터코아 ERP 선정</h3>
-            <span class="period">완료 · 포스코인터내셔널</span>
-          </div>
-          <dl class="facts">
-            <dt>범위</dt><dd><b>폴란드 모터코아</b>: ERP 구축 PMO로 초기 기획부터 실행 관리까지 담당<br><b>인도 모터코아</b>: 초기 ERP 솔루션 선정까지 담당</dd>
-            <dt>한 일</dt><dd>ERP 솔루션 선정 단계에서 경쟁 입찰 기획, RFP 작성, 제안 평가표 작성, 평가 항목별·조직별 가중치 설계와 반영을 수행했습니다. 인도 모터코아는 QAD, TCS iON 등 후보 솔루션을 비교하고 구매·생산·원가·재무 약 133개 항목의 기능 적합성과 추가 개발 필요 여부를 분석했습니다.</dd>
-            <dt>결과</dt><dd class="result">폴란드 모터코아 ERP는 2024년 하반기 경쟁 입찰과 평가를 거쳐 2024년 10월 계약했고, 2025년 5월 회계·구매 모듈 1차 오픈 후 생산 모듈까지 가동했습니다. 인도 모터코아 ERP는 솔루션 선정을 거쳐 2026년 5월 QAD와 계약했습니다.</dd>
-            <dt>바탕</dt><dd>Oracle ERP → SAP ERP 전환 PI 프로젝트와 SAP ERP 운영으로 쌓은 업무 프로세스·시스템 실무 경험</dd>
-          </dl>
-          <ul class="chips" aria-label="주제"><li>ERP</li><li>PMO</li><li>RFP · 제안 평가</li><li>해외 법인</li></ul>
-        </article>
-
-        <article class="project">
-          <div class="project-head">
-            <h3>수출 거래처 우려거래자 자동 조회 RPA</h3>
-            <span class="period">포스코인터내셔널 DX혁신실</span>
-          </div>
-          <dl class="facts">
-            <dt>문제</dt><dd>거래처가 우려거래자인지 확인하려면 직원마다 필요할 때 정부의 전략물자관리시스템에 들어가 한 곳씩 직접 검색해야 했습니다. 같은 확인을 여러 사람이 반복했습니다.</dd>
-            <dt>한 일</dt><dd>SAP에 등록된 모든 거래처 약 2만 건을 전략물자관리시스템에서 자동으로 조회하고, 결과를 사내 공지에 올려 두는 RPA를 직접 설계하고 개발했습니다.</dd>
-            <dt>결과</dt><dd class="result">직원 각자가 하던 개별 검색이 사라지고, 누구나 공지에서 전체 거래처의 조회 결과를 바로 확인합니다. 이 사례를 사내 교재와 강의에도 반영했습니다. 2026년 Power Platform 지원 완료 실적 8건 중 하나입니다.</dd>
-          </dl>
-          <ul class="chips" aria-label="사용 기술"><li>RPA</li><li>SAP</li><li>웹 데이터 수집</li></ul>
-        </article>
-
-        <article class="project">
-          <div class="project-head">
-            <h3>현업 DX 과제 8건: 대시보드 4건 · 자동화 4건</h3>
-            <span class="period">2026 · 포스코인터내셔널</span>
-          </div>
-          <dl class="facts">
-            <dt>대시보드</dt><dd>철강 부문 실적, 전기강판 판매, 기초소재 수입 국가별 통계(HS코드 검색), 철강원료 트레이딩 실적</dd>
-            <dt>자동화</dt><dd>우려거래자 자동 조회, 이차전지 원료 시황·웹 데이터 수집, 철강 시황지 메일의 Teams 채널 자동 게시, 무역금융 주요 지표 데이터 자동 수집·누적</dd>
-            <dt>방식</dt><dd>현업 요청을 듣고 직접 설계·개발하거나, 담당자가 스스로 만들 수 있도록 함께 개발했습니다.</dd>
-          </dl>
-          <ul class="chips" aria-label="사용 기술"><li>Power BI</li><li>Power Automate</li><li>RPA</li></ul>
-        </article>
-
-        <article class="project">
-          <div class="project-head">
-            <h3>RPA Self 개발 지원 7건</h3>
-            <span class="period">2025 · 포스코인터내셔널</span>
-          </div>
-          <dl class="facts">
-            <dt>사례</dt><dd>해외법인 환율 크롤링 후 SAP 자동 입력, 국제 유가·뉴스 수집과 메일링, IEA 에너지 보고서를 받아 ChatGPT로 전략 보고서 초안 작성, 월 결산 반복 업무 자동화, 원자재 Surcharge 웹 수집, 익일 작업 계획 메일 자동 발송 등</dd>
-            <dt>결과</dt><dd class="result">현업 담당자가 직접 만들고 운영하는 자동화가 늘어나, 개발 요청 없이도 반복 업무를 줄이는 구조를 만들었습니다.</dd>
-          </dl>
-          <ul class="chips" aria-label="사용 기술"><li>Power Automate Desktop</li><li>생성형 AI</li><li>SAP</li></ul>
-        </article>
-
-        <article class="project">
-          <div class="project-head">
-            <h3>유럽 법인 DX Contest 평가 체계 설계</h3>
-            <span class="period">2026 · 포스코인터내셔널</span>
-          </div>
-          <dl class="facts">
-            <dt>범위</dt><dd>유럽 5개 법인이 제출한 DX 과제 12건</dd>
-            <dt>한 일</dt><dd>효과성·확산성·혁신성·기술난이도·구현가능성 5개 기준과 배점 체계를 설계해 객관적으로 평가할 수 있게 했습니다.</dd>
-          </dl>
-          <ul class="chips" aria-label="주제"><li>DX 평가</li><li>해외 법인</li></ul>
-        </article>
-
-        <article class="project">
-          <div class="project-head">
-            <h3>Power BI 중급 과정 End-to-End 실습 설계</h3>
-            <span class="period">DX 준전문가 과정 · 교재 직접 제작</span>
-          </div>
-          <dl class="facts">
-            <dt>문제</dt><dd>직원들이 가장 어려워하는 단계는 데이터 수집부터 자동화, 연결, 예약 새로고침까지 이어지는 흐름이었습니다.</dd>
-            <dt>한 일</dt><dd>공공·웹 데이터 수집, Power Automate Desktop 자동화, Power BI Service 연계를 하나의 실습 시나리오로 재구성하고 교재를 직접 만들었습니다.</dd>
-            <dt>결과</dt><dd class="result">수강생이 현업에서 바로 쓸 수 있는 데이터 파이프라인을 직접 구현하게 됐고, 현장 질문과 시행착오를 교재에 계속 반영하고 있습니다.</dd>
-          </dl>
-          <ul class="chips" aria-label="사용 기술"><li>Power BI</li><li>Power Automate Desktop</li><li>Power BI Service</li></ul>
-        </article>
-
-        <article class="project">
-          <div class="project-head">
-            <h3>의사결정으로 이어지는 대시보드 설계 교육</h3>
-            <span class="period">사내 교육 · 대시보드 설계</span>
-          </div>
-          <dl class="facts">
-            <dt>문제</dt><dd>보기 좋기만 하고 실제로는 쓰이지 않는 대시보드가 많았습니다.</dd>
-            <dt>한 일</dt><dd>Stephen Few의 대시보드 디자인 이론을 접목해 "좋은 대시보드 vs 사용되지 않는 대시보드"를 비교하고, 임원 보고용 KPI 구조, 드릴다운, 조건부 서식 활용법을 사례 중심으로 가르쳤습니다.</dd>
-            <dt>결과</dt><dd class="result">경영·의사결정 관점에서 대시보드를 설계하는 방법을 조직에 확산했습니다.</dd>
-          </dl>
-          <ul class="chips" aria-label="사용 기술"><li>Power BI</li><li>대시보드 디자인</li><li>KPI 설계</li></ul>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
   <section id="skills">
     <div class="wrap">
       <div class="label"><b>기술</b>Skills</div>
+      <div class="stack">
+      <h2>다루는 기술</h2>
       <div class="table-scroll">
         <table>
           <thead><tr><th scope="col">분야</th><th scope="col">내용</th><th scope="col">수준</th></tr></thead>
           <tbody>
             <tr><td>ERP</td><td>Oracle ERP → SAP ERP 전환 PI, SAP ERP 운영, 해외 법인 ERP 구축 PMO와 솔루션 선정(RFP·제안 평가 설계), 경영대학원 SAP Track에서 FI(재무회계) 모듈 학습</td><td>실무</td></tr>
-            <tr><td>데이터 분석</td><td>전력거래량·거래금액·SMP 시계열 데이터 수집과 전처리</td><td>석사 논문 연구에 적용</td></tr>
+            <tr><td>데이터 분석·시각화</td><td>Power Query 전처리, 스타 스키마 모델링, DAX 측정값, 의사결정용 대시보드 설계(Stephen Few), 시계열 데이터 분석</td><td>실무 · 교육 · 논문 연구</td></tr>
             <tr><td>Python</td><td>데이터 분석, RNN · LSTM 시계열 예측 모델, matplotlib 시각화</td><td>논문 연구 적용 · 뉴칼라 과정 누적 약 1,600명 강의</td></tr>
             <tr><td>Power Platform · AI</td><td>Power BI, Power Apps, Power Automate, Microsoft 365 Copilot</td><td>사내 초급·중급 과정 강의 · 교재 개발</td></tr>
             <tr><td>강의</td><td>포스코그룹 사내 강사 (디지털혁신교육, DX 준전문가 과정)</td><td>A급 강사 인증</td></tr>
             <tr><td>RPA · 자동화</td><td>RPA 설계·개발, Power Automate Desktop, 웹·공공 데이터 수집 자동화</td><td>실무 개발 · 교육</td></tr>
-            <tr><td>생성형 AI</td><td>바이브 코딩, 생성형 AI 기반 업무 도구 구현</td><td>실무 적용 · 교육</td></tr>
+            <tr><td>생성형 AI</td><td>바이브 코딩(Claude Code, vibe.powerapps.com), Microsoft 365 Copilot, 생성형 AI 기반 업무 도구 구현</td><td>실무 적용 · 교육</td></tr>
+            <tr><td>프로세스 · 보안</td><td>프로세스 마이닝, 바이브 코딩 공격 표면 관리(ASM·CTEM), 정보시스템 감사</td><td>CISA · 정보관리기술사 심화 과정 수료</td></tr>
           </tbody>
         </table>
+      </div>
       </div>
     </div>
   </section>
@@ -580,6 +602,8 @@ footer .wrap { padding-block: 32px 48px; font-family: var(--font-mono); font-siz
   <section id="career">
     <div class="wrap">
       <div class="label"><b>경력 · 자격</b>Career</div>
+      <div class="stack">
+      <h2>경력 · 학력 · 자격</h2>
       <ol class="timeline">
         <li><span class="period">2010.05 – 현재</span><div><b>포스코인터내셔널 · 차장</b><p>경영지원본부 DX혁신실 DX기획그룹. 전사 DX 기획·실행, Power Platform(Power BI, Power Apps, Power Automate) 사내 전문가, WX 사내 강사</p><p>Oracle ERP → SAP ERP 전환 PI 프로젝트 참여 후 SAP ERP 운영 관리. 최근 폴란드 모터코아 ERP 구축 PMO, 인도 모터코아 ERP 선정</p></div></li>
         <li><span class="period">2026 – 현재</span><div><b>한국 MS 파워플랫폼 협회 · 기술 이사</b><p>협회 설립을 주도하고, 기업 간 실무 교류와 커뮤니티 기반 성장을 이끌고 있습니다</p></div></li>
@@ -591,20 +615,25 @@ footer .wrap { padding-block: 32px 48px; font-family: var(--font-mono); font-siz
         <li><span class="period">2022.10</span><div><b>우수발표논문상 · 한국품질경영학회</b><p>2022년 추계 학술대회, Best Quality Management Presentation Award</p></div></li>
         <li><span class="period">2022.03</span><div><b>A급 강사 인증 · 포스코인재창조원</b><p>포스코그룹 사내 강사로 활동하며 강의 평가 우수 등 우수강사 인증 조건 충족</p></div></li>
         <li><span class="period">2020.09 – 2022.12</span><div><b>포스코인재창조원 디지털혁신교육그룹 파견 · 차장</b><p>포스코인터내셔널 소속으로 약 2년 4개월간 파견. 포스코 뉴칼라 과정에서 Python으로 데이터 전처리부터 분석, 시각화까지 강의하고 우수 강사로 선정</p><p>파견 기간 내내 매달 3주는 주마다 2일 과정(수강생 약 30명)을 운영하고, 마지막 주에는 수료 평가와 미통과자 재평가를 진행. 누적 수강생 약 1,600명</p></div></li>
-        <li><span class="period">2019</span><div><b>CISA · ISACA</b><p>국제공인 정보시스템감사사 (Certified Information Systems Auditor) · 2019년 취득, 현재 미갱신</p></div></li>
         <li><span class="period">2021 · 2022</span><div><b>재능기부 · 포항제철공업고등학교 Python · RPA 강의</b><p>연 1회씩 두 차례 강의. 학생들이 바로 활용할 수 있는 RPA를 가르쳐, 일부 학생이 관련 개발을 직접 수행</p></div></li>
+        <li><span class="period">2019</span><div><b>CISA · ISACA</b><p>국제공인 정보시스템감사사 (Certified Information Systems Auditor) · 2019년 취득, 현재 미갱신</p></div></li>
         <li><span class="period">2008.01 – 2010.05</span><div><b>포스코DX</b></div></li>
       </ol>
+      </div>
     </div>
   </section>
 
   <section id="contact">
     <div class="wrap">
       <div class="label"><b>연락처</b>Contact</div>
+      <div class="stack">
+      <h2>강의·강연·교재·협업 문의</h2>
+      <p>Power Platform·생성형 AI 실무 강의, 사내 교육과정 설계, 현업 DX 과제 자문 문의는 이메일로 보내 주세요.</p>
       <dl class="contact">
         <dt>GitHub</dt><dd><a href="https://github.com/JaewoongYoon-hub" target="_blank" rel="noopener">github.com/JaewoongYoon-hub</a></dd>
         <dt>이메일</dt><dd><a href="mailto:yoonjw3840@naver.com">yoonjw3840@naver.com</a></dd>
       </dl>
+      </div>
     </div>
   </section>
 </main>
