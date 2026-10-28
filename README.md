@@ -4,7 +4,7 @@
 포스코인터내셔널 DX혁신실에서 전사 DX를 기획·실행하고, Power BI·Power Apps·Power Automate 전사 사내 강사로 활동합니다.
 포스코 뉴칼라 과정에서 약 1,600명에게 Python 데이터 분석을 가르쳤습니다.
 
-**포트폴리오: [www.kpredict.co.kr](https://www.kpredict.co.kr)** · 📫 yoonjw3840@naver.com
+**포트폴리오: [www.kpredict.co.kr](https://www.kpredict.co.kr)** · [English](https://www.kpredict.co.kr/en/) · 📫 yoonjw3840@naver.com
 
 #### 경력
 - 2010.05 – 현재 · 포스코인터내셔널 차장, 경영지원본부 DX혁신실 DX기획그룹 (2020.09 – 2022.12 포스코인재창조원 디지털혁신교육그룹 파견)

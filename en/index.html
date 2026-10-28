@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jaewoong Yoon · KPredict</title>
+<meta name="description" content="Jaewoong Yoon, DX specialist at POSCO International: Power BI, Power Apps and Power Automate instructor, Technical Director of the Korea Microsoft Power Platform Association, MBA with an LSTM electricity price forecasting thesis.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KPredict">
+<meta property="og:title" content="Jaewoong Yoon · KPredict">
+<meta property="og:description" content="Jaewoong Yoon, DX specialist at POSCO International: Power BI, Power Apps and Power Automate instructor, Technical Director of the Korea Microsoft Power Platform Association, MBA with an LSTM electricity price forecasting thesis.">
+<meta property="og:url" content="https://www.kpredict.co.kr/en/">
+<meta property="og:image" content="https://www.kpredict.co.kr/images/og-mwc.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://www.kpredict.co.kr/en/">
+<link rel="alternate" hreflang="ko" href="https://www.kpredict.co.kr/">
+<link rel="alternate" hreflang="en" href="https://www.kpredict.co.kr/en/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%232f45a8'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='18' font-weight='700' fill='%23ffffff' text-anchor='middle'%3Ek%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;700&display=swap">
+<style>
+/* Layout: 원장(ledger) 문서 같은 단일 칼럼. 섹션마다 왼쪽에 라벨, 오른쪽에 본문. */
+:root {
+  --bg: #f4f6f9;
+  --surface: #ffffff;
+  --fg: #172033;
+  --muted: #5a6478;
+  --line: #d9dee8;
+  --accent: #2f45a8;
+  --forecast: #b8700f;
+  --accent-soft: #e6eaf8;
+  --font-body: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --step-0: 1rem;
+  --step-1: 1.25rem;
+  --step-2: 1.75rem;
+  --step-3: clamp(2.1rem, 5vw, 3.2rem);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #10141d; --surface: #171d29; --fg: #e4e8f1; --muted: #9aa3b6;
+    --line: #2a3242; --accent: #8fa2f5; --forecast: #e6a64a; --accent-soft: #1f2741;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #10141d; --surface: #171d29; --fg: #e4e8f1; --muted: #9aa3b6;
+  --line: #2a3242; --accent: #8fa2f5; --forecast: #e6a64a; --accent-soft: #1f2741;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: var(--step-0);
+  line-height: 1.7;
+  overflow-wrap: break-word;
+}
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+.wrap {
+  max-width: 960px;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+/* 상단 바 */
+.topbar { border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 10; background: var(--bg); }
+section { scroll-margin-top: 64px; }
+.topbar .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; padding-block: 14px; }
+.brand { font-family: var(--font-mono); font-weight: 500; letter-spacing: 0.02em; color: var(--fg); text-decoration: none; }
+.brand span { color: var(--forecast); }
+.nav { display: flex; flex-wrap: wrap; gap: 4px 18px; font-size: 0.9rem; }
+.nav a { color: var(--muted); text-decoration: none; }
+.nav a:hover { color: var(--fg); }
+
+/* 히어로 */
+.hero .wrap { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; padding-block: 64px 48px; }
+.hero .wrap > * { min-width: 0; }
+.eyebrow { font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 0 0 12px; }
+h1 { font-size: var(--step-3); line-height: 1.2; margin: 0 0 16px; text-wrap: balance; font-weight: 700; }
+h1 em { font-style: normal; color: var(--accent); }
+.lede { color: var(--muted); font-size: var(--step-1); line-height: 1.6; margin: 0; max-width: 32em; }
+.stats { list-style: none; margin: 32px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.stats li { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 14px 16px; display: grid; gap: 2px; }
+.stats b { font-family: var(--font-mono); font-size: 1.6rem; font-weight: 500; color: var(--accent); line-height: 1.2; font-variant-numeric: tabular-nums; }
+.stats span { font-size: 0.85rem; color: var(--muted); line-height: 1.4; }
+.cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+.btn { display: inline-block; padding: 9px 18px; border-radius: 6px; background: var(--accent); color: #ffffff; text-decoration: none; font-weight: 500; font-size: 0.95rem; }
+.btn.ghost { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+:root[data-theme="dark"] .btn:not(.ghost) { color: #10141d; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .btn:not(.ghost) { color: #10141d; } }
+@media (max-width: 720px) { .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* 섹션 */
+section { border-top: 1px solid var(--line); }
+section > .wrap { display: grid; grid-template-columns: 180px 1fr; gap: 24px 40px; padding-block: 48px; }
+section > .wrap > * { min-width: 0; }
+.label { font-family: var(--font-mono); font-size: 0.8rem; color: var(--muted); padding-top: 6px; }
+.label b { display: block; color: var(--fg); font-weight: 500; font-size: 0.95rem; font-family: var(--font-body); }
+h2 { font-size: var(--step-2); margin: 0 0 16px; line-height: 1.3; text-wrap: balance; }
+h3 { font-size: var(--step-1); margin: 0; line-height: 1.4; text-wrap: balance; }
+p { margin: 0; max-width: 65ch; }
+.stack { display: flex; flex-direction: column; gap: 16px; }
+
+.group { font-size: 1rem; font-family: var(--font-mono); font-weight: 500; color: var(--muted); margin-top: 12px; padding-top: 12px; border-top: 1px dashed var(--line); }
+
+/* 프로젝트 */
+.projects { display: flex; flex-direction: column; gap: 16px; }
+.project { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 24px; display: grid; gap: 12px; }
+.project-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 16px; }
+.period { font-family: var(--font-mono); font-size: 0.85rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.facts { display: grid; grid-template-columns: 5.5em 1fr; gap: 6px 16px; margin: 0; }
+.facts dt { font-size: 0.85rem; color: var(--muted); padding-top: 2px; }
+.facts dd { margin: 0; min-width: 0; }
+.result { color: var(--forecast); font-weight: 500; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; margin: 0; padding: 0; }
+.chips li { font-family: var(--font-mono); font-size: 0.8rem; border: 1px solid var(--line); border-radius: 3px; padding: 1px 8px; color: var(--fg); }
+
+/* 논문 */
+.paper { display: grid; gap: 16px; }
+.paper h2 { margin: 0; }
+.fuel { margin: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 20px; display: grid; gap: 12px; }
+.fuel figcaption { font-size: 0.85rem; color: var(--muted); }
+.fuel-rows { display: grid; gap: 8px; }
+.fuel-row { display: grid; grid-template-columns: 5em 1fr 3.5em; align-items: center; gap: 12px; font-size: 0.9rem; }
+.fuel-row .bar { height: 10px; border-radius: 2px; background: linear-gradient(var(--forecast), var(--forecast)) no-repeat left / var(--w) 100%, var(--accent-soft); }
+.fuel-row b { font-family: var(--font-mono); font-weight: 500; text-align: right; font-variant-numeric: tabular-nums; }
+.fuel .note { font-size: 0.85rem; color: var(--muted); }
+.links { display: flex; flex-wrap: wrap; gap: 4px 20px; }
+.research { display: flex; flex-direction: column; gap: 56px; }
+.research > .paper + .paper { border-top: 1px dashed var(--line); padding-top: 40px; }
+.paper .en { font-size: 0.9rem; color: var(--muted); font-style: italic; margin-top: -8px; }
+.paper .note { font-size: 0.9rem; color: var(--muted); }
+.headline { display: grid; grid-template-columns: auto 1fr; gap: 8px 20px; align-items: center; border-left: 3px solid var(--forecast); padding: 4px 0 4px 16px; }
+.headline b { font-family: var(--font-mono); font-size: var(--step-3); font-weight: 500; color: var(--forecast); line-height: 1; font-variant-numeric: tabular-nums; }
+.headline p { font-size: 0.95rem; }
+.thesis-fig { margin: 0; display: grid; gap: 6px; }
+.thesis-fig img { display: block; width: 100%; height: auto; max-width: 100%; border: 1px solid var(--line); border-radius: 4px; background: #ffffff; }
+.thesis-fig figcaption { font-size: 0.85rem; color: var(--muted); }
+.mape caption { text-align: left; font-size: 0.85rem; color: var(--muted); padding-bottom: 6px; }
+.mape td + td, .mape th + th { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.mape .best td { color: var(--forecast); font-weight: 500; }
+.award { color: var(--forecast); }
+@media (max-width: 480px) { .headline { grid-template-columns: 1fr; } }
+.photos { margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.photos img { display: block; width: 100%; height: 100%; max-width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 4px; background: var(--accent-soft); }
+.photos .photo-main { grid-column: 1 / -1; aspect-ratio: 16 / 9; object-position: center 40%; }
+.photos.duo { grid-template-columns: 1fr 1fr; }
+.photos.duo img { aspect-ratio: 3 / 2; }
+.photos.duo .talk { object-position: left center; }
+.agenda { list-style: none; counter-reset: step; margin: 0; padding: 0; display: grid; gap: 10px; }
+.agenda li { counter-increment: step; display: grid; grid-template-columns: 2.2em 1fr; gap: 2px 12px; }
+.agenda li::before { content: counter(step, decimal-leading-zero); grid-row: span 2; font-family: var(--font-mono); color: var(--accent); padding-top: 1px; }
+.agenda span { font-size: 0.9rem; color: var(--muted); }
+@media (max-width: 480px) { .photos.duo { grid-template-columns: 1fr; } }
+.books { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.book { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 20px; display: flex; flex-direction: column; gap: 10px; }
+.book-meta { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 12px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--muted); }
+.book-meta span:first-child { color: var(--accent); }
+.book h3 { font-size: 1.1rem; }
+.book-goal { font-size: 0.92rem; color: var(--muted); }
+.flow { margin: 0; padding-left: 1.3em; display: grid; gap: 4px; font-size: 0.9rem; }
+.flow li::marker { font-family: var(--font-mono); color: var(--muted); }
+@media (max-width: 720px) { .books { grid-template-columns: 1fr; } }
+.book-sub { color: var(--muted); margin-top: -8px; }
+.parts { list-style: none; counter-reset: part; margin: 0; padding: 0; display: grid; gap: 10px; }
+.parts li { counter-increment: part; display: grid; grid-template-columns: 3.2em 1fr; gap: 2px 12px; padding: 10px 0; border-top: 1px solid var(--line); }
+.parts li::before { content: counter(part) "부"; grid-row: span 2; font-family: var(--font-mono); color: var(--accent); }
+.parts span { font-size: 0.92rem; color: var(--muted); }
+.photos figcaption { grid-column: 1 / -1; font-size: 0.85rem; color: var(--muted); }
+
+/* 기술 표 */
+.table-scroll { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 0.95rem; }
+th, td { text-align: left; padding: 10px 12px 10px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: 0.8rem; font-weight: 500; color: var(--muted); letter-spacing: 0.04em; }
+td code { font-family: var(--font-mono); font-size: 0.85rem; }
+
+/* 경력 타임라인 */
+.timeline { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 20px; }
+.timeline li { display: grid; grid-template-columns: 9em 1fr; gap: 4px 20px; }
+.timeline li > * { min-width: 0; }
+
+/* 연락처 */
+.contact { display: grid; grid-template-columns: 6em 1fr; gap: 8px 16px; margin: 0; }
+.contact dt { color: var(--muted); font-size: 0.9rem; }
+.contact dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+
+footer .wrap { padding-block: 32px 48px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--muted); border-top: 1px solid var(--line); }
+
+@media (max-width: 720px) {
+  .hero .wrap { grid-template-columns: 1fr; padding-block: 40px 32px; gap: 28px; }
+  section > .wrap { grid-template-columns: 1fr; gap: 12px; padding-block: 36px; }
+  .timeline li { grid-template-columns: 1fr; }
+  .facts { grid-template-columns: 1fr; gap: 0; }
+  .facts dd { margin-bottom: 8px; }
+  .nav { flex-wrap: nowrap; overflow-x: auto; width: 100%; padding-bottom: 2px; }
+  section { scroll-margin-top: 100px; }
+  .nav a { white-space: nowrap; }
+}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top">k<span>predict</span></a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#research">Research</a>
+      <a href="#career">Career</a>
+      <a href="#contact">Contact</a>
+      <a href="../" lang="ko" hreflang="ko">한국어</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">DX · ERP · Power Platform · Deep Learning</p>
+        <h1>Turning business problems into <em>tools people actually use</em></h1>
+        <p class="lede">Jaewoong Yoon (윤재웅). Senior Manager in the DX Innovation Office at POSCO International, company-wide instructor for Power BI, Power Apps and Power Automate, and Technical Director of the Korea Microsoft Power Platform Association. I have taught Python data analysis to about 1,600 employees, and I hold an MBA with a thesis on forecasting Korea's wholesale electricity price with LSTM.</p>
+        <ul class="stats" aria-label="Key numbers">
+          <li><b>1,600</b><span>employees taught Python data analysis</span></li>
+          <li><b>22</b><span>in-house Power Platform classes in 2026</span></li>
+          <li><b>15</b><span>business DX and RPA builds supported (2025–2026)</span></li>
+          <li><b>10</b><span>course books and training decks written</span></li>
+        </ul>
+        <p class="cta"><a class="btn" href="#contact">Get in touch</a><a class="btn ghost" href="../#materials">Materials (Korean)</a></p>
+      </div>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="label"><b>About</b>Profile</div>
+      <div class="stack">
+        <h2>Build it fast, then make it stick in the organization</h2>
+        <p>I have worked across ERP, data analysis, RPA and visualization in the POSCO Group since 2008. I took part in the process innovation project that moved POSCO International from Oracle ERP to SAP ERP, then ran SAP ERP operations. More recently I led the PMO for an overseas subsidiary's ERP rollout and the ERP selection for another. Today I plan and deliver company-wide DX, and I spread data analysis, automation and visualization skills through a course program I designed myself.</p>
+        <p>When someone in the business says "I wish we had a tool for this," I use generative AI and vibe coding to show a working prototype within minutes. I aim to be the person who builds the solution and gets it adopted, not just the one who explains the technology.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <div class="label"><b>Projects</b>Selected</div>
+      <div class="projects">
+        <h2>Selected work</h2>
+
+        <article class="project">
+          <div class="project-head"><h3>ERP rollout PMO (Poland) and ERP selection (India)</h3><span class="period">2024–2026 · POSCO International</span></div>
+          <dl class="facts">
+            <dt>Role</dt><dd>PMO for the ERP rollout at the motor core subsidiary in Poland; ERP solution selection for the motor core subsidiary in India.</dd>
+            <dt>Work</dt><dd>Designed the competitive bid, wrote the RFP, built the proposal scorecard with weights by criterion and by department, and compared candidate solutions against about 133 functional requirements in purchasing, production, costing and finance.</dd>
+            <dt>Result</dt><dd class="result">Poland: contract in October 2024, finance and purchasing modules live in May 2025, followed by production. India: contract signed with QAD in May 2026.</dd>
+          </dl>
+          <ul class="chips"><li>ERP</li><li>PMO</li><li>RFP · bid evaluation</li><li>Overseas subsidiaries</li></ul>
+        </article>
+
+        <article class="project">
+          <div class="project-head"><h3>Automated denied-party screening for export customers</h3><span class="period">2026 · POSCO International</span></div>
+          <dl class="facts">
+            <dt>Problem</dt><dd>Employees each searched the government strategic trade control system by hand whenever they needed to check a customer, repeating the same checks.</dd>
+            <dt>Work</dt><dd>Designed and built an RPA bot that screens all of the roughly 20,000 customers registered in SAP and posts the results on the company notice board.</dd>
+            <dt>Result</dt><dd class="result">Manual one-off searches disappeared; anyone can see the screening result for every customer in one place.</dd>
+          </dl>
+          <ul class="chips"><li>RPA</li><li>SAP</li><li>Web data collection</li></ul>
+        </article>
+
+        <article class="project">
+          <div class="project-head"><h3>Citizen development support: 15 builds</h3><span class="period">2025–2026 · POSCO International</span></div>
+          <dl class="facts">
+            <dt>2026</dt><dd>8 business DX projects: 4 Power BI dashboards (steel results, electrical steel sales, import statistics by country, raw material trading) and 4 automations.</dd>
+            <dt>2025</dt><dd>7 self-built RPA flows coached to completion, such as exchange-rate crawling into SAP, oil price and news digests, and AI-drafted reports from IEA publications.</dd>
+            <dt>Result</dt><dd class="result">Business users now build and run their own automations without filing development requests.</dd>
+          </dl>
+          <ul class="chips"><li>Power BI</li><li>Power Automate</li><li>Generative AI</li></ul>
+        </article>
+
+        <article class="project">
+          <div class="project-head"><h3>DX Contest evaluation framework for European subsidiaries</h3><span class="period">2026</span></div>
+          <dl class="facts">
+            <dt>Work</dt><dd>Designed five criteria (impact, scalability, innovation, technical difficulty, feasibility) and a scoring scheme to evaluate 12 DX projects from 5 European subsidiaries objectively.</dd>
+          </dl>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="teaching">
+    <div class="wrap">
+      <div class="label"><b>Teaching</b>Talks · Books</div>
+      <div class="stack">
+        <h2>Teaching, talks and writing</h2>
+        <table>
+          <thead><tr><th scope="col" style="width:8.5em">When</th><th scope="col">What</th></tr></thead>
+          <tbody>
+            <tr><td class="period">2026.09</td><td><b>Speaker, Modern Work Conference Seoul 2026</b> (Modern Work Community, at Microsoft Korea). "Become a Power BI expert in no time with Copilot." <a href="https://ticketa.co/event/796zfanx" target="_blank" rel="noopener">Event page ↗</a></td></tr>
+            <tr><td class="period">2025–2026</td><td><b>Instructor, DX Associate Expert Program</b> at POSCO International: beginner and intermediate Power BI, Power Apps and Power Automate. 18 sessions in 2025, 22 classes in 2026. All course books written by me (113 to 206 pages each).</td></tr>
+            <tr><td class="period">2020.09–2022.12</td><td><b>Seconded instructor, POSCO Human Resources Development Center</b>: Python data analysis in the POSCO "New Collar" program, two-day classes of about 30 people, about 1,600 learners in total. Certified A-grade instructor (2022.03).</td></tr>
+            <tr><td class="period">2021 · 2022</td><td>Volunteer Python and RPA classes for Pohang Jecheol Technical High School students.</td></tr>
+            <tr><td class="period">In progress</td><td><b>Book:</b> "Power Platform Automation with Copilot" (working title, about 400 pages): collect with Power Automate, analyze with Power BI, act with Power Apps, with generative AI at every step. <a href="../docs/book-sample-ch7-8.pdf" target="_blank" rel="noopener">Sample chapters (Korean, PDF) ↗</a></td></tr>
+            <tr><td class="period">Materials</td><td>Downloadable handouts in Korean: vibe coding with Python and Claude Code, SAP CDS View and OData to Power BI, Power BI dashboard labs, process mining, and attack surface management for vibe coding. <a href="../#materials">See the list ↗</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="research">
+    <div class="wrap">
+      <div class="label"><b>Research</b>MBA thesis</div>
+      <article class="paper">
+        <p class="eyebrow">MBA thesis · 2023.08 · Ajou University Graduate School of Business</p>
+        <h2>The impact of nuclear power expansion on Korea's System Marginal Price, forecast with deep learning</h2>
+        <p>Shows that the generation mix chosen in the national power supply plan moves the wholesale electricity price (SMP). Holding settlement prices at 2021 levels and applying the 10th Basic Plan's generation mix, an LSTM model forecasts the 2030 SMP.</p>
+        <div class="headline"><b>−22.2%</b><p>Forecast 2030 SMP versus the 2021 actual. LSTM validation MAPE 8.6%, against 13.8% for RNN.</p></div>
+        <figure class="thesis-fig">
+          <img src="../images/smp-2030-lstm.png" width="997" height="546" loading="lazy" alt="Line chart: LSTM forecast of 2030 SMP stays below the 2021 actual across all months">
+          <figcaption>2030 SMP forecast (orange) vs. 2021 actual (blue), LSTM, normalized values</figcaption>
+        </figure>
+        <p><span class="award">Best Presentation Award</span>, Korean Society for Quality Management, Fall Conference 2022, for the preceding study. <a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12479173" target="_blank" rel="noopener">DBpia ↗</a></p>
+      </article>
+    </div>
+  </section>
+
+  <section id="career">
+    <div class="wrap">
+      <div class="label"><b>Career</b>Education · Certification</div>
+      <div class="stack">
+        <h2>Career, education and certification</h2>
+        <ol class="timeline">
+          <li><span class="period">2010.05 – present</span><div><b>POSCO International · Senior Manager</b><p>DX Planning Group, DX Innovation Office. Company-wide DX planning and delivery; in-house Power Platform expert and instructor. Earlier: Oracle-to-SAP ERP transition and SAP ERP operations.</p></div></li>
+          <li><span class="period">2026 – present</span><div><b>Korea Microsoft Power Platform Association · Technical Director</b><p>Co-founded the association; leads practitioner exchange between companies.</p></div></li>
+          <li><span class="period">2025.03 – 2025.08</span><div><b>Professional Engineer Information Management, advanced course</b><p>Completed with top marks.</p></div></li>
+          <li><span class="period">2023.08</span><div><b>MBA, Ajou University Graduate School of Business, SAP Track</b><p>Focused on SAP FI (Financial Accounting).</p></div></li>
+          <li><span class="period">2020.09 – 2022.12</span><div><b>POSCO Human Resources Development Center · seconded instructor</b></div></li>
+          <li><span class="period">2019</span><div><b>CISA · ISACA</b><p>Certified Information Systems Auditor, obtained 2019 (not currently renewed).</p></div></li>
+          <li><span class="period">2008.01 – 2010.05</span><div><b>POSCO DX</b></div></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="label"><b>Contact</b></div>
+      <div class="stack">
+        <h2>Talks, training and collaboration</h2>
+        <p>For Power Platform and generative AI training, course design, or DX advisory, please email me. I reply in English or Korean.</p>
+        <dl class="contact">
+          <dt>Email</dt><dd><a href="mailto:yoonjw3840@naver.com">yoonjw3840@naver.com</a></dd>
+          <dt>GitHub</dt><dd><a href="https://github.com/JaewoongYoon-hub" target="_blank" rel="noopener">github.com/JaewoongYoon-hub</a></dd>
+          <dt>Korean</dt><dd><a href="../">www.kpredict.co.kr</a> (full portfolio)</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Jaewoong Yoon · www.kpredict.co.kr/en/</div>
+</footer>
+
+<script data-goatcounter="https://yoonjw33.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
