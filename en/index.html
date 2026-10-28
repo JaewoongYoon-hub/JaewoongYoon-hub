@@ -90,6 +90,8 @@ section { scroll-margin-top: 64px; }
 h1 { font-size: var(--step-3); line-height: 1.2; margin: 0 0 16px; text-wrap: balance; font-weight: 700; }
 h1 em { font-style: normal; color: var(--accent); }
 .lede { color: var(--muted); font-size: var(--step-1); line-height: 1.6; margin: 0; max-width: 32em; }
+.callout { border-left: 3px solid var(--forecast); background: var(--surface); border-radius: 0 6px 6px 0; padding: 14px 18px; display: grid; gap: 6px; }
+.callout b { color: var(--forecast); }
 .stats { list-style: none; margin: 32px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
 .stats li { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 14px 16px; display: grid; gap: 2px; }
 .stats b { font-family: var(--font-mono); font-size: 1.6rem; font-weight: 500; color: var(--accent); line-height: 1.2; font-variant-numeric: tabular-nums; }
@@ -306,6 +308,14 @@ footer .wrap { padding-block: 32px 48px; font-family: var(--font-mono); font-siz
       <div class="label"><b>Teaching</b>Talks · Books</div>
       <div class="stack">
         <h2>Teaching, talks and writing</h2>
+        <div class="callout">
+          <p><b>Custom course books and datasets: industry → company → department</b> · I build course books and practice datasets by narrowing from the broad to the specific, so learners practice on screens that look like their own work and apply it the next day.</p>
+          <dl class="facts">
+            <dt>Industry</dt><dd>Reflect the deal structure of the industry, such as trading, manufacturing or energy. Example: 600 three-country trade transactions for consolidated profit and intercompany analysis.</dd>
+            <dt>Company</dt><dd>Match the company's business structure and systems. Example: results data modeled on steel, energy and food divisions; SAP OData integration.</dd>
+            <dt>Department</dt><dd>Practice with the metrics and screens the team sees every day. Example: results, equipment monitoring and subsidiary P&amp;L dashboards.</dd>
+          </dl>
+        </div>
         <table>
           <thead><tr><th scope="col" style="width:8.5em">When</th><th scope="col">What</th></tr></thead>
           <tbody>
@@ -314,7 +324,6 @@ footer .wrap { padding-block: 32px 48px; font-family: var(--font-mono); font-siz
             <tr><td class="period">2020.09–2022.12</td><td><b>Seconded instructor, POSCO Human Resources Development Center</b>: Python data analysis in the POSCO "New Collar" program, two-day classes of about 30 people, about 1,600 learners in total. Certified A-grade instructor (2022.03).</td></tr>
             <tr><td class="period">2021 · 2022</td><td>Volunteer Python and RPA classes for Pohang Jecheol Technical High School students.</td></tr>
             <tr><td class="period">In progress</td><td><b>Book:</b> "Power Platform Automation with Copilot" (working title, about 400 pages): collect with Power Automate, analyze with Power BI, act with Power Apps, with generative AI at every step. <a href="../docs/book-sample-ch7-8.pdf" target="_blank" rel="noopener">Sample chapters (Korean, PDF) ↗</a></td></tr>
-            <tr><td class="period">Custom</td><td><b>Custom course books and practice datasets</b>, narrowed from industry to company to department, so learners practice on screens that look like their own work and apply it the next day.</td></tr>
             <tr><td class="period">Materials</td><td>Downloadable handouts in Korean: vibe coding with Python and Claude Code, SAP CDS View and OData to Power BI, Power BI dashboard labs, process mining, and attack surface management for vibe coding. <a href="../#materials">See the list ↗</a></td></tr>
           </tbody>
         </table>
