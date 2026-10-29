@@ -192,6 +192,8 @@ td code { font-family: var(--font-mono); font-size: 0.85rem; }
 .timeline { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 20px; }
 .timeline li { display: grid; grid-template-columns: 9em 1fr; gap: 4px 20px; }
 .timeline li > * { min-width: 0; }
+.tl-group { font-size: 0.85rem; font-weight: 600; color: var(--muted); margin: 16px 0 -4px; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
+.tl-group:first-of-type { margin-top: 0; }
 
 /* 연락처 */
 .contact { display: grid; grid-template-columns: 6em 1fr; gap: 8px 16px; margin: 0; }
@@ -251,7 +253,8 @@ footer .wrap { padding-block: 32px 48px; font-family: var(--font-mono); font-siz
       <div class="label"><b>About</b>Profile</div>
       <div class="stack">
         <h2>Build it fast, then make it stick in the organization</h2>
-        <p>I have worked across ERP, data analysis, RPA and visualization in the POSCO Group since 2008. I took part in a company-wide process diagnosis that led to a new PI task force, then in the process innovation project that moved POSCO Energy (now part of POSCO International) from Oracle ERP to SAP ERP, owning the plant maintenance and quality modules, then ran SAP ERP operations. More recently I led the PMO for an overseas subsidiary's ERP rollout and the ERP selection for another. Today I plan and deliver company-wide DX, and I spread data analysis, automation and visualization skills through a course program I designed myself.</p>
+        <p>I started at POSCO DX in 2008 and have worked across ERP, data analysis, RPA and visualization in the POSCO Group ever since. At POSCO Energy (now part of POSCO International) I worked on a company-wide process diagnosis, then joined the PI task force it led to, owning the plant maintenance and quality modules in the move from Oracle ERP to SAP ERP. I then ran SAP ERP for five years, including authorizations and month-end closing issues, and separated the IT systems of the Korea Fuel Cell spin-off. More recently I led the PMO for an overseas subsidiary's ERP rollout and the ERP selection for another.</p>
+        <p>Today I plan and deliver company-wide DX, and I spread data analysis, automation and visualization skills through a course program I designed myself.</p>
         <p>When someone in the business says "I wish we had a tool for this," I use generative AI and vibe coding to show a working prototype within minutes. I aim to be the person who builds the solution and gets it adopted, not just the one who explains the technology.</p>
       </div>
     </div>
@@ -372,18 +375,26 @@ footer .wrap { padding-block: 32px 48px; font-family: var(--font-mono); font-siz
       <div class="label"><b>Career</b>Education · Certification</div>
       <div class="stack">
         <h2>Career, education and certification</h2>
+        <h3 class="tl-group">Career</h3>
         <ol class="timeline">
-          <li><span class="period">2010.05 – present</span><div><b>POSCO International · Senior Manager</b><p>Transferred from POSCO DX to POSCO Energy in May 2010; it merged into POSCO International in January 2023. DX Planning Group, DX Innovation Office. Company-wide DX planning and delivery; in-house Power Platform expert and instructor. Earlier: Oracle-to-SAP ERP transition and SAP ERP operations.</p></div></li>
+          <li><span class="period">2023.01 – present</span><div><b>POSCO International · Senior Manager</b><p>DX Planning Group, DX Innovation Office. Company-wide DX planning and delivery; in-house Power Platform expert and instructor. ERP PMO for the Poland subsidiary and ERP selection for the India subsidiary.</p><p>POSCO Energy merged into POSCO International in January 2023.</p></div></li>
+          <li><span class="period">2020.09 – 2022.12</span><div><b>POSCO Human Resources Development Center · seconded instructor</b><p>Seconded from POSCO Energy. Taught Python data analysis to about 1,600 learners.</p></div></li>
+          <li><span class="period">2019.11 – 2020.08</span><div><b>Korea Fuel Cell · secondment</b><p>IT carve-out from POSCO Energy: SAP to seven Douzone iCUBE cloud modules, independent groupware and IT operations, office network and printer setup, and training of its first IT team.</p></div></li>
+          <li><span class="period">2014.07 – 2019.10</span><div><b>POSCO Energy · IT Planning Group</b><p>Ran SAP ERP as a whole, including user authorization management and month-end closing issue management.</p></div></li>
+          <li><span class="period">2012.10 – 2014.07</span><div><b>POSCO Energy · PI Task Force</b><p>Joined the task force set up after the process diagnosis. Owned the plant maintenance (PM) and quality (QM) modules in the Oracle-to-SAP ERP transition.</p></div></li>
+          <li><span class="period">2012.04 – 2012.10</span><div><b>POSCO Energy · Process Diagnosis Team</b><p>Gathered data, VOC and VOB and wrote the reports for two company-wide process diagnoses (fuel cell business; power plant construction, operation and maintenance). The results were presented to the POSCO chairman and led to the PI Task Force.</p></div></li>
+          <li><span class="period">2010.05</span><div><b>Transferred to POSCO Energy</b><p>Moved from POSCO DX within the group.</p></div></li>
+          <li><span class="period">2008.01 – 2010.05</span><div><b>POSCO DX</b></div></li>
+        </ol>
+        <h3 class="tl-group">Community</h3>
+        <ol class="timeline">
           <li><span class="period">2026 – present</span><div><b>Korea Microsoft Power Platform Association · Technical Director</b><p>Co-founded the association; leads practitioner exchange between companies.</p></div></li>
+        </ol>
+        <h3 class="tl-group">Education · Certification</h3>
+        <ol class="timeline">
           <li><span class="period">2025.03 – 2025.08</span><div><b>Professional Engineer Information Management, advanced course</b><p>Completed with top marks.</p></div></li>
           <li><span class="period">2023.08</span><div><b>MBA, Ajou University Graduate School of Business, SAP Track</b><p>Focused on SAP FI (Financial Accounting).</p></div></li>
-          <li><span class="period">2020.09 – 2022.12</span><div><b>POSCO Human Resources Development Center · seconded instructor</b></div></li>
-          <li><span class="period">2019.11 – 2020.08</span><div><b>Korea Fuel Cell · seconded Senior Manager</b><p>IT carve-out from POSCO Energy: SAP to seven Douzone iCUBE cloud modules, independent groupware and IT operations, office network and printer setup, and training of its first IT team.</p></div></li>
           <li><span class="period">2019</span><div><b>CISA · ISACA</b><p>Certified Information Systems Auditor, obtained 2019 (not currently renewed).</p></div></li>
-          <li><span class="period">2014.07 – 2019.10</span><div><b>IT Planning Group · POSCO Energy</b><p>Ran SAP ERP as a whole, including user authorization management and month-end closing issue management.</p></div></li>
-          <li><span class="period">2012.10 – 2014.07</span><div><b>PI Task Force · POSCO Energy</b><p>Joined the task force set up after the process diagnosis. Owned the plant maintenance (PM) and quality (QM) modules in the Oracle-to-SAP ERP transition.</p></div></li>
-          <li><span class="period">2012.04 – 2012.10</span><div><b>Process Diagnosis Team · POSCO Energy</b><p>Gathered data, VOC and VOB and wrote the reports for two company-wide process diagnoses (fuel cell business; power plant construction, operation and maintenance). The results were presented to the POSCO chairman and led to the PI Task Force in October 2012.</p></div></li>
-          <li><span class="period">2008.01 – 2010.05</span><div><b>POSCO DX</b><p>Moved to POSCO Energy within the group in May 2010.</p></div></li>
         </ol>
       </div>
     </div>

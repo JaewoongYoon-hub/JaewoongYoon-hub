@@ -197,6 +197,8 @@ td code { font-family: var(--font-mono); font-size: 0.85rem; }
 .timeline { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 20px; }
 .timeline li { display: grid; grid-template-columns: 9em 1fr; gap: 4px 20px; }
 .timeline li > * { min-width: 0; }
+.tl-group { font-size: 0.85rem; font-weight: 600; color: var(--muted); margin: 16px 0 -4px; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
+.tl-group:first-of-type { margin-top: 0; }
 
 /* 연락처 */
 .contact { display: grid; grid-template-columns: 6em 1fr; gap: 8px 16px; margin: 0; }
@@ -260,7 +262,8 @@ footer .wrap { padding-block: 32px 48px; font-family: var(--font-mono); font-siz
       <div class="label"><b>소개</b>About</div>
       <div class="stack">
         <h2>현업의 문제를 빠르게 구현하고, 조직에 정착시킵니다</h2>
-        <p>2008년부터 포스코그룹에서 ERP 구축·운영, 데이터 분석, RPA, 시각화를 다뤄 왔습니다. 전사 프로세스 진단에 참여해 PI추진반 신설로 이어졌고, Oracle ERP에서 SAP ERP로 전환하는 PI 프로젝트에서 설비·품질 모듈을 맡은 뒤 SAP ERP 운영을 맡으며 핵심 업무 프로세스를 익혔고, 한국퓨얼셀 분사 때는 SAP에서 더존 iCUBE로 IT 시스템을 분리(Carve-out)했습니다. 최근에는 폴란드 법인 ERP 구축 PMO와 인도 법인 ERP 솔루션 선정을 맡았습니다. 지금은 포스코인터내셔널 경영지원본부 DX혁신실에서 전사 DX 기획과 실행을 맡고 있습니다. 직접 설계한 DX 준전문가 과정으로 데이터 분석·자동화·시각화를 조직 전반에 확산하고 있습니다.</p>
+        <p>2008년 포스코DX에서 시작해 포스코그룹에서 ERP 구축·운영, 데이터 분석, RPA, 시각화를 다뤄 왔습니다. 포스코에너지에서 전사 프로세스 진단에 참여했고, 이어 신설된 PI추진반에서 Oracle ERP → SAP ERP 전환(설비·품질 모듈)을 맡았습니다. 이후 5년간 SAP ERP를 운영하며 권한 관리와 결산 이슈까지 챙겼고, 한국퓨얼셀 분사 때는 SAP에서 더존 iCUBE로 IT 시스템을 분리(Carve-out)했습니다. 최근에는 폴란드 법인 ERP 구축 PMO와 인도 법인 ERP 솔루션 선정을 맡았습니다.</p>
+        <p>지금은 포스코인터내셔널 경영지원본부 DX혁신실에서 전사 DX를 기획·실행하고, 직접 설계한 DX 준전문가 과정으로 데이터 분석·자동화·시각화를 조직 전반에 확산하고 있습니다.</p>
         <p>현장에서 "이런 기능이 있으면 좋겠다"는 요청을 들으면 생성형 AI와 바이브 코딩으로 몇 분 만에 작동하는 결과물을 만들어 보여 줍니다. 석사 과정에서는 RNN·LSTM으로 SMP를 예측해 한국품질경영학회 우수발표논문상을 받았습니다. 기술을 설명하는 사람보다, 현업의 문제를 구현하고 실제로 쓰이게 만드는 DX 전문가를 지향합니다.</p>
       </div>
     </div>
@@ -303,7 +306,7 @@ footer .wrap { padding-block: 32px 48px; font-family: var(--font-mono); font-siz
 
         <article class="project">
           <div class="project-head">
-            <h3>전사 프로세스 진단 → PI추진반 신설 · Oracle → SAP ERP 전환</h3>
+            <h3>전사 프로세스 진단과 PI추진반 · Oracle → SAP ERP 전환</h3>
             <span class="period">2012.04 – 2014.07 · 포스코에너지</span>
           </div>
           <dl class="facts">
@@ -311,7 +314,7 @@ footer .wrap { padding-block: 32px 48px; font-family: var(--font-mono); font-siz
             <dt>2차 진단</dt><dd>시장 변화에 대비한 실행 프로세스를 중심으로, 수익성 향상을 위해 발전소 건설·운전·정비의 경쟁력 제고에 초점을 맞췄습니다.</dd>
             <dt>맡은 일</dt><dd>진단 전체의 데이터와 VOC·VOB 취합, 진단 보고서 실무 작성을 주로 맡았습니다.</dd>
             <dt>결과</dt><dd class="result">진단 결과는 포스코 회장 보고로 이어졌고(보고 자리 참석), 이를 계기로 2012년 10월 PI추진반이 신설됐습니다.</dd>
-            <dt>PI추진반</dt><dd>2012.10–2014.07 PI추진반에서 Oracle ERP → SAP ERP 전환 프로젝트에 참여해 설비(PM)·품질(QM) 모듈을 담당했습니다.</dd>
+            <dt>PI추진반</dt><dd>2012.10 – 2014.07 PI추진반에서 Oracle ERP → SAP ERP 전환 프로젝트에 참여해 설비(PM)·품질(QM) 모듈을 담당했습니다.</dd>
           </dl>
           <ul class="chips" aria-label="주제"><li>프로세스 진단</li><li>연료전지</li><li>발전소 운영</li><li>VOC·VOB</li><li>보고서 작성</li><li>PI</li><li>Oracle → SAP</li><li>설비(PM)·품질(QM)</li></ul>
         </article>
@@ -648,24 +651,32 @@ footer .wrap { padding-block: 32px 48px; font-family: var(--font-mono); font-siz
       <div class="label"><b>경력 · 자격</b>Career</div>
       <div class="stack">
       <h2>경력 · 학력 · 자격</h2>
+      <h3 class="tl-group">경력</h3>
       <ol class="timeline">
-        <li><span class="period">2010.05 – 현재</span><div><b>포스코인터내셔널 · 차장</b><p>2010년 5월 포스코DX에서 포스코에너지로 전적, 2023년 1월 포스코인터내셔널과 합병. 경영지원본부 DX혁신실 DX기획그룹. 전사 DX 기획·실행, Power Platform(Power BI, Power Apps, Power Automate) 사내 전문가, WX 사내 강사</p><p>전사 프로세스 진단, Oracle ERP → SAP ERP 전환 PI 프로젝트(설비·품질 모듈) 참여 후 SAP ERP 운영 관리. 최근 폴란드 모터코아 ERP 구축 PMO, 인도 모터코아 ERP 선정</p></div></li>
+        <li><span class="period">2023.01 – 현재</span><div><b>포스코인터내셔널 · 차장</b><p>경영지원본부 DX혁신실 DX기획그룹. 전사 DX 기획·실행, Power Platform(Power BI, Power Apps, Power Automate) 사내 전문가, WX 사내 강사. 폴란드 모터코아 ERP 구축 PMO, 인도 모터코아 ERP 선정</p><p>2023년 1월 포스코에너지가 포스코인터내셔널과 합병</p></div></li>
+        <li><span class="period">2020.09 – 2022.12</span><div><b>포스코인재창조원 디지털혁신교육그룹 파견</b><p>포스코에너지 소속으로 약 2년 4개월간 파견. 포스코 뉴칼라 과정에서 Python으로 데이터 전처리부터 분석, 시각화까지 강의. 뉴칼라 과정은 승진 가점이 주어져 인기가 많았던 과정</p><p>파견 기간 내내 매달 3주는 주마다 2일 과정(수강생 약 30명)을 운영하고, 마지막 주에는 수료 평가 미통과자 재평가를 진행. 누적 수강생 약 1,600명</p></div></li>
+        <li><span class="period">2019.11 – 2020.08</span><div><b>한국퓨얼셀㈜ 사외파견</b><p>포스코에너지에서 분사한 한국퓨얼셀의 IT 시스템 분리(Carve-out). SAP → 더존 iCUBE(클라우드) 7개 모듈 전환, EP 그룹웨어 포함 독립 IT 운영체계 구축, 데이터·사용자 이관과 사무환경 구축 지원, IT 운영·관리 담당 양성</p></div></li>
+        <li><span class="period">2014.07 – 2019.10</span><div><b>포스코에너지 · 정보기획그룹</b><p>SAP ERP 전반 운영 관리, 사용자 권한 관리, 결산 이슈 관리</p></div></li>
+        <li><span class="period">2012.10 – 2014.07</span><div><b>포스코에너지 · PI추진반</b><p>프로세스 진단 결과에 따라 신설된 PI추진반에서 Oracle ERP → SAP ERP 전환 프로젝트에 참여, 설비(PM)·품질(QM) 모듈 담당</p></div></li>
+        <li><span class="period">2012.04 – 2012.10</span><div><b>포스코에너지 · 프로세스 진단팀</b><p>1차 연료전지 사업 중심 투자·생산·구매·R&amp;D, 2차 발전소 건설·운전·정비 중심으로 전사 프로세스 진단. 데이터·VOC·VOB 취합과 보고서 실무 작성. 결과는 포스코 회장에게 보고됐고(보고 자리 참석), 이를 계기로 PI추진반 신설</p></div></li>
+        <li><span class="period">2010.05</span><div><b>포스코에너지 전적</b><p>포스코DX에서 그룹 내 전적</p></div></li>
+        <li><span class="period">2008.01 – 2010.05</span><div><b>포스코DX</b></div></li>
+      </ol>
+      <h3 class="tl-group">강의 · 대외활동</h3>
+      <ol class="timeline">
         <li><span class="period">2026 – 현재</span><div><b>한국 MS 파워플랫폼 협회 · 기술 이사</b><p>협회 설립을 주도하고, 기업 간 실무 교류와 커뮤니티 기반 성장을 이끌고 있습니다</p></div></li>
         <li><span class="period">2026.09</span><div><b>외부 강연 · Modern Work Conference Seoul 2026</b><p>트랙2 「Copilot을 활용해 단숨에 Power BI 전문가 되기」 · Modern Work Community 주최, 한국마이크로소프트</p><p><a href="https://ticketa.co/event/796zfanx" target="_blank" rel="noopener">행사 페이지 보기 ↗</a></p></div></li>
         <li><span class="period">2025 – 2026</span><div><b>DX 준전문가 과정 강사 · 포스코인터내셔널</b><p>임직원 대상 Power BI, Power Apps 초급·중급 과정 강의, 과정 교재 직접 개발.<br>2025년 신입사원 교육·DX 준전문가 과정 15차수 주강사·보조강사<br>2026년 신입사원 교육·DX 준전문가 과정 22차수 주강사</p></div></li>
         <li><span class="period">2025 – 2026</span><div><b>직원 Self 개발 과정 지원 · 포스코인터내셔널</b><p>직원들이 자기 업무용 대시보드와 RPA를 직접 만들 수 있도록 개발 과정을 지원. 2025년 RPA 개발 지원 7건, 2026년 현업 DX 과제 8건 완료</p></div></li>
+        <li><span class="period">2021 · 2022</span><div><b>재능기부 · 포항제철공업고등학교 Python · RPA 강의</b><p>연 1회씩 두 차례 강의. 학생들이 바로 활용할 수 있는 RPA를 가르쳐, 일부 학생이 관련 개발을 직접 수행</p></div></li>
+      </ol>
+      <h3 class="tl-group">학력 · 수상 · 자격</h3>
+      <ol class="timeline">
         <li><span class="period">2025.03 – 2025.08</span><div><b>정보관리기술사 심화 과정 수료</b><p>정보 기획·관리, 소프트웨어 공학, 데이터베이스, 네트워크, 보안, AI·빅데이터 과목 상위권 수료</p></div></li>
         <li><span class="period">2023.08</span><div><b>경영학 석사 · 아주대학교 경영대학원 SAP Track</b><p>SAP Track에서 SAP FI(재무회계) 모듈 중심 학습</p><p>학위논문: 딥러닝 기반 원전 확대의 전기요금원가 영향 연구 (지도교수 강주영)</p></div></li>
         <li><span class="period">2022.10</span><div><b>우수발표논문상 · 한국품질경영학회</b><p>2022년 추계 학술대회, Best Quality Management Presentation Award</p></div></li>
         <li><span class="period">2022.03</span><div><b>A급 강사 인증 · 포스코인재창조원</b><p>포스코그룹 사내 강사로 활동하며 강의 평가 우수 등 우수강사 인증 조건 충족</p></div></li>
-        <li><span class="period">2020.09 – 2022.12</span><div><b>포스코인재창조원 디지털혁신교육그룹 파견 · 차장</b><p>포스코인터내셔널 소속으로 약 2년 4개월간 파견. 포스코 뉴칼라 과정에서 Python으로 데이터 전처리부터 분석, 시각화까지 강의하고 우수 강사로 선정. 뉴칼라 과정은 승진 가점이 주어져 인기가 많았던 과정</p><p>파견 기간 내내 매달 3주는 주마다 2일 과정(수강생 약 30명)을 운영하고, 마지막 주에는 수료 평가 미통과자 재평가를 진행. 누적 수강생 약 1,600명</p></div></li>
-        <li><span class="period">2021 · 2022</span><div><b>재능기부 · 포항제철공업고등학교 Python · RPA 강의</b><p>연 1회씩 두 차례 강의. 학생들이 바로 활용할 수 있는 RPA를 가르쳐, 일부 학생이 관련 개발을 직접 수행</p></div></li>
-        <li><span class="period">2019.11 – 2020.08</span><div><b>한국퓨얼셀㈜ 사외파견 · 차장</b><p>포스코에너지에서 분사한 한국퓨얼셀의 IT 시스템 분리(Carve-out) 수행. SAP 기반 업무환경을 더존 iCUBE(클라우드) 7개 모듈(회계·인사·근태·영업·구매자재·무역·서비스관리)로 전환하고, EP 그룹웨어를 포함한 독립 IT 운영체계 구축, 데이터·사용자 이관, 네트워크 장비·프린터 등 사무환경 구축 지원, 자체 IT 운영을 위한 IT 운영·관리 담당 양성</p></div></li>
         <li><span class="period">2019</span><div><b>CISA · ISACA</b><p>국제공인 정보시스템감사사 (Certified Information Systems Auditor) · 2019년 취득, 현재 미갱신</p></div></li>
-        <li><span class="period">2014.07 – 2019.10</span><div><b>정보기획그룹 · 포스코에너지</b><p>SAP ERP 전반 운영 관리, 사용자 권한 관리, 결산 이슈 관리</p></div></li>
-        <li><span class="period">2012.10 – 2014.07</span><div><b>PI추진반 · 포스코에너지</b><p>프로세스 진단 결과에 따라 신설된 PI추진반에서 근무. Oracle ERP → SAP ERP 전환 프로젝트에 참여해 설비(PM)·품질(QM) 모듈 담당</p></div></li>
-        <li><span class="period">2012.04 – 2012.10</span><div><b>프로세스 진단팀 · 포스코에너지</b><p>1차 연료전지 사업 중심 투자·생산·구매·R&amp;D, 2차 발전소 건설·운전·정비 중심으로 전사 프로세스를 진단. 데이터·VOC·VOB 취합과 보고서 실무 작성을 맡음. 결과는 포스코 회장에게 보고됐고(보고 자리 참석), 이 진단을 계기로 2012년 10월 PI추진반 신설</p></div></li>
-        <li><span class="period">2008.01 – 2010.05</span><div><b>포스코DX</b><p>2010년 5월 그룹 내 전적으로 포스코에너지에 합류</p></div></li>
       </ol>
       </div>
     </div>
