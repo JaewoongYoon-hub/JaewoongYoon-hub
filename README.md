@@ -45,7 +45,7 @@
 
 #### 연구
 - **경영학 석사 논문** 「딥러닝 기반 원전 확대의 전기요금원가 영향 연구」 (2023.08): 제10차 전력수급계획의 발전원 비율을 반영하면 LSTM이 예측한 2030년 SMP가 2021년 실적보다 **22.2% 낮음** (검증 MAPE 8.6%)
-- 🏆 **한국품질경영학회 2022 추계 학술대회 우수발표논문상** · [DBpia](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12479173)
+- 🏆 **한국품질경영학회 2022 추계 학술대회 우수발표논문상** · [DBpia](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12479173) · [아주대 수상 소식](https://iacf.ajou.ac.kr/ebiz/board/notice.do?mode=view&articleNo=207470&article.offset=60&articleLimit=10)
 
 #### 경력
 - 2010.05 – 현재 · 포스코인터내셔널, 현재 DX혁신실 (2023년 1월 합병 전까지 포스코에너지. 아래 2010~2022년 이력은 포스코에너지 시절)
