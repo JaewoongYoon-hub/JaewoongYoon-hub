@@ -5,7 +5,7 @@
 
 🌐 **[www.kpredict.co.kr](https://www.kpredict.co.kr)** · [English](https://www.kpredict.co.kr/en/) · 📫 [yoonjw3840@naver.com](mailto:yoonjw3840@naver.com)
 
-| 1,600명 | 21차수 | 15건 | 10종 |
+| 1,600명 | 21차수 | 15건 | 11종 |
 | :---: | :---: | :---: | :---: |
 | Python 데이터 분석<br>누적 수강생 | 2026년 신입사원 교육·DX 준전문가<br>과정 주강사 | 현업 DX·RPA<br>개발 지원 (2025–2026) | 직접 만든<br>교재·교육자료 |
 
@@ -39,6 +39,7 @@
 | Power BI | 좋은 대시보드 만드는 Power BI 쉬운 실습 (30~60분) | [PDF](https://www.kpredict.co.kr/docs/powerbi-easy-dashboard.pdf) |
 | Power BI | 삼국간 거래 Power BI 수익성 분석 (90분) | [PDF](https://www.kpredict.co.kr/docs/powerbi-trilateral-trade.pdf) |
 | Process · Task Mining | 강제 입력 없이 업무 데이터 확보하기 (Power Automate Task Mining 실습 포함) | [PDF](https://www.kpredict.co.kr/docs/process-mining-data.pdf) |
+| AI Governance | 기업용 Claude 도입 절차와 보안 체크리스트 | [PDF](https://www.kpredict.co.kr/docs/claude-enterprise-adoption.pdf) |
 | Security | 바이브 코딩 환경의 공격 표면 관리 방안 | [PDF](https://www.kpredict.co.kr/docs/vibe-coding-attack-surface.pdf) |
 
 <sub>PDF는 공개용으로 간추린 요약본입니다. 실제 강의 교재는 PowerPoint로 화면 캡처와 단계별 설명이 담겨 훨씬 자세합니다.</sub>
