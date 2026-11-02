@@ -139,6 +139,11 @@ p { margin: 0; max-width: 65ch; }
 .fuel { margin: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 20px; display: grid; gap: 12px; }
 .fuel figcaption { font-size: 0.85rem; color: var(--muted); }
 .fuel-rows { display: grid; gap: 8px; }
+.kpis { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.kpis li { border-top: 2px solid var(--fg); padding-top: 8px; display: grid; gap: 2px; }
+.kpis b { font-size: 1.5rem; line-height: 1.2; }
+.kpis span { font-size: 0.85rem; color: var(--muted); }
+@media (max-width: 720px) { .kpis { grid-template-columns: repeat(2, 1fr); } }
 .fuel-row { display: grid; grid-template-columns: 5em 1fr 3.5em; align-items: center; gap: 12px; font-size: 0.9rem; }
 .fuel-row .bar { height: 10px; border-radius: 2px; background: linear-gradient(var(--forecast), var(--forecast)) no-repeat left / var(--w) 100%, var(--accent-soft); }
 .fuel-row b { font-family: var(--font-mono); font-weight: 500; text-align: right; font-variant-numeric: tabular-nums; }
@@ -228,6 +233,7 @@ footer .wrap { padding-block: 32px 48px; font-family: var(--font-mono); font-siz
       <a href="#about">소개</a>
       <a href="#projects">프로젝트</a>
       <a href="#talks">강연</a>
+      <a href="#news">동향</a>
       <a href="#materials">교재</a>
       <a href="#book">집필</a>
       <a href="#paper">연구</a>
@@ -424,6 +430,44 @@ footer .wrap { padding-block: 32px 48px; font-family: var(--font-mono); font-siz
         </ol>
         <ul class="chips" aria-label="주제"><li>Power BI</li><li>Microsoft 365 Copilot</li><li>데이터 전처리</li><li>대시보드 설계</li></ul>
         <p class="links"><a href="https://ticketa.co/event/796zfanx" target="_blank" rel="noopener">행사 페이지 보기 ↗</a></p>
+      </article>
+    </div>
+  </section>
+
+  <section id="news">
+    <div class="wrap">
+      <div class="label"><b>동향</b>News</div>
+      <article class="paper">
+        <p class="eyebrow">Power Platform 동향 · 2026.11.02</p>
+        <h2>PPCC 2026: Power Platform, 앱 도구에서 에이전트 운영체계로</h2>
+        <p class="period">Power Platform Community Conference 2026 · 2026.10.27–29, 라스베이거스 MGM Grand · 참석자 9,000명 이상</p>
+        <p>올해 PPCC의 메시지는 <b>앱·자동화·에이전트·코드·거버넌스가 하나의 운영 모델로 묶였다</b>는 것입니다. 경쟁력의 중심이 "빠르게 만드는 것"에서 "안전하게 일하는 에이전트를 운영하는 것"으로 옮겨 가고 있습니다.</p>
+        <ul class="kpis">
+          <li><b>+20%</b><span>Power Apps 일간 사용자</span></li>
+          <li><b>+20%</b><span>Flow 실행 수</span></li>
+          <li><b>2배+</b><span>Power Apps 내 AI 사용</span></li>
+          <li><b>3배+</b><span>Copilot Studio 앱 사용</span></li>
+        </ul>
+        <p class="note">전년 대비 · 월간 활성 메이커 200만 명 이상, 앱 400만 개 이상 (Microsoft 발표)</p>
+        <ol class="agenda">
+          <li><b>에이전트가 동료가 됩니다</b><span>Copilot Studio 에이전트가 자체 계정으로 Microsoft 365에서 일하고, 트리거로 스스로 시작하며, 업무 프로세스를 기억합니다. 길고 복잡한 작업은 Microsoft Copilot harness가 맡습니다.</span></li>
+          <li><b>앱 만들기의 경계가 사라집니다</b><span>Copilot Studio 안에서 앱 제작(공개 미리보기), Copilot Cowork에서 앱 생성, 자연어로 캔버스·모델 기반 앱 제작. 개발자는 다시 만들 필요 없이 VS Code·GitHub Copilot·Copilot CLI로 이어받습니다.</span></li>
+          <li><b>AI가 사업을 이해합니다</b><span>Work IQ에 비즈니스 애플리케이션 연결(공개 미리보기), Dataverse 의미 모델 기반 Ask API·Business Skills·MCP Server로 에이전트가 업무 용어와 규칙을 압니다.</span></li>
+          <li><b>코드로 만든 것도 관리합니다</b><span>Microsoft Copilot Managed Runtime이 Copilot으로 만든 코드를 기업 거버넌스 아래에서 호스팅합니다.</span></li>
+          <li><b>거버넌스와 비용을 한곳에서</b><span>Microsoft Agent 365로 모든 앱·에이전트를 한눈에 보고, 커넥터 정책을 액션 단위로, 지출을 사용자·자산별로 통제합니다. 키노트 처음으로 보안·거버넌스 데모가 진행됐습니다.</span></li>
+        </ol>
+        <p><b>발표된 고객 사례</b> · Asurion은 Copilot Studio 에이전트로 무접촉 송장 처리 비율을 20% 미만에서 70% 이상으로, NFL은 경기 운영 대시보드로 주 8~12시간의 입력·보고 업무를 줄였습니다.</p>
+        <h3>기업이 지금 준비할 것</h3>
+        <dl class="facts">
+          <dt>데이터</dt><dd>권한, 테이블 관계, 용어 정의를 AI가 읽을 수 있는 형태로 먼저 정비. 과공유와 데이터 품질 문제는 에이전트 품질과 위험으로 그대로 드러납니다</dd>
+          <dt>개발</dt><dd>메이커와 개발자가 같은 자산을 다루는 ALM, MCP·GitHub Copilot 활용 표준</dd>
+          <dt>운영</dt><dd>에이전트마다 소유자·승인자·중단 기준을 정하고 정기적으로 인벤토리 점검</dd>
+          <dt>비용</dt><dd>크레딧 사용량과 업무 성과를 함께 측정, 사용자·에이전트별 한도와 알림 설계</dd>
+          <dt>보안</dt><dd>에이전트의 데이터 접근·실행 권한 최소화, 민감정보 라벨·DLP·커넥터 노출 점검</dd>
+        </dl>
+        <p class="note">대부분의 기능이 미리보기 단계이고 정식 출시일과 사용 한도는 발표되지 않았습니다. 진단(0–4주) → 설계(1–2개월) → 고가치 업무 2~3개 PoC(2–4개월) → 확산(4–9개월) 순으로 시범 적용부터 시작하기를 권합니다.</p>
+        <ul class="chips" aria-label="주제"><li>Copilot Studio</li><li>AI Agent</li><li>Power Apps</li><li>Work IQ · Dataverse</li><li>Agent 365</li><li>거버넌스</li></ul>
+        <p class="links"><a href="https://www.microsoft.com/en-us/power-platform/blog/2026/10/29/built-by-makers-five-years-of-power-platform-community-conference/" target="_blank" rel="noopener">Microsoft 공식 PPCC 2026 정리 ↗</a><a href="https://www.microsoft.com/en-us/power-platform/blog/2026/10/23/dataverse-and-workiq-ppcc-2026/" target="_blank" rel="noopener">Dataverse·Work IQ 발표 ↗</a></p>
       </article>
     </div>
   </section>
