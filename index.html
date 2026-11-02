@@ -26,6 +26,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
 /* Layout: 원장(ledger) 문서 같은 단일 칼럼. 섹션마다 왼쪽에 라벨, 오른쪽에 본문. */
 :root {
@@ -221,6 +222,92 @@ footer .wrap { padding-block: 32px 48px; font-family: var(--font-mono); font-siz
   .nav { flex-wrap: nowrap; overflow-x: auto; width: 100%; padding-bottom: 2px; }
   section { scroll-margin-top: 100px; }
   .nav a { white-space: nowrap; }
+}
+
+/* ===== Corporate theme ===== */
+:root {
+  --bg: #f5f7fa; --surface: #ffffff; --fg: #0f1c2e; --muted: #556275; --line: #dfe4ec;
+  --accent: #0b5cd5; --accent-soft: #e8f0fd; --forecast: #0b5cd5;
+  --navy: #0a1f3c; --navy-2: #12305a; --gold: #c99a3b;
+  --font-body: "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+  --shadow: 0 1px 2px rgba(15,28,46,.06), 0 4px 16px rgba(15,28,46,.06);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg:#0c1320; --surface:#131c2c; --fg:#e6ebf3; --muted:#9aa6b8; --line:#243045; --accent:#6aa1ff; --accent-soft:#16233a; --forecast:#6aa1ff; --navy:#08111f; --navy-2:#0f1f38; --shadow:none; }
+}
+:root[data-theme="dark"] { --bg:#0c1320; --surface:#131c2c; --fg:#e6ebf3; --muted:#9aa6b8; --line:#243045; --accent:#6aa1ff; --accent-soft:#16233a; --forecast:#6aa1ff; --navy:#08111f; --navy-2:#0f1f38; --shadow:none; }
+body { letter-spacing: -0.01em; }
+.wrap { max-width: 1080px; }
+
+/* top bar */
+.topbar { background: var(--surface); border-bottom: 1px solid var(--line); box-shadow: 0 1px 0 rgba(15,28,46,.03); }
+.brand { font-family: var(--font-body); font-weight: 800; font-size: 1.05rem; letter-spacing: -0.02em; display: inline-flex; align-items: center; }
+.brand::before { content: ""; width: 14px; height: 14px; margin-right: 8px; border-radius: 3px; background: linear-gradient(135deg, var(--accent), var(--navy-2)); }
+.brand span { color: var(--accent); }
+.nav { font-weight: 500; }
+.nav a { color: var(--fg); opacity: .72; }
+.nav a:hover { opacity: 1; color: var(--accent); }
+
+/* hero: navy band */
+.hero { background: radial-gradient(1200px 400px at 85% -10%, rgba(11,92,213,.45), transparent 60%), linear-gradient(160deg, var(--navy) 0%, var(--navy-2) 100%); color: #fff; }
+.hero .wrap { padding-block: 88px 72px; }
+.hero .eyebrow { color: #9fc0f5; font-family: var(--font-body); font-weight: 600; letter-spacing: .14em; }
+.hero h1 { color: #fff; font-weight: 800; letter-spacing: -0.03em; }
+.hero h1 em { color: #7fb0ff; }
+.hero .lede { color: #c9d5e6; max-width: 40em; }
+.hero .stats li { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14); border-radius: 10px; backdrop-filter: blur(2px); padding: 18px 18px; }
+.hero .stats b { font-family: var(--font-body); font-weight: 800; color: #fff; font-size: 1.9rem; letter-spacing: -0.02em; }
+.hero .stats span { color: #b4c3d9; }
+.hero .btn { background: #fff; color: var(--navy); font-weight: 700; border-radius: 8px; padding: 11px 22px; }
+.hero .btn.ghost { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,.5); }
+:root[data-theme="dark"] .hero .btn:not(.ghost) { color: var(--navy); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .hero .btn:not(.ghost) { color: var(--navy); } }
+
+/* sections */
+section { border-top: 0; }
+main > section:nth-of-type(even) { background: var(--surface); }
+section > .wrap { padding-block: 72px; grid-template-columns: 200px 1fr; }
+.label { font-family: var(--font-body); font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+.label b { font-size: 1.15rem; font-weight: 800; letter-spacing: -0.02em; text-transform: none; color: var(--fg); padding-top: 12px; border-top: 3px solid var(--accent); width: fit-content; margin-bottom: 4px; }
+h2 { font-weight: 800; letter-spacing: -0.03em; }
+h3 { font-weight: 700; letter-spacing: -0.02em; }
+.eyebrow, .period, .book-meta, .group, .chips li, footer .wrap, .agenda li::before, .parts li::before { font-family: var(--font-body); }
+.eyebrow { color: var(--accent); font-weight: 600; letter-spacing: .12em; }
+.period { font-weight: 500; }
+
+/* cards */
+.project, .book, .fuel, .callout { border-radius: 12px; box-shadow: var(--shadow); border-color: var(--line); }
+main > section:nth-of-type(even) .project, main > section:nth-of-type(even) .book { background: var(--bg); box-shadow: none; }
+.project { padding: 28px; border-top: 3px solid var(--accent); }
+.project:hover, .book:hover { transform: translateY(-2px); transition: transform .15s ease; }
+@media (prefers-reduced-motion: reduce) { .project:hover, .book:hover { transform: none; } }
+.book { padding: 24px; }
+.book-meta span:first-child { font-weight: 700; }
+.callout { border-left: 4px solid var(--gold); }
+.callout b { color: var(--fg); }
+.result { color: var(--accent); font-weight: 600; }
+.chips li { background: var(--accent-soft); border: 0; border-radius: 999px; padding: 3px 12px; color: var(--accent); font-weight: 600; font-size: .78rem; }
+.agenda li::before { font-weight: 800; }
+.kpis li { border-top: 3px solid var(--accent); }
+.kpis b { color: var(--accent); font-weight: 800; }
+.headline { border-left-color: var(--gold); }
+.headline b { font-family: var(--font-body); font-weight: 800; color: var(--accent); }
+.award { color: var(--gold); font-weight: 700; }
+.btn { border-radius: 8px; font-weight: 700; }
+.group { font-weight: 700; color: var(--fg); border-top: 0; padding-top: 8px; }
+.tl-group { color: var(--accent); letter-spacing: .02em; border-bottom: 2px solid var(--line); }
+.timeline .period { color: var(--accent); }
+table th { color: var(--fg); font-weight: 700; background: var(--accent-soft); padding-left: 12px; }
+table td { padding-left: 12px; }
+.photos img, .thesis-fig img { border-radius: 10px; }
+
+/* footer */
+footer { background: var(--navy); }
+footer .wrap { color: #9fb0c8; border-top: 0; }
+
+@media (max-width: 720px) {
+  .hero .wrap { padding-block: 56px 44px; }
+  section > .wrap { grid-template-columns: 1fr; padding-block: 48px; }
 }
 </style>
 </head>
