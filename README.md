@@ -38,7 +38,7 @@
 | SAP | SAP CDS View & OData 서비스 생성과 Power BI 연동 (강의 준비 중) | [PDF](https://www.kpredict.co.kr/docs/sap-cds-odata-powerbi.pdf) |
 | Power BI | 좋은 대시보드 만드는 Power BI 쉬운 실습 (30~60분) | [PDF](https://www.kpredict.co.kr/docs/powerbi-easy-dashboard.pdf) |
 | Power BI | 삼국간 거래 Power BI 수익성 분석 (90분) | [PDF](https://www.kpredict.co.kr/docs/powerbi-trilateral-trade.pdf) |
-| Process Mining | 강제 입력 없이 업무 데이터 확보하기 | [PDF](https://www.kpredict.co.kr/docs/process-mining-data.pdf) |
+| Process · Task Mining | 강제 입력 없이 업무 데이터 확보하기 (Power Automate Task Mining 실습 포함) | [PDF](https://www.kpredict.co.kr/docs/process-mining-data.pdf) |
 | Security | 바이브 코딩 환경의 공격 표면 관리 방안 | [PDF](https://www.kpredict.co.kr/docs/vibe-coding-attack-surface.pdf) |
 
 <sub>PDF는 공개용으로 간추린 요약본입니다. 실제 강의 교재는 PowerPoint로 화면 캡처와 단계별 설명이 담겨 훨씬 자세합니다.</sub>
