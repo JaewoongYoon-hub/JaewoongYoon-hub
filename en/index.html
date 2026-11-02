@@ -352,7 +352,7 @@ footer .wrap { padding-block: 32px 48px; font-family: var(--font-mono); font-siz
             <tr><td class="period">2020.09–2022.12</td><td><b>Seconded instructor, POSCO Human Resources Development Center</b>: Python data analysis in the POSCO "New Collar" program, a popular course because completion counted toward promotion; two-day classes of about 30 people, about 1,600 learners in total. Certified A-grade instructor (2022.03).</td></tr>
             <tr><td class="period">2021 · 2022</td><td>Volunteer Python and RPA classes for Pohang Jecheol Technical High School students.</td></tr>
             <tr><td class="period">In progress</td><td><b>Book:</b> "Power Platform Automation with Copilot" (working title, about 400 pages): collect with Power Automate, analyze with Power BI, act with Power Apps, with generative AI at every step. <a href="../docs/book-sample-ch7-8.pdf" target="_blank" rel="noopener">Sample chapters (Korean, PDF) ↗</a></td></tr>
-            <tr><td class="period">Materials</td><td>Downloadable handouts in Korean: vibe coding with Python and Claude Code, SAP CDS View and OData to Power BI, Power BI dashboard labs, process mining with a Power Automate Task Mining lab, an enterprise Claude adoption and security checklist, and attack surface management for vibe coding. <a href="../#materials">See the list ↗</a></td></tr>
+            <tr><td class="period">Materials</td><td>In-house courses currently delivered: Power BI and Power Apps, beginner and intermediate. The other materials are finished course books prepared for upcoming courses. Downloadable handouts in Korean: vibe coding with Python and Claude Code, SAP CDS View and OData to Power BI, Power BI dashboard labs, process mining with a Power Automate Task Mining lab, an enterprise Claude adoption and security checklist, and attack surface management for vibe coding. <a href="../#materials">See the list ↗</a></td></tr>
           </tbody>
         </table>
       </div>
@@ -361,38 +361,55 @@ footer .wrap { padding-block: 32px 48px; font-family: var(--font-mono); font-siz
 
   <section id="news">
     <div class="wrap">
-      <div class="label"><b>News</b>Power Platform</div>
-      <article class="paper">
-        <p class="eyebrow">Power Platform news · 2026.11.02</p>
-        <h2>PPCC 2026: Power Platform moves from app tool to agent operating model</h2>
-        <p class="period">Power Platform Community Conference 2026 · Oct 27–29, MGM Grand, Las Vegas · 9,000+ attendees</p>
-        <p>The message this year: <b>apps, automation, agents, code and governance now form one operating model.</b> The edge is shifting from building fast to running agents that work safely.</p>
-        <ul class="kpis">
-          <li><b>+20%</b><span>Power Apps daily active users</span></li>
-          <li><b>+20%</b><span>Flow runs</span></li>
-          <li><b>2x+</b><span>AI usage in Power Apps</span></li>
-          <li><b>3x+</b><span>App usage in Copilot Studio</span></li>
-        </ul>
-        <p class="note">Year over year · 2M+ monthly active makers and 4M+ apps (Microsoft)</p>
-        <ol class="agenda">
-          <li><b>Agents become coworkers</b><span>Copilot Studio agents act under their own accounts in Microsoft 365, start on triggers and remember business processes. The Microsoft Copilot harness runs longer, complex work.</span></li>
-          <li><b>The line between building and coding blurs</b><span>Apps in Copilot Studio (public preview), app creation in Copilot Cowork, natural-language canvas and model-driven apps. Developers pick up the same solution in VS Code, GitHub Copilot and Copilot CLI.</span></li>
-          <li><b>AI that understands the business</b><span>Business applications in Work IQ (public preview), plus Dataverse semantic models, Ask API, Business Skills and MCP Server.</span></li>
-          <li><b>Code under governance</b><span>Microsoft Copilot Managed Runtime hosts code created with Copilot under enterprise governance.</span></li>
-          <li><b>Governance and spend in one place</b><span>Microsoft Agent 365 gives one view of all apps and agents, action-level connector policies and spending controls by user and asset.</span></li>
-        </ol>
-        <p><b>Customer stories</b> · Asurion raised touchless invoice processing from under 20% to over 70% with a Copilot Studio agent; the NFL saves 8 to 12 hours a week of data entry and reporting.</p>
-        <dl class="facts">
-          <dt>Data</dt><dd>Clean up permissions, table relationships and business terms so AI can read them. Oversharing and poor data quality show up directly as agent risk.</dd>
-          <dt>Build</dt><dd>Shared ALM for makers and developers; standards for MCP and GitHub Copilot.</dd>
-          <dt>Run</dt><dd>An owner, approver and stop rule for every agent, with a regular inventory review.</dd>
-          <dt>Cost</dt><dd>Measure credit use against business results; set limits and alerts per user and agent.</dd>
-          <dt>Security</dt><dd>Least-privilege data access and actions; check labels, DLP and connector exposure.</dd>
-        </dl>
-        <p class="note">Most features are in preview, with no GA dates or usage limits announced. Start small: assess (0–4 weeks), design (1–2 months), pilot two or three high-value processes (2–4 months), then scale (4–9 months).</p>
-        <ul class="chips"><li>Copilot Studio</li><li>AI agents</li><li>Power Apps</li><li>Work IQ · Dataverse</li><li>Agent 365</li><li>Governance</li></ul>
-        <p class="links"><a href="https://www.microsoft.com/en-us/power-platform/blog/2026/10/29/built-by-makers-five-years-of-power-platform-community-conference/" target="_blank" rel="noopener">Microsoft PPCC 2026 recap ↗</a><a href="https://www.microsoft.com/en-us/power-platform/blog/2026/10/23/dataverse-and-workiq-ppcc-2026/" target="_blank" rel="noopener">Dataverse and Work IQ ↗</a></p>
-      </article>
+      <div class="label"><b>News</b>AI · Power Platform</div>
+      <div class="research">
+        <article class="paper">
+          <p class="eyebrow">AI news · 2026.11.02</p>
+          <h2>Enterprise Claude reaches company-wide readiness with security and audit built in</h2>
+          <p class="period">From Anthropic announcements · self-serve Enterprise in Feb 2026 · wider Compliance API coverage in Aug 2026</p>
+          <p>Security has been the main reason companies hesitate on generative AI. This year Claude Enterprise added the controls that let a company <b>own its accounts, data and logs</b>, and it can now be bought without a sales call.</p>
+          <ol class="agenda">
+            <li><b>Self-serve Claude Enterprise (Feb 12, 2026)</b><span>Buy online and set up SSO, domain capture and SCIM provisioning in minutes. Claude, Claude Code and Cowork for the whole organization, with Microsoft 365 and Slack connectors and Excel and PowerPoint sidebars.</span></li>
+            <li><b>Admin and security controls included</b><span>Audit logs, Compliance API, organization-wide permissions, custom data retention, usage analytics and spend caps by organization and user. Enterprise content is not used for training by default.</span></li>
+            <li><b>Compliance API extended (Aug 2026)</b><span>Covers Cowork (desktop, web, mobile) and Claude Code (CLI, desktop) sessions, including prompts, responses and tool calls, for audit and eDiscovery. Claude Code on the web, API use and Bedrock, Vertex AI and Foundry sessions are not covered yet.</span></li>
+            <li><b>Certifications</b><span>SOC 2 Type II, ISO 27001, ISO/IEC 42001, and a HIPAA configuration with a BAA. Check scope by plan and cloud route in the Trust Center.</span></li>
+          </ol>
+          <p><b>Takeaway</b> · Moving AI use into a place the company controls is now a practical alternative to blocking it. My Korean handout lays out a seven-step rollout and fixes for eleven security concerns.</p>
+          <ul class="chips"><li>Claude Enterprise</li><li>Compliance API</li><li>SSO · SCIM</li><li>AI governance</li></ul>
+          <p class="links"><a href="https://claude.com/blog/self-serve-enterprise" target="_blank" rel="noopener">Self-serve Enterprise ↗</a><a href="https://claude.com/blog/compliance-api-cowork-and-claude-code" target="_blank" rel="noopener">Compliance API coverage ↗</a><a href="../docs/claude-enterprise-adoption.pdf" target="_blank" rel="noopener" download>Adoption checklist (Korean PDF) ↓</a></p>
+        </article>
+        <article class="paper">
+          <p class="eyebrow">Power Platform news · 2026.11.02</p>
+          <h2>PPCC 2026: Power Platform moves from app tool to agent operating model</h2>
+          <p class="period">Power Platform Community Conference 2026 · Oct 27–29, MGM Grand, Las Vegas · 9,000+ attendees</p>
+          <p>The message this year: <b>apps, automation, agents, code and governance now form one operating model.</b> The edge is shifting from building fast to running agents that work safely.</p>
+          <ul class="kpis">
+            <li><b>+20%</b><span>Power Apps daily active users</span></li>
+            <li><b>+20%</b><span>Flow runs</span></li>
+            <li><b>2x+</b><span>AI usage in Power Apps</span></li>
+            <li><b>3x+</b><span>App usage in Copilot Studio</span></li>
+          </ul>
+          <p class="note">Year over year · 2M+ monthly active makers and 4M+ apps (Microsoft)</p>
+          <ol class="agenda">
+            <li><b>Agents become coworkers</b><span>Copilot Studio agents act under their own accounts in Microsoft 365, start on triggers and remember business processes. The Microsoft Copilot harness runs longer, complex work.</span></li>
+            <li><b>The line between building and coding blurs</b><span>Apps in Copilot Studio (public preview), app creation in Copilot Cowork, natural-language canvas and model-driven apps. Developers pick up the same solution in VS Code, GitHub Copilot and Copilot CLI.</span></li>
+            <li><b>AI that understands the business</b><span>Business applications in Work IQ (public preview), plus Dataverse semantic models, Ask API, Business Skills and MCP Server.</span></li>
+            <li><b>Code under governance</b><span>Microsoft Copilot Managed Runtime hosts code created with Copilot under enterprise governance.</span></li>
+            <li><b>Governance and spend in one place</b><span>Microsoft Agent 365 gives one view of all apps and agents, action-level connector policies and spending controls by user and asset.</span></li>
+          </ol>
+          <p><b>Customer stories</b> · Asurion raised touchless invoice processing from under 20% to over 70% with a Copilot Studio agent; the NFL saves 8 to 12 hours a week of data entry and reporting.</p>
+          <dl class="facts">
+            <dt>Data</dt><dd>Clean up permissions, table relationships and business terms so AI can read them. Oversharing and poor data quality show up directly as agent risk.</dd>
+            <dt>Build</dt><dd>Shared ALM for makers and developers; standards for MCP and GitHub Copilot.</dd>
+            <dt>Run</dt><dd>An owner, approver and stop rule for every agent, with a regular inventory review.</dd>
+            <dt>Cost</dt><dd>Measure credit use against business results; set limits and alerts per user and agent.</dd>
+            <dt>Security</dt><dd>Least-privilege data access and actions; check labels, DLP and connector exposure.</dd>
+          </dl>
+          <p class="note">Most features are in preview, with no GA dates or usage limits announced. Start small: assess (0–4 weeks), design (1–2 months), pilot two or three high-value processes (2–4 months), then scale (4–9 months).</p>
+          <ul class="chips"><li>Copilot Studio</li><li>AI agents</li><li>Power Apps</li><li>Work IQ · Dataverse</li><li>Agent 365</li><li>Governance</li></ul>
+          <p class="links"><a href="https://www.microsoft.com/en-us/power-platform/blog/2026/10/29/built-by-makers-five-years-of-power-platform-community-conference/" target="_blank" rel="noopener">Microsoft PPCC 2026 recap ↗</a><a href="https://www.microsoft.com/en-us/power-platform/blog/2026/10/23/dataverse-and-workiq-ppcc-2026/" target="_blank" rel="noopener">Dataverse and Work IQ ↗</a></p>
+        </article>
+      </div>
     </div>
   </section>
 
