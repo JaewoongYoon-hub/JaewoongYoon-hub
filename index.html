@@ -224,6 +224,10 @@ footer .wrap { padding-block: 32px 48px; font-family: var(--font-mono); font-siz
   .nav a { white-space: nowrap; }
 }
 
+.photo-tag-wrap { position: relative; }
+.photo-tag { position: absolute; left: 3%; top: 9%; background: var(--accent); color: #fff; font-size: .8rem; font-weight: 700; padding: 3px 10px; border-radius: 999px; box-shadow: 0 2px 6px rgba(0,0,0,.25); }
+.photo-tag::after { content: ""; position: absolute; left: 22px; bottom: -6px; border: 6px solid transparent; border-bottom: 0; border-top-color: var(--accent); }
+.who { display: inline-block; background: var(--accent-soft); color: var(--accent); font-weight: 700; padding: 0 8px; border-radius: 999px; }
 /* ===== Corporate theme ===== */
 :root {
   --bg: #f5f7fa; --surface: #ffffff; --fg: #0f1c2e; --muted: #556275; --line: #dfe4ec;
@@ -443,8 +447,11 @@ footer .wrap { color: #9fb0c8; border-top: 0; }
           </dl>
           <ul class="chips" aria-label="주제"><li>프로세스 진단</li><li>발전소 운영</li><li>VOC·VOB</li><li>보고서 작성</li><li>PI</li><li>Oracle → SAP</li><li>설비(PM)·품질(QM)</li><li>PI3.0</li></ul>
           <figure class="thesis-fig" style="max-width:520px">
-            <img src="images/pi-book-2015.jpg" width="640" height="439" loading="lazy" alt="필자 윤재웅(맨 왼쪽)과 동료들이 PI3.0 업무혁신 과정을 담은 책 「포스코에너지, 내일을 먼저 만나다」를 들고 있는 모습">
-            <figcaption>「포스코에너지, 내일을 먼저 만나다」 발간 (2015) · 필자 윤재웅(맨 왼쪽) · 사진: 에너지경제 2015.05.04 보도</figcaption>
+            <div class="photo-tag-wrap">
+              <img src="images/pi-book-2015.jpg" width="640" height="439" loading="lazy" alt="필자 윤재웅(맨 왼쪽)과 동료들이 PI3.0 업무혁신 과정을 담은 책 「포스코에너지, 내일을 먼저 만나다」를 들고 있는 모습">
+              <span class="photo-tag" aria-hidden="true">윤재웅</span>
+            </div>
+            <figcaption>「포스코에너지, 내일을 먼저 만나다」 발간 (2015) · <span class="who">필자 윤재웅 · 맨 왼쪽</span> · 사진: 에너지경제 2015.05.04 보도</figcaption>
           </figure>
         </article>
 
