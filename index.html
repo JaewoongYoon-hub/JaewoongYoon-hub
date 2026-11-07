@@ -915,6 +915,31 @@ pool = np.array([[relu[i:i+2, j:j+2].max() for j in (0, 2)] for i in (0, 2)])  #
         <p class="note">석사 논문에서 쓴 RNN·LSTM이 시간 순서의 패턴을 읽는다면, CNN은 공간의 패턴을 읽습니다. 두 구조 모두 "필요한 특징만 남겨 간추린 뒤 그 위에서 판단한다"는 같은 원리 위에 있습니다. 다만 RNN·LSTM은 앞 시점의 결과가 있어야 다음 시점을 계산할 수 있어 시간 축으로는 병렬화가 어렵습니다. LSTM의 게이트는 계산을 줄이기보다 오래된 정보를 잃지 않으려는 장치입니다. 이 한계를 넘어 문장 전체를 한 번에 병렬 처리하도록 만든 구조가 오늘날 생성형 AI의 바탕인 트랜스포머입니다.</p>
         <ul class="chips" aria-label="주제"><li>딥러닝</li><li>CNN</li><li>합성곱</li><li>풀링</li><li>Python · NumPy</li></ul>
       </article>
+      <article class="paper">
+        <p class="eyebrow">개인 연구 · 생성형 AI 원리</p>
+        <h2>트랜스포머는 문장을 어떻게 한 번에 이해할까</h2>
+        <p class="en">How a Transformer reads a whole sentence at once</p>
+        <p>RNN·LSTM은 단어를 한 개씩 순서대로 읽어 앞 결과를 다음으로 넘깁니다. 트랜스포머는 이 순서 의존을 없애고, 문장의 <b>모든 단어가 서로를 동시에 바라보며</b> "누가 나와 관련 있는가"를 계산합니다. 이것이 <b>셀프 어텐션</b>이며, 모든 단어 쌍을 한 번의 행렬 곱으로 계산하므로 GPU에서 통째로 병렬 처리할 수 있습니다. GPT·Claude 같은 대규모 언어 모델이 모두 이 구조 위에 서 있습니다.</p>
+        <dl class="facts">
+          <dt>① 토큰·임베딩</dt><dd>문장을 토큰으로 나누고 각 토큰을 숫자 벡터로 바꿉니다. 순서 정보는 위치 인코딩으로 더해 줍니다.</dd>
+          <dt>② Q · K · V</dt><dd>각 단어에서 질문(Query, 내가 찾는 것), 열쇠(Key, 내가 가진 것), 값(Value, 전달할 내용) 세 벡터를 만듭니다.</dd>
+          <dt>③ 어텐션</dt><dd>Q와 K를 곱해 관련도 점수를 내고 softmax로 비율(합 1)로 바꾼 뒤, 그 비율만큼 V를 섞어 문맥이 반영된 새 표현을 만듭니다.</dd>
+          <dt>④ 멀티헤드 · 층 쌓기</dt><dd>여러 개의 어텐션(헤드)이 문법·의미 등 서로 다른 관계를 동시에 보고, 이런 층을 수십 개 쌓아 점점 깊은 의미를 담습니다.</dd>
+          <dt>⑤ 다음 토큰 생성</dt><dd>생성형 모델은 마지막 표현으로 "다음에 올 토큰"의 확률을 계산해 하나를 고르고, 그것을 다시 입력에 붙여 반복하며 문장을 만들어 갑니다.</dd>
+        </dl>
+        <div class="mat-row">
+          <figure><table class="mat"><tr><td></td><td><b>나는</b></td><td><b>사과를</b></td><td><b>먹었다</b></td></tr><tr><td><b>나는</b></td><td class="hi">0.40</td><td class="">0.20</td><td class="hi">0.40</td></tr><tr><td><b>사과를</b></td><td class="">0.20</td><td class="hi">0.40</td><td class="hi">0.40</td></tr><tr><td><b>먹었다</b></td><td class="">0.25</td><td class="">0.25</td><td class="hi">0.50</td></tr></table><figcaption>각 행의 단어가 어느 단어에 얼마나 주목하는지 (행 합계 1)</figcaption></figure>
+        </div>
+        <p>"먹었다"는 자기 자신에 50%, "나는"(누가)과 "사과를"(무엇을)에 25%씩 주목해, 주어와 목적어 정보를 함께 담은 표현이 됩니다. 아래 코드는 이 표를 그대로 계산합니다.</p>
+        <pre class="code-block"><code>import numpy as np
+X = np.array([[1,0], [0,1], [1,1]])           # 나는 · 사과를 · 먹었다 (2차원 예시 벡터)
+Q, K, V = X, X, X                            # 실제 모델은 각각 학습된 행렬을 곱해 만듦
+score = Q @ K.T / np.sqrt(2)                 # 단어끼리 얼마나 관련 있는지
+weight = np.exp(score) / np.exp(score).sum(axis=1, keepdims=True)  # softmax → 합이 1
+out = weight @ V                             # 관련도만큼 섞은 새 표현</code></pre>
+        <p class="note">CNN이 "작은 필터를 공유해 병렬로" 효율을 얻었다면, 트랜스포머는 "모든 단어 관계를 한 번의 행렬 곱으로" 효율을 얻었습니다. 대신 단어 수가 늘면 계산량이 제곱으로 커져, 긴 문서를 다루는 기법이 지금도 활발히 연구되고 있습니다.</p>
+        <ul class="chips" aria-label="주제"><li>트랜스포머</li><li>셀프 어텐션</li><li>LLM</li><li>Python · NumPy</li></ul>
+      </article>
       </div>
     </div>
   </section>
