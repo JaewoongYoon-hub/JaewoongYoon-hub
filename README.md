@@ -11,7 +11,7 @@
 
 #### 지금 하는 일
 - 🏢 포스코인터내셔널 경영지원본부 DX혁신실 차장: 전사 DX 기획·실행, DX 준전문가 과정 설계와 강의
-- 🤝 한국 MS 파워플랫폼 협회 기술 이사 (2026–, 설립 주도)
+- 🤝 [한국 MS 파워플랫폼 협회](https://www.mspowerplatform.co.kr) 기술 이사 (2026–, 설립 주도)
 - ✍️ 「Copilot과 함께하는 Power Platform 업무 자동화」 집필 중 (약 400쪽) · [샘플 원고 7~8장](https://www.kpredict.co.kr/docs/book-sample-ch7-8.pdf)
 
 #### 주요 프로젝트
