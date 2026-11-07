@@ -230,6 +230,13 @@ footer .wrap { padding-block: 32px 48px; font-family: var(--font-mono); font-siz
 .cert-badge img { width: 64px; height: auto; flex: none; }
 .code-block { margin: 0; background: #0f1c2e; color: #e6ebf3; border-radius: 10px; padding: 16px 18px; overflow-x: auto; font-family: var(--font-mono); font-size: .82rem; line-height: 1.6; }
 .hash { font-family: var(--font-mono); font-size: .85rem; overflow-wrap: anywhere; background: var(--accent-soft); color: var(--accent); padding: 2px 6px; border-radius: 4px; }
+.mat { border-collapse: collapse; width: auto; font-family: var(--font-mono); font-size: .8rem; }
+.mat td { border: 1px solid var(--line); padding: 4px 8px; text-align: center; min-width: 2em; }
+.mat td.hi { background: var(--accent-soft); color: var(--accent); font-weight: 700; }
+.mat-row { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+.mat-row figcaption { font-size: .8rem; color: var(--muted); margin-top: 4px; }
+.mat-row figure { margin: 0; }
+.arrow { color: var(--muted); font-size: 1.2rem; }
 /* ===== Corporate theme ===== */
 :root {
   --bg: #f5f7fa; --surface: #ffffff; --fg: #0f1c2e; --muted: #556275; --line: #dfe4ec;
@@ -837,6 +844,25 @@ footer .wrap { color: #9fb0c8; border-top: 0; }
         <p class="links"><a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12479173" target="_blank" rel="noopener">DBpia에서 보기 ↗</a><a href="https://kiss.kstudy.com/Detail/Ar?key=3988099" target="_blank" rel="noopener">KISS에서 보기 ↗</a><a href="https://iacf.ajou.ac.kr/ebiz/board/notice.do?mode=view&amp;articleNo=207470&amp;article.offset=60&amp;articleLimit=10" target="_blank" rel="noopener">아주대 수상 소식 ↗</a></p>
       </article>
       <article class="paper">
+        <p class="eyebrow">개인 연구 · 블록체인 기초</p>
+        <h2>블록체인을 지키는 암호 함수 SHA-256</h2>
+        <p class="en">How SHA-256 keeps a blockchain honest</p>
+        <p>SHA-256은 어떤 길이의 데이터를 넣어도 <b>항상 256비트(16진수 64자리)</b>의 고유한 값, 즉 해시를 돌려주는 함수입니다. 블록체인은 이 성질 위에 서 있습니다.</p>
+        <dl class="facts">
+          <dt>결정성</dt><dd>같은 입력이면 언제 어디서 계산해도 같은 해시가 나옵니다.</dd>
+          <dt>눈사태 효과</dt><dd>입력이 한 글자만 달라도 해시가 완전히 달라집니다. 아래 예에서 "hello"와 "hellp"의 해시는 256비트 중 <b>131비트</b>가 다릅니다.</dd>
+          <dt>일방향</dt><dd>해시로부터 원래 입력을 거꾸로 알아낼 수 없습니다. 원하는 해시를 얻으려면 입력을 바꿔 가며 계속 계산해 보는 수밖에 없습니다.</dd>
+          <dt>충돌 저항</dt><dd>서로 다른 두 입력이 같은 해시를 갖는 경우를 현실적으로 찾을 수 없습니다.</dd>
+        </dl>
+        <pre class="code-block"><code>import hashlib
+for text in [&quot;hello&quot;, &quot;hellp&quot;]:
+    print(text, hashlib.sha256(text.encode()).hexdigest())
+# hello  2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824
+# hellp  fdd7585e08c4e2afd71dcabdb4636c89d557a3f42db9e2040c8bbd1708aa4ce7</code></pre>
+        <p><b>블록체인에서 쓰이는 곳</b> · 각 블록은 <b>바로 앞 블록의 해시</b>를 자기 헤더에 담습니다. 그래서 과거 블록 하나를 고치면 그 해시가 바뀌고, 뒤에 이어진 모든 블록이 어긋나 위조가 드러납니다. 또 채굴은 "앞자리에 0이 충분히 많은 해시"가 나올 때까지 논스를 바꿔 가며 SHA-256을 반복하는 일이라, 일방향성 덕분에 지름길 없이 실제 계산(작업)을 증명하게 됩니다. 아래 제네시스 블록 재현 프로그램이 바로 이 원리를 보여 줍니다.</p>
+        <ul class="chips" aria-label="주제"><li>SHA-256</li><li>해시 함수</li><li>블록체인</li><li>작업증명</li></ul>
+      </article>
+      <article class="paper">
         <p class="eyebrow">개인 연구 · 블록체인</p>
         <h2>비트코인 제네시스 블록 해시를 파이썬으로 재현하기</h2>
         <p class="en">Reproducing the Bitcoin genesis block hash in Python</p>
@@ -857,6 +883,35 @@ print(&quot;Genesis Block Hash:&quot;, genesis_hash)</code></pre>
         <p class="result">2009년 1월 3일 만들어진 제네시스 블록의 실제 논스(2,083,236,893)를 넣으면 공식 블록 해시가 그대로 재현됩니다.</p>
         <p><span class="hash">000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f</span></p>
         <ul class="chips" aria-label="주제"><li>Python</li><li>SHA-256</li><li>작업증명</li><li>블록체인</li></ul>
+      </article>
+      <article class="paper">
+        <p class="eyebrow">개인 연구 · 딥러닝 원리</p>
+        <h2>CNN은 이미지를 어떻게 간추리고, 그 위에서 판단할까</h2>
+        <p class="en">How a CNN condenses an image and builds on it</p>
+        <p>합성곱 신경망(CNN)은 이미지를 통째로 외우지 않습니다. 작은 <b>필터</b>로 이미지를 훑어 경계·질감 같은 특징만 남기고(<b>합성곱</b>), 그 결과를 더 작게 <b>요약</b>(풀링)하는 과정을 여러 번 반복합니다. 앞쪽 층은 선과 경계를, 뒤쪽 층은 그것을 조합한 모양과 사물을 알아봅니다. 마지막에 이렇게 간추린 특징을 바탕으로 분류하거나, 거꾸로 펼쳐 새 이미지를 만듭니다.</p>
+        <div class="mat-row">
+          <figure><table class="mat"><tr><td class="">0</td><td class="">0</td><td class="">0</td><td class="hi">9</td><td class="hi">9</td><td class="hi">9</td></tr><tr><td class="">0</td><td class="">0</td><td class="">0</td><td class="hi">9</td><td class="hi">9</td><td class="hi">9</td></tr><tr><td class="">0</td><td class="">0</td><td class="">0</td><td class="hi">9</td><td class="hi">9</td><td class="hi">9</td></tr><tr><td class="">0</td><td class="">0</td><td class="">0</td><td class="hi">9</td><td class="hi">9</td><td class="hi">9</td></tr><tr><td class="">0</td><td class="">0</td><td class="">0</td><td class="hi">9</td><td class="hi">9</td><td class="hi">9</td></tr><tr><td class="">0</td><td class="">0</td><td class="">0</td><td class="hi">9</td><td class="hi">9</td><td class="hi">9</td></tr></table><figcaption>① 6×6 이미지 (36개 값)</figcaption></figure>
+          <span class="arrow">∗</span>
+          <figure><table class="mat"><tr><td class="">-1</td><td class="">0</td><td class="hi">1</td></tr><tr><td class="">-1</td><td class="">0</td><td class="hi">1</td></tr><tr><td class="">-1</td><td class="">0</td><td class="hi">1</td></tr></table><figcaption>② 세로 경계 필터 3×3</figcaption></figure>
+          <span class="arrow">→</span>
+          <figure><table class="mat"><tr><td class="">0</td><td class="hi">27</td><td class="hi">27</td><td class="">0</td></tr><tr><td class="">0</td><td class="hi">27</td><td class="hi">27</td><td class="">0</td></tr><tr><td class="">0</td><td class="hi">27</td><td class="hi">27</td><td class="">0</td></tr><tr><td class="">0</td><td class="hi">27</td><td class="hi">27</td><td class="">0</td></tr></table><figcaption>③ 합성곱 결과 4×4</figcaption></figure>
+          <span class="arrow">→</span>
+          <figure><table class="mat"><tr><td class="hi">27</td><td class="hi">27</td></tr><tr><td class="hi">27</td><td class="hi">27</td></tr></table><figcaption>④ 2×2 최대 풀링 (4개 값)</figcaption></figure>
+        </div>
+        <p>36개 숫자였던 이미지가 4개 숫자로 줄었지만 <b>"가운데에 세로 경계가 있다"</b>는 핵심 정보는 그대로 남았습니다. 실제 CNN은 이런 필터 수십~수백 개를 학습 데이터로부터 스스로 익힙니다.</p>
+        <pre class="code-block"><code>import numpy as np
+img = np.array([[0,0,0,9,9,9]] * 6)          # 왼쪽 어둡고 오른쪽 밝은 6×6 이미지
+k   = np.array([[-1,0,1]] * 3)               # 세로 경계를 찾는 3×3 필터
+conv = np.array([[(img[i:i+3, j:j+3] * k).sum() for j in range(4)] for i in range(4)])
+relu = np.maximum(conv, 0)                   # 음수는 0으로
+pool = np.array([[relu[i:i+2, j:j+2].max() for j in (0, 2)] for i in (0, 2)])  # 2×2 최댓값</code></pre>
+        <dl class="facts">
+          <dt>간추리기</dt><dd>합성곱 + 활성화(ReLU) + 풀링을 쌓아 이미지 → 경계 → 모양 → 사물 순으로 압축된 특징을 만듭니다.</dd>
+          <dt>판단하기</dt><dd>마지막 특징을 완전연결층에 넣어 "고양이 92%"처럼 분류합니다.</dd>
+          <dt>만들기</dt><dd>오토인코더·생성 모델은 이 압축된 특징을 거꾸로 펼쳐(업샘플링) 이미지를 복원하거나 새로 만듭니다.</dd>
+        </dl>
+        <p class="note">석사 논문에서 쓴 RNN·LSTM이 시간 순서의 패턴을 읽는다면, CNN은 공간의 패턴을 읽습니다. 두 구조 모두 "필요한 특징만 남겨 간추린 뒤 그 위에서 판단한다"는 같은 원리 위에 있습니다.</p>
+        <ul class="chips" aria-label="주제"><li>딥러닝</li><li>CNN</li><li>합성곱</li><li>풀링</li><li>Python · NumPy</li></ul>
       </article>
       </div>
     </div>

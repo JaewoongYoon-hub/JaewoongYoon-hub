@@ -225,6 +225,13 @@ footer .wrap { padding-block: 32px 48px; font-family: var(--font-mono); font-siz
 .cert-badge img { width: 64px; height: auto; flex: none; }
 .code-block { margin: 0; background: #0f1c2e; color: #e6ebf3; border-radius: 10px; padding: 16px 18px; overflow-x: auto; font-family: var(--font-mono); font-size: .82rem; line-height: 1.6; }
 .hash { font-family: var(--font-mono); font-size: .85rem; overflow-wrap: anywhere; background: var(--accent-soft); color: var(--accent); padding: 2px 6px; border-radius: 4px; }
+.mat { border-collapse: collapse; width: auto; font-family: var(--font-mono); font-size: .8rem; }
+.mat td { border: 1px solid var(--line); padding: 4px 8px; text-align: center; min-width: 2em; }
+.mat td.hi { background: var(--accent-soft); color: var(--accent); font-weight: 700; }
+.mat-row { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+.mat-row figcaption { font-size: .8rem; color: var(--muted); margin-top: 4px; }
+.mat-row figure { margin: 0; }
+.arrow { color: var(--muted); font-size: 1.2rem; }
 /* ===== Corporate theme ===== */
 :root {
   --bg: #f5f7fa; --surface: #ffffff; --fg: #0f1c2e; --muted: #556275; --line: #dfe4ec;
@@ -556,6 +563,12 @@ footer .wrap { color: #9fb0c8; border-top: 0; }
         <p><span class="award">Best Presentation Award</span>, Korean Society for Quality Management, Fall Conference 2022, for the preceding study. <a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12479173" target="_blank" rel="noopener">DBpia ↗</a> · <a href="https://iacf.ajou.ac.kr/ebiz/board/notice.do?mode=view&amp;articleNo=207470&amp;article.offset=60&amp;articleLimit=10" target="_blank" rel="noopener">Ajou University news ↗</a></p>
       </article>
         <article class="paper">
+          <p class="eyebrow">Personal research · Blockchain basics</p>
+          <h2>SHA-256, the hash that keeps a blockchain honest</h2>
+          <p>SHA-256 turns any input into a fixed 256-bit value. It is deterministic, one-way and collision resistant, and a one-letter change flips about half the bits ("hello" vs "hellp": 131 of 256). Each block stores the previous block's hash, so changing an old block breaks every block after it; mining repeats SHA-256 with new nonces until the hash meets the difficulty rule.</p>
+          <ul class="chips"><li>SHA-256</li><li>Blockchain</li></ul>
+        </article>
+        <article class="paper">
           <p class="eyebrow">Personal research · Blockchain</p>
           <h2>Reproducing the Bitcoin genesis block hash in Python</h2>
           <p>A Python version of the proof-of-work described in Satoshi Nakamoto’s 2008 Bitcoin paper. It joins the 80-byte block header (version, previous hash, Merkle root, time, difficulty bits, nonce), applies SHA-256 twice and checks the result against the difficulty rule. Mining is the search that raises the nonce one by one until a hash meets that rule.</p>
@@ -574,6 +587,12 @@ genesis_hash = hash2[::-1].hex()
 print(&quot;Genesis Block Hash:&quot;, genesis_hash)</code></pre>
           <p class="result">With the genesis block’s real nonce (2,083,236,893) it reproduces the official hash <span class="hash">000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f</span>.</p>
           <ul class="chips"><li>Python</li><li>SHA-256</li><li>Proof-of-work</li></ul>
+        </article>
+        <article class="paper">
+          <p class="eyebrow">Personal research · Deep learning</p>
+          <h2>How a CNN condenses an image and builds on it</h2>
+          <p>A convolutional network slides small filters over an image to keep features such as edges, then pools the result into a smaller summary, layer after layer: edges, then shapes, then objects. A worked example turns a 6×6 image (36 values) into a 2×2 summary (4 values) that still says "there is a vertical edge in the middle". The final features feed a classifier, or are expanded again to rebuild or generate images.</p>
+          <ul class="chips"><li>CNN</li><li>Deep learning</li><li>NumPy</li></ul>
         </article>
     </div>
   </section>
