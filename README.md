@@ -5,7 +5,7 @@
 
 🌐 **[www.kpredict.co.kr](https://www.kpredict.co.kr)** · [English](https://www.kpredict.co.kr/en/) · 📫 [yoonjw3840@naver.com](mailto:yoonjw3840@naver.com)
 
-| 1,600명 | 21차수 | 15건 | 11종 |
+| 1,600명 | 21차수 | 15건 | 12종 |
 | :---: | :---: | :---: | :---: |
 | Python 데이터 분석<br>누적 수강생 | 2026년 신입사원 교육·DX 준전문가<br>과정 주강사 · 만족도 4.8/5 | 현업 DX·RPA<br>개발 지원 (2025–2026) | 직접 만든<br>교재·교육자료 |
 
