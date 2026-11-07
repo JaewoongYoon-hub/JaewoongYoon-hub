@@ -44,6 +44,7 @@
 | Power BI | 삼국간 거래 Power BI 수익성 분석 (90분) | [PDF](https://www.kpredict.co.kr/docs/powerbi-trilateral-trade.pdf) |
 | Process · Task Mining | 강제 입력 없이 업무 데이터 확보하기 (Power Automate Task Mining 실습 포함) | [PDF](https://www.kpredict.co.kr/docs/process-mining-data.pdf) |
 | AI Governance | 기업용 Claude 도입 절차와 보안 체크리스트 | [PDF](https://www.kpredict.co.kr/docs/claude-enterprise-adoption.pdf) |
+| Power Apps × AI | VS Code + Claude로 Power Apps 캔버스 앱 단숨에 만들기 (.msapp · Canvas Apps 플러그인 · MCP) | [PDF](https://www.kpredict.co.kr/docs/powerapps-claude-vibe.pdf) |
 | Security | 바이브 코딩 환경의 공격 표면 관리 방안 | [PDF](https://www.kpredict.co.kr/docs/vibe-coding-attack-surface.pdf) |
 
 <sub>PDF는 공개용으로 간추린 요약본입니다. 실제 강의 교재는 PowerPoint로 화면 캡처와 단계별 설명이 담겨 훨씬 자세합니다.</sub>
