@@ -592,7 +592,7 @@ print(&quot;Genesis Block Hash:&quot;, genesis_hash)</code></pre>
         <article class="paper">
           <p class="eyebrow">Personal research · Deep learning</p>
           <h2>How a CNN condenses an image and builds on it</h2>
-          <p>A convolutional network slides small filters over an image to keep features such as edges, then pools the result into a smaller summary, layer after layer: edges, then shapes, then objects. A worked example turns a 6×6 image (36 values) into a 2×2 summary (4 values) that still says "there is a vertical edge in the middle". The final features feed a classifier, or are expanded again to rebuild or generate images.</p>
+          <p>A convolutional network slides small filters over an image to keep features such as edges, then pools the result into a smaller summary, layer after layer: edges, then shapes, then objects. A worked example turns a 6×6 image (36 values) into a 2×2 summary (4 values) that still says "there is a vertical edge in the middle". The final features feed a classifier, or are expanded again to rebuild or generate images. Because one small filter is shared across the whole image and every position can be computed independently, CNNs need far fewer weights and run in parallel on GPUs, which is why GPU-trained CNNs such as AlexNet (2012) launched the deep-learning boom. RNNs and LSTMs, by contrast, must process a sequence step by step, a limit that Transformers later removed.</p>
           <ul class="chips"><li>CNN</li><li>Deep learning</li><li>NumPy</li></ul>
         </article>
     </div>
