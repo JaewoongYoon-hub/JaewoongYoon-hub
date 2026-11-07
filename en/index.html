@@ -586,6 +586,7 @@ hash2 = hashlib.sha256(hash1).digest()
 genesis_hash = hash2[::-1].hex()
 print(&quot;Genesis Block Hash:&quot;, genesis_hash)</code></pre>
           <p class="result">With the genesis block’s real nonce (2,083,236,893) it reproduces the official hash <span class="hash">000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f</span>.</p>
+          <p class="note">Written with Claude and verified against the real genesis block hash.</p>
           <ul class="chips"><li>Python</li><li>SHA-256</li><li>Proof-of-work</li></ul>
         </article>
         <article class="paper">
