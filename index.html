@@ -237,6 +237,9 @@ footer .wrap { padding-block: 32px 48px; font-family: var(--font-mono); font-siz
 .mat-row figcaption { font-size: .8rem; color: var(--muted); margin-top: 4px; }
 .mat-row figure { margin: 0; }
 .arrow { color: var(--muted); font-size: 1.2rem; }
+.app-shots { margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; max-width: 420px; }
+.app-shots img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 10px; }
+.app-shots figcaption { grid-column: 1 / -1; font-size: 0.85rem; color: var(--muted); }
 /* ===== Corporate theme ===== */
 :root {
   --bg: #f5f7fa; --surface: #ffffff; --fg: #0f1c2e; --muted: #556275; --line: #dfe4ec;
@@ -553,6 +556,41 @@ footer .wrap { color: #9fb0c8; border-top: 0; }
             <dt>결과</dt><dd class="result">경영·의사결정 관점에서 대시보드를 설계하는 방법을 조직에 확산했습니다.</dd>
           </dl>
           <ul class="chips" aria-label="사용 기술"><li>Power BI</li><li>대시보드 디자인</li><li>KPI 설계</li></ul>
+        </article>
+
+        <article class="project">
+          <div class="project-head">
+            <h3>바이브 코딩으로 만든 개인 앱 · 계획·실적 플래너</h3>
+            <span class="period">2026 · 개인 프로젝트 · Claude</span>
+          </div>
+          <dl class="facts">
+            <dt>문제</dt><dd>종이 플래너는 계획과 실제로 한 일을 비교하기 어렵고, 휴대폰과 PC에서 같은 내용을 보기 어려웠습니다.</dd>
+            <dt>만든 것</dt><dd>종이 플래너처럼 펼쳐 보는 월간·주간 화면에, 30분 단위 시간표의 <b>계획(빨강)과 실행(파랑)을 나란히</b> 기록합니다. 할 일은 / 진행중 → ✕ 완료 → ← 취소 → → 연기·위임 기호로 관리하고, 월별 업무·개인·공부 목표, 2026~2050년 공휴일·음력까지 넣었습니다.</dd>
+            <dt>방식</dt><dd>코드를 직접 짜지 않고 Claude에게 원하는 화면과 규칙을 설명하며 고쳐 나갔습니다. 계정에 저장돼 휴대폰·PC 어디서든 같은 기록을 봅니다.</dd>
+          </dl>
+          <figure class="thesis-fig">
+            <img src="images/app-planner-week.jpg" width="1600" height="1000" loading="lazy" alt="계획·실적 플래너 주간 화면: 요일별 할 일과 30분 단위 시간표에 계획과 실행 막대가 나란히 표시됨">
+            <figcaption>주간 화면 · 화면 속 일정은 예시 데이터입니다</figcaption>
+          </figure>
+          <ul class="chips" aria-label="사용 기술"><li>바이브 코딩</li><li>Claude</li><li>HTML · JavaScript</li><li>기기 간 동기화</li></ul>
+        </article>
+
+        <article class="project">
+          <div class="project-head">
+            <h3>바이브 코딩으로 만든 개인 앱 · 커피 카운터</h3>
+            <span class="period">2026 · 개인 프로젝트 · Claude</span>
+          </div>
+          <dl class="facts">
+            <dt>문제</dt><dd>하루에 커피를 몇 잔, 카페인을 얼마나 마시는지 감으로만 알고 있었습니다.</dd>
+            <dt>만든 것</dt><dd>음료 버튼을 한 번 누르면 기록되고, 카페인·당·크리머 합계와 하루 권장 상한(400mg) 대비 막대를 보여 줍니다. 통계 탭에서 7·30·90일 음료별 추이와 상한 초과일을 확인하고, 음료 종류와 수치는 직접 바꿀 수 있습니다.</dd>
+            <dt>의미</dt><dd>작은 불편 하나를 데이터로 바꾸는 과정은 현업 업무 자동화와 같습니다. 측정 → 시각화 → 행동 변화의 흐름을 생활 속에서 직접 실험했습니다.</dd>
+          </dl>
+          <figure class="app-shots">
+            <img src="images/app-coffee-today.jpg" width="600" height="1298" loading="lazy" alt="커피 카운터 오늘 화면: 음료 버튼 4개와 카페인 합계 막대">
+            <img src="images/app-coffee-stats.jpg" width="600" height="1298" loading="lazy" alt="커피 카운터 통계 화면: 7일 일별 카페인 막대 그래프와 음료별 합계표">
+            <figcaption>오늘 · 통계 화면 · 화면 속 기록은 예시 데이터입니다</figcaption>
+          </figure>
+          <ul class="chips" aria-label="사용 기술"><li>바이브 코딩</li><li>Claude</li><li>모바일 웹앱</li><li>데이터 시각화</li></ul>
         </article>
 
       </div>
