@@ -465,10 +465,10 @@ footer .wrap { color: #9fb0c8; border-top: 0; }
         <article class="project">
           <div class="project-head"><h3>Personal apps built by vibe coding: Plan &amp; Do planner, Coffee counter</h3><span class="period">2026 · personal · Claude</span></div>
           <dl class="facts">
-            <dt>Planner</dt><dd>A paper-style monthly and weekly planner with a 30-minute timetable that shows plan (red) and actual (blue) side by side, status marks for to-dos, monthly goals, and Korean holidays through 2050, synced across phone and PC.</dd>
+            <dt>Planner</dt><dd>Started as a 61-spread 2027 plan-vs-actual PDF for Samsung Notes, generated in Python (ReportLab, korean_lunar_calendar) with linked yearly, monthly and weekly pages. Then rebuilt as an installable app where one entry appears in both the monthly calendar and the 30-minute weekly timetable, with plan and actual side by side.</dd>
             <dt>Coffee counter</dt><dd>One tap logs a drink; it totals caffeine, sugar and creamer against a 400 mg daily limit and charts 7, 30 and 90-day trends.</dd>
             <dt>How</dt><dd>Built without hand-writing code, by describing screens and rules to Claude and refining them.</dd>
-            <dt>Sync</dt><dd>Data is split into per-day, per-week and per-month documents and only changed documents are saved after a short debounce. A real-time listener (onSnapshot) shows edits from other devices at once without overwriting changes still being saved, a local copy keeps working offline, and the storage layer is separated so the installable version syncs through Google Firebase.</dd>
+            <dt>Tech</dt><dd>Offline-first PWA (manifest, service worker, localStorage), Firebase Authentication and Cloud Firestore with offline cache and per-user security rules, hosted on GitHub Pages. Sync merges per item (each to-do, goal, time block and note), keeps the latest edit and stores the other side in a conflict log; offline conflicts were tested with two browsers. <a href="https://jaewoongyoon-hub.github.io/planner/" target="_blank" rel="noopener">Open the app ↗</a></dd>
           </dl>
           <figure class="thesis-fig"><img src="../images/app-planner-week.jpg" width="1600" height="1000" loading="lazy" alt="Weekly view of the planner with plan and actual bars"><figcaption>Weekly view · sample data</figcaption></figure>
         </article>

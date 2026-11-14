@@ -57,7 +57,7 @@
 - 🏆 **한국품질경영학회 2022 추계 학술대회 우수발표논문상** · [DBpia](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12479173) · [아주대 수상 소식](https://iacf.ajou.ac.kr/ebiz/board/notice.do?mode=view&articleNo=207470&article.offset=60&articleLimit=10)
 - 🎤 **한국지능정보시스템학회 2023 춘계학술대회 발표 (2023.05.26, 연세대)** · 정부 정책의 전기 요금 원가 영향 딥러닝 알고리즘으로 예측 (비즈니스 애널리틱스 세션) · [프로그램](https://www.kiiss.or.kr/conference/2023.1/sub03.html)
 - 🔗 **개인 연구**: SHA-256 해시의 원리와 블록체인 연결 구조 정리, 비트코인 백서의 작업증명을 Claude를 활용해 파이썬으로 직접 재현해 제네시스 블록 해시(000000000019d668…8ce26f) 검증, CNN 합성곱·풀링으로 이미지를 간추리는 원리를 NumPy 예제로 설명, 트랜스포머 셀프 어텐션의 원리를 NumPy 예제로 설명
-- 📱 **개인 앱 (바이브 코딩)**: 계획·실행을 나란히 기록하는 월간·주간 플래너, 카페인 섭취를 기록·시각화하는 커피 카운터를 Claude로 제작
+- 📱 **개인 앱 (바이브 코딩)**: [계획·실적 플래너](https://jaewoongyoon-hub.github.io/planner/) (Python으로 생성한 삼성노트용 PDF → 오프라인 우선 PWA, Firebase Auth·Cloud Firestore 항목 단위 동기화와 충돌 기록, GitHub Pages), 카페인 섭취를 기록·시각화하는 커피 카운터
 
 #### 경력
 - 2010.05 – 현재 · 포스코인터내셔널, 현재 DX혁신실 (2023년 1월 합병 전까지 포스코에너지. 아래 2010~2022년 이력은 포스코에너지 시절)
